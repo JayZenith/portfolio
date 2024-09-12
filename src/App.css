@@ -18,15 +18,16 @@
 
 
 a{
-  text-decoration: none;
-  color:black;
-  font-weight: 1000;
-  color: red;
   
+  color:black;
+
+  color: rgb(197, 20, 20);
+  text-decoration: underline ;
+  text-decoration-thickness: .5px;
 }
 
 a:hover{
-  color: rgb(85, 25, 25);
+  color: rgb(134, 31, 31);
 
 }
 
