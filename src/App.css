@@ -22,4 +22,17 @@ a{
   color:black;
   font-weight: 1000;
   color: red;
+  
+}
+
+a:hover{
+  color: rgb(85, 25, 25);
+
+}
+
+
+@media all and (max-width: 500px){
+  .App{
+    font-size: 13px;
+  }
 }
