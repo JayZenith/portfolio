@@ -9,7 +9,13 @@ function App() {
         <div className="App">
           <div><p>Hello, my name is Jay Zenith.</p><br />
           <p>I'm a developer.</p> <br></br>
-          <p>2024. I aint done yet.</p>
+          <p>2024.</p>
+          <br></br>
+          <p>But I got a little less than 2 months.</p><br></br>
+          <Link to="http://starfront.s3-website.us-east-2.amazonaws.com">
+          Days Before . . .
+          </Link>
+          <br></br>
           <br></br>
           <Link to="https://github.com/JayZenith">Github</Link>
           <br></br>
@@ -17,7 +23,7 @@ function App() {
           <Link to="https://x.com/JayZenith_">X</Link>
           <br></br>
           <br></br>
-          <ButtonMailto label="Email: jayzenith248@gmail.com" mailto="mailto:jayzenith248@gmail.com" />
+          <ButtonMailto label="jayzenith248@gmail.com" mailto="mailto:jayzenith248@gmail.com" />
           </div>
         </div>
       </Router>
