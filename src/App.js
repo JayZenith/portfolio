@@ -11,7 +11,6 @@ function App() {
           <p>I'm a developer.</p> <br></br>
           <p>2024.</p>
           <br></br>
-          <p>But I got a little less than 2 months.</p><br></br>
           <Link to="http://starfront.s3-website.us-east-2.amazonaws.com">
           Days Before . . .
           </Link>
