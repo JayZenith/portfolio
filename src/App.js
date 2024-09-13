@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "rea
 import './App.css';
 import ButtonMailto from "./ButtonMailto";
 
+
 function App() {
   return (
     <>
       <Router>
         <div className="App">
-          <div><p>Hello, my name is Jay Zenith.</p><br />
+          <div><p>My name is Jay Zenith.</p><br />
           <p>I'm a developer.</p> <br></br>
           <p>2024.</p>
           <br></br>
@@ -29,7 +30,7 @@ function App() {
           <br></br>
           <br></br>
           [
-          <ButtonMailto label=" jayzenith248@gmail.com " mailto="mailto:jayzenith248@gmail.com" />
+          <ButtonMailto label="jayzenith248@gmail.com " mailto="mailto:jayzenith248@gmail.com" />
           ]
           </div>
         </div>
