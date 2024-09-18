@@ -10,7 +10,7 @@ function App() {
         <div className="App">
           <div><p>My name is Jay Zenith.</p><br />
           <p>I'm a developer.</p> <br></br>
-          <p>2024. You like that.</p>
+          <p>2024.</p>
           <br></br>
           [
           <Link to="http://starfront.s3-website.us-east-2.amazonaws.com">

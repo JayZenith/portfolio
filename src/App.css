@@ -7,14 +7,20 @@
 .App{
   font-family: Consolas, Courier, monospace;
   background-color: black;
-  color: red;
+  color: rgb(255, 0, 0);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/youlikethat.gif');
+  background-position: center top;
+  font-weight: 800;
+
 }
+
+
 
 
 a{
