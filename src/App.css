@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/you-rook-marbelous');
+
 *{
   padding: 0;
   margin: 0;
@@ -6,7 +8,7 @@
 
 
 .App{
-  font-family: monospace, monospace;
+  font-family: 'You Rook Marbelous', sans-serif;
   background-color: black;
   color: rgb(255, 0, 0);
   height: 100vh;
@@ -15,6 +17,7 @@
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  
   /*
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/youlikethat.gif');
   background-position: center top;
