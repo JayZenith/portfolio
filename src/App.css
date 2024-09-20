@@ -6,11 +6,23 @@
   box-sizing: border-box;
 }
 
+.videoTag {
+  position: fixed;
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 
 .App{
+  position: absolute;
+  background: transparent;
+
   font-family: 'You Rook Marbelous', sans-serif;
-  background-color: black;
-  color: rgb(255, 0, 0);
+ 
+  color: rgb(105, 141, 194);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -25,13 +37,13 @@
 }
 
 .App p{
-  font-family: 'Courier', monospace; 
+  font-family: 'You Rook Marbelous', sans-serif;
   
  
 }
 
 .center{
-  background: rgba(0, 0, 0, 0.6);   /*  40% opaque green */ 
+  background: rgba(0, 0, 0, 0.3);   /*  40% opaque green */ 
   padding: 15px;
   border-radius: 10px;
   
@@ -44,7 +56,7 @@
 a{
   
 
-  color: rgb(197, 20, 20);
+  color: rgb(105, 141, 194);
   text-decoration: underline ;
   text-decoration-thickness: .5px;
 }
