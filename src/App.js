@@ -19,7 +19,7 @@ function App() {
             <br></br>
             
             <Link to="http://starfront.s3-website.us-east-2.amazonaws.com">
-             9/21/2024 ...
+             9/23/2024 ...
             </Link>
             
             <br></br>
