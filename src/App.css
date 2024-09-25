@@ -1,4 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/you-rook-marbelous');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
   padding: 0;
@@ -7,49 +10,35 @@
 }
 
 
-
+/*
 
 .App{
-  position: absolute;
-  background: transparent;
-
-  font-family: 'You Rook Marbelous', sans-serif;
- 
-  color: rgb(145, 11, 11);
+  color: rgb(0, 0, 0);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
+  font-size: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  
+}
+
+.navbar{
+  width: 100%;
+  height: 5%;
+  background-color: aqua;
+  display: flex;
   align-items: center;
-  font-size: 30px;
-  background-color: black;
-  
-  /*
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/youlikethat.gif');
-  background-position: center top;
-  */
+  justify-content: center;
 }
 
-.App p{
-  font-family: 'You Rook Marbelous', sans-serif;
-  
- 
+.navbar ul{
+  list-style-type: none;
+  color: rgb(0, 86, 156)
 }
-
-.center{
-  background: rgba(0, 0, 0, 0.3);   /*  40% opaque green */ 
-  padding: 15px;
-  border-radius: 10px;
-  
-
-}
-
-
 
 
 a{
-  
-
   color: rgb(212, 32, 32);
   text-decoration: underline ;
   text-decoration-thickness: .5px;
@@ -57,12 +46,7 @@ a{
 
 a:hover{
   color: rgb(134, 31, 31);
-
 }
 
 
-@media all and (max-width: 500px){
-  .App{
-    font-size: 13px;
-  }
-}
+*/

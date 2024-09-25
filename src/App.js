@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import './App.css';
 import ButtonMailto from "./ButtonMailto";
-import sample from './space.mp4';
+import MainPage from './MainPage';
+
 
 
 function App() {
@@ -10,11 +11,22 @@ function App() {
       <Router>
       
 
-        <div className="App">
+        <div className="min-h-screen min-w-screen bg-slate-50 flex flex-col items-center font-mono">
+          <div className=" bg-white h-20 w-2/3 flex items-center justify-center border-dashed border-b-4  border-red-700">
+         
+            <ul className="flex items-center justify-center ">
+              <li className="text-red-800 text-xl"><a href="#">Home</a></li>
 
+            </ul>
+          </div>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+          </Routes>
+          
+          {/*
           <div className="center">
-            <div><p>My name is Jay Zenith.</p><br />
-            <p>I'm a developer.</p> <br></br>
+            <div><p>My name is Jay Zenith. I'm a developer.</p><br />
+            
             <p>2024.</p>
             <br></br>
             
@@ -30,7 +42,7 @@ function App() {
             <br></br>
             <br></br>
             
-            <Link to="https://x.com/JayZenith_"> X </Link>
+            <Link to="https://x.com/JayZenith"> X </Link>
             
             <br></br>
             <br></br>
@@ -39,6 +51,7 @@ function App() {
             
             </div>
           </div>
+          */}
         </div>
       </Router>
     </>
