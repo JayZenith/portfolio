@@ -8,7 +8,7 @@ function MainPage() {
  
  return (
     <div className='bg-white flex flex-col mt-15 h-screen w-screen items-center font-mono'>
-        <div className='mt-10 lg:mt-10 w-5/6 lg:w-2/3  h-3/5 lg:h-1/5 bg-white flex flex-col lg:flex-row '>
+        <div className='mt-10 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-1/5 bg-white flex flex-col lg:flex-row '>
             <div className='bg-white w-full h-full lg:w-1/4 lg:h-full mt-0 lg:mt-0'>
                 <img className='w-full h-full lg:h-full lg:w-full' src={mainImage}></img>
             </div>
@@ -29,8 +29,11 @@ function MainPage() {
                 </ul>
             </div>
         </div>
-        <p className='mt-20 w-2/3 h-0 border-dashed border-b-4  border-red-700'></p>
-        <div className='mt-10 lg:mt-10 w-5/6 lg:w-2/3  h-3/5 lg:h-1/5 bg-white flex flex-col lg:flex-row '>
+        
+    
+        <div className='pt-20 w-60 h-0 border-dashed border-b-4  border-red-800'></div>
+        
+        <div className='pt-10 lg:mt-10 w-64 lg:w-2/3  h-3/5 lg:h-1/5 bg-white flex flex-col lg:flex-row '>
             <div className='bg-white w-full h-full lg:w-1/4 lg:h-full mt-0 lg:mt-0'>
                 <img className='w-full h-full lg:h-full lg:w-full' src={redBox}></img>
             </div>

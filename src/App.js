@@ -11,8 +11,8 @@ function App() {
       <Router>
       
 
-        <div className="min-h-screen min-w-screen bg-slate-50 flex flex-col items-center font-mono">
-          <div className=" bg-white h-20 w-2/3 flex items-center justify-center border-dashed border-b-4  border-red-700">
+        <div className="h-screen w-screen bg-slate-50 flex flex-col items-center font-mono">
+          <div className=" bg-white h-20 w-64 flex items-center justify-center border-dashed border-b-4  border-red-700">
          
             <ul className="flex items-center justify-center ">
               <li className="text-red-800 text-xl"><a href="#">Home</a></li>
