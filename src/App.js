@@ -15,7 +15,7 @@ function App() {
           <div className=" bg-white h-20 w-2/3 flex items-center justify-center border-b border-b-2  border-black">
          
             <ul className="flex items-center justify-center ">
-              <li className="text-black text-xl"><a href="#">Zenith</a></li>
+              <li className="text-black text-xl"><a href="#"></a></li>
 
             </ul>
           </div>
