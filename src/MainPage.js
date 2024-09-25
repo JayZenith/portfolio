@@ -21,7 +21,7 @@ function MainPage() {
             
             <div className='bg-white mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-red-800 text-red-800'>Links</p>
-                <ul className='mt-2 lg:mt-5 bg-white w-full'>
+                <ul className='mt-5 lg:mt-5 bg-white w-full'>
                     <li><a href="https://github.com/JayZenith" className='underline text-red-800 '>Github</a></li>
                     <li className='mt-3 text-red-800 '><a href="https://x.com/JayZenith_" className='underline'>X</a></li>
                     <li className='mt-3 text-red-800 underline'><ButtonMailto  label="jayzenith248@gmail.com " mailto="mailto:jayzenith248@gmail.com" /> </li>
