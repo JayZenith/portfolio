@@ -9,7 +9,7 @@ function MainPage() {
  
  return (
     <div className='bg-white flex flex-col mt-15 h-screen w-screen items-center font-mono'>
-        <div className='mt-10 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-72 bg-white flex flex-col lg:flex-row '>
+        <div className='mt-5 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-72 bg-white flex flex-col lg:flex-row '>
             {/*
             <div className='bg-black w-full h-full lg:w-96 lg:h-72 mt-0 lg:mt-0'>
                 <img className='w-full h-full lg:h-full lg:w-full' src={mainImage}></img>
@@ -18,9 +18,11 @@ function MainPage() {
             */}
             <div className='mt-0 w-full h-full lg:mt-10 lg:bg-white lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '></p>
-                <p className='mt-5 text-black '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
+                <p className='mt-0 text-black '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
                     of computing. 
-                </p>
+                </p> 
+                <br />
+                <p className='mt-0 text-black '>I graduated high school with a 1.8 GPA but ended up with a degree in Computer Science because im really passionate about it.</p>
             </div>
             
             <div className='bg-white mt-10 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
@@ -37,7 +39,7 @@ function MainPage() {
     
         <div className='pt-20 w-2/3 h-0 border-b border-b-2  border-black'></div>
         
-        <div className='pt-10 lg:mt-10 w-64 lg:w-2/3  h-3/5 lg:h-72 bg-white flex flex-col lg:flex-row '>
+        <div className='pt-10 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-72 bg-white flex flex-col lg:flex-row '>
             <div className='bg-black w-full h-full lg:w-96 lg:h-72 mt-0 lg:mt-0'>
                 <img className='w-full h-full lg:h-full lg:w-full' src={redBox}></img>
             </div>
@@ -56,7 +58,7 @@ function MainPage() {
             </div>
         </div>
 
-        <p className='mt-20 w-2/3  border-b border-b-2 border-black'></p>
+        <p className='mt-20 w-2/3 h-auto border-b border-b-2 border-black'></p>
 
         <div className='pt-10 lg:mt-10 h-auto w-64 lg:w-2/3   lg:h-72 bg-white flex flex-col lg:flex-row '>
             <div className='bg-black w-full h-full lg:w-96 lg:h-72 mt-0 lg:mt-0'>

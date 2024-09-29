@@ -11,7 +11,7 @@ function App() {
       <Router>
       
 
-        <div className="h-screen w-screen bg-slate-50 flex flex-col items-center font-mono mt-5">
+        <div className="h-screen w-screen bg-slate-50 flex flex-col items-center font-mono mt-0">
           <div className=" bg-white h-20 w-2/3 flex items-center justify-center border-b border-b-2  border-black">
          
             <ul className="flex items-center justify-center ">
