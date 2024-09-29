@@ -22,7 +22,7 @@ function MainPage() {
                     of computing. 
                 </p> 
                 <br />
-                <p className='mt-0 text-black '>I graduated high school with a 1.8 GPA but ended up with a degree in Computer Science because im really passionate about it.</p>
+                <p className='mt-0 text-black '>I graduated high school with a 1.8 GPA but ended up with a degree in Computer Science.</p>
             </div>
             
             <div className='bg-white mt-10 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
