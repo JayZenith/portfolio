@@ -22,7 +22,7 @@ function MainPage() {
                     of computing. 
                 </p> 
                 <br />
-                <p className='mt-0 text-black '>I graduated high school with a 1.8 GPA but ended up with a degree in Computer Science.</p>
+
             </div>
             
             <div className='bg-white mt-10 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
@@ -67,7 +67,7 @@ function MainPage() {
             <div className='mt-10 w-full h-full lg:bg-white lg:w-1/2   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 2</p>
                 <p className='mt-5 text-black'>
-                    Topster2093. 
+                    ... 
                 </p>
             </div>
             
@@ -86,7 +86,7 @@ function MainPage() {
             <div className='mt-10 w-full h-full lg:bg-white lg:w-1/2   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 3</p>
                 <p className='mt-5 text-black'>
-                    Need to learn real time chat with this one.
+                    ...
                 </p>
             </div>
             
@@ -105,7 +105,7 @@ function MainPage() {
             <div className='mt-10 w-full h-full lg:bg-white lg:w-1/2   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 4</p>
                 <p className='mt-5 text-black'>
-                    This will be the wormhole. 
+                    ... 
                 </p>
             </div>
             
