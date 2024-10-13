@@ -8,7 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function MainPage() {
  
  return (
-    <div className='bg-white text-black flex flex-col mt-15 h-screen w-screen items-center font-mono'>
+    <div className='bg-white text-black flex flex-col mt-20 lg:mt-10 h-screen w-screen items-center '>
         <div className='mt-5 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-72 bg-white  flex flex-col lg:flex-row '>
             {/*
             <div className='bg-black w-full h-full lg:w-96 lg:h-72 mt-0 lg:mt-0'>
@@ -18,7 +18,7 @@ function MainPage() {
             */}
             <div className='mt-0 w-full h-full lg:mt-10 lg:bg-white lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black '></p>
-                <p className='mt-0  '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
+                <p className='mt-0 '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
                     of computing. 
                 </p> 
                 <br />
