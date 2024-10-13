@@ -48,7 +48,7 @@ function MainPage() {
            
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
-                <li className='list-none text-xl '><i class="bi bi-arrow-right"></i>Click on Box to go to app soon.</li>
+                <li className='list-none text-xl '><i class="bi bi-arrow-right"></i>Click on Box to go to site soon.</li>
                 <div className='bg-white w-32 h-32 lg:w-2/4 lg:h-auto mt-0 lg:mt-0'>
                     <a href="http://starfront.s3-website.us-east-2.amazonaws.com" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full       transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
                 </div>
@@ -61,14 +61,14 @@ function MainPage() {
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 2</p>
                 <p className='mt-5 text-black'>
-                    . 
+                    Local to Global Image Gallery app.
                 </p>
            
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
-                <li className='list-none text-xl '><i class="bi bi-arrow-right"></i>Click on Box to go to app soon.</li>
+                <li className='list-none text-xl '><i class="bi bi-arrow-right"></i>Click on Box to go to source code.</li>
                 <div className='bg-white w-32 h-32 lg:w-2/4 lg:h-auto mt-0 lg:mt-0'>
-                    <a href="http://starfront.s3-website.us-east-2.amazonaws.com" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full       transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
+                    <a href="https://github.com/JayZenith/TheCollage" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full       transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
                 </div>
             </div>
         </div>
@@ -80,14 +80,14 @@ function MainPage() {
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 3</p>
                 <p className='mt-5 text-black'>
-                    . 
+                    Speech Recognition app. 
                 </p>
            
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
-                <li className='list-none text-xl '><i class="bi bi-arrow-right"></i>Click on Box to go to app soon.</li>
+                <li className='list-none text-xl '><i class="bi bi-arrow-right"></i>Click on Box to go to source code.</li>
                 <div className='bg-white w-32 h-32 lg:w-2/4 lg:h-auto mt-0 lg:mt-0'>
-                    <a href="http://starfront.s3-website.us-east-2.amazonaws.com" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full       transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
+                    <a href="https://github.com/JayZenith/Speech-To-Text" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full       transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
                 </div>
             </div>
         </div>
