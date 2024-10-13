@@ -18,14 +18,14 @@ function MainPage() {
             */}
             <div className='  mt-0 w-full  h-auto lg:mt-10  lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black '></p>
-                <p className='mt-0 text-2xl lg:text-6xl font-mono font-bold '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
+                <p className='mt-0 text-2xl lg:text-6xl font-mono font-bold text-center'>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
                     of computing. 
                 </p> 
                 <br />
 
             </div>
             
-            <div className='mt-10 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
+            <div className='mt-0 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-2  border-black text-black'>Links</p>
                 <ul className='mt-5 lg:mt-5 w-full'>
                     <li><a href="https://github.com/JayZenith" className='underline text-black '><i class="bi bi-arrow-right"></i>Github</a></li>
