@@ -8,8 +8,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function MainPage() {
  
  return (
-    <div className='bg-white text-black flex flex-col mt-20 lg:mt-10 h-screen w-screen items-center '>
-        <div className='mt-5 lg:mt-10 w-96 lg:w-2/3  h-auto lg:h-auto bg-white  flex flex-col lg:flex-row '>
+    <div className='bg-white text-black flex flex-col mt-16 lg:mt-10 h-screen w-screen items-center '>
+        <div className=' mt-5 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-auto   flex flex-col lg:flex-row '>
             {/*
             <div className='bg-black w-full h-full lg:w-96 lg:h-72 mt-0 lg:mt-0'>
                 <img className='w-full h-full lg:h-full lg:w-full' src={mainImage}></img>
@@ -18,16 +18,16 @@ function MainPage() {
             */}
             <div className='  mt-0 w-full  h-auto lg:mt-10  lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black '></p>
-                <p className='mt-0 text-2xl lg:text-4xl font-mono font-bold '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
+                <p className='mt-0 text-2xl lg:text-6xl font-mono font-bold '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
                     of computing. 
                 </p> 
                 <br />
 
             </div>
             
-            <div className='bg-white mt-10 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
+            <div className='mt-10 lg:mt-10 w-full lg:w-1/4 lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-2  border-black text-black'>Links</p>
-                <ul className='mt-5 lg:mt-5 bg-white w-full'>
+                <ul className='mt-5 lg:mt-5 w-full'>
                     <li><a href="https://github.com/JayZenith" className='underline text-black '><i class="bi bi-arrow-right"></i>Github</a></li>
                     <li className='mt-3 text-black '><a href="https://x.com/JayZenith_" className='underline'><i class="bi bi-arrow-right"></i>X</a></li>
                     <li className='mt-3 flex flex-row text-black underline'><i class="bi bi-arrow-right"></i><ButtonMailto  label="jayzenith248@gmail.com " mailto="mailto:jayzenith248@gmail.com" /> </li>
@@ -37,7 +37,7 @@ function MainPage() {
         </div>
         
     
-        <div className='pt-20 w-2/3 border-b-2  border-black'></div>
+        <div className='mt-10 w-2/3 border-b-2  border-black'></div>
         
         <div className='pt-10 w-64 lg:w-2/3  h-auto lg:h-72 flex flex-col items-start lg:flex-row '>
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 text-xl flex flex-col items-start'>
