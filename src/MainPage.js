@@ -9,16 +9,16 @@ function MainPage() {
  
  return (
     <div className='bg-white text-black flex flex-col mt-20 lg:mt-10 h-screen w-screen items-center '>
-        <div className='mt-5 lg:mt-10 w-64 lg:w-2/3  h-auto lg:h-72 bg-white  flex flex-col lg:flex-row '>
+        <div className='mt-5 lg:mt-10 w-96 lg:w-2/3  h-auto lg:h-auto bg-white  flex flex-col lg:flex-row '>
             {/*
             <div className='bg-black w-full h-full lg:w-96 lg:h-72 mt-0 lg:mt-0'>
                 <img className='w-full h-full lg:h-full lg:w-full' src={mainImage}></img>
             
             </div>
             */}
-            <div className='mt-0 w-full h-full lg:mt-10 lg:bg-white lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
+            <div className='  mt-0 w-full  h-auto lg:mt-10  lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black '></p>
-                <p className='mt-0 '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
+                <p className='mt-0 text-2xl lg:text-4xl font-mono font-bold '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
                     of computing. 
                 </p> 
                 <br />
