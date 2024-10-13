@@ -12,10 +12,10 @@ function App() {
       
 
         <div className="h-screen w-screen bg-slate-50 flex flex-col items-center mt-0   font-custom">
-          <div className="  h-20 w-2/3 flex items-center justify-center border-b-2 fixed top-0 border-black">
+          <div className="bg-black  h-20 w-2/3 flex items-center justify-center border-b-2 fixed top-0  border-black">
          
             <ul className="flex items-center justify-center ">
-              <li className="text-black text-4xl "><a href="#" >In Construction</a></li>
+              <li className="text-white text-4xl hover:text-red-800 "><a href="#" >Jay Zenith</a></li>
 
             </ul>
           </div>
