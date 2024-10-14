@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'custom': ["Protest Strike", "sans-serif"],
+        'custom': ["PT Serif", "serif"],
       },
     },
   },

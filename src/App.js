@@ -11,11 +11,11 @@ function App() {
       <Router>
       
 
-        <div className="h-screen w-screen bg-slate-50 flex flex-col items-center mt-0   font-custom">
-          <div className="bg-black h-14 w-2/3 flex items-center justify-center border-b-2 fixed top-0  border-black">
+        <div className="bg-white h-full w-full lg:h-full lg:w-full flex flex-col items-center font-custon">
+          <div className="bg-black h-14 w-full flex items-center justify-center  fixed top-0  ">
          
             <ul className="flex items-center justify-center ">
-              <li className="text-white text-2xl hover:text-red-800 "><a href="#" >Jay Zenith</a></li>
+              <li className="text-white text-2xl "><a href="#" >.</a></li>
 
             </ul>
           </div>
