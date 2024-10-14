@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'custom': ["PT Serif", "serif"],
+        'custom': ["Rubik Mono One", "monospace"],
       },
     },
   },
