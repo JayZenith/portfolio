@@ -26,7 +26,7 @@ function MainPage() {
                 <ul className='mt-5 lg:mt-5 w-full '>
                     <li><a href="https://github.com/JayZenith" className='underline text-black '><i class="bi bi-arrow-right"></i>Github</a></li>
                     <li className='mt-3 text-black '><a href="https://x.com/JayZenith_" className='underline'><i class="bi bi-arrow-right"></i>X</a></li>
-                    <li className=' mt-3 flex flex-row text-black underline break-all '><i class="bi bi-arrow-right"></i><ButtonMailto  mailto="mailto:jayzenith248@gmail.com" />jayzenith248@gmail.com</li>
+                    <li className=' mt-3 flex flex-row text-black underline break-all '><i class="bi bi-arrow-right"></i><ButtonMailto label="jayzenith248@gmail.com" mailto="mailto:jayzenith248@gmail.com" /></li>
 
                 </ul>
             </div>
