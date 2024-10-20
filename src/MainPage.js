@@ -16,8 +16,8 @@ function MainPage() {
                 <p className='border-dashed border-b-4  border-black '></p>
                 <p className='mt-0 text-2xl lg:text-4xl 
                 
-                '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, distributed systems, and the future
-                    of computing. 
+                '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, and the future
+                    of this computing stuff. 
                 </p> 
                 <br />
 
@@ -43,7 +43,7 @@ function MainPage() {
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 1</p>
                 <p className='mt-5 text-black'>
-                    A not so regular review demo app. 
+                    I am a review site. 
                 </p>
            
             </div>
@@ -62,7 +62,7 @@ function MainPage() {
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 2</p>
                 <p className='mt-5 text-black'>
-                    Local to Global Image Gallery app.
+                    I am an Images app.
                 </p>
            
             </div>
@@ -83,7 +83,7 @@ function MainPage() {
                 <p className='mt-5 text-black
                 
                 '>
-                    Speech Recognition app. 
+                    I am a Speech Recognition app. 
                 </p>
            
             </div>
