@@ -14,10 +14,10 @@ function MainPage() {
         flex flex-col lg:flex-row '>
             <div className='w-80 h-auto lg:mt-10  lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black '></p>
-                <p className='mt-0 text-2xl lg:text-4xl 
+                <p className='mt-5 text-2xl lg:text-4xl 
                 
                 '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, and the future
-                    of this computing stuff. 
+                    of computing. 
                 </p> 
                 <br />
 
