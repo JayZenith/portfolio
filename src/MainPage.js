@@ -16,8 +16,7 @@ function MainPage() {
                 <p className='border-dashed border-b-4  border-black '></p>
                 <p className='mt-5 text-2xl lg:text-4xl 
                 
-                '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, and the future
-                    of computing. 
+                '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, Unix, and distributed systems. 
                 </p> 
                 <br />
 
