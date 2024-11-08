@@ -16,7 +16,8 @@ function MainPage() {
                 <p className='border-dashed border-b-4  border-black '></p>
                 <p className='mt-5 text-2xl lg:text-4xl 
                 
-                '>My name is Jay Zenith. I'm a developer interested in full stack development, machine learning, Unix, and distributed systems. 
+                '>My name is Jay Zenith. I'm a developer interested in full stack development but realized im more interested in compilers and such. 
+                I have a timeline of a month to get cracked.
                 </p> 
                 <br />
 
@@ -36,13 +37,15 @@ function MainPage() {
         </div>
         
     
+            
+
         <div className='mt-10 w-2/3 border-b-8  border-black'></div>
         
         <div className='pt-10 w-64 lg:w-2/3  h-auto lg:h-72 flex flex-col items-start lg:flex-row '>
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 1</p>
                 <p className='mt-5 text-black'>
-                    I am a review site. 
+                    I am a review site made with React, ExpressJS, NodeJS, MySQL. 
                 </p>
            
             </div>
@@ -61,7 +64,7 @@ function MainPage() {
             <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 flex flex-col items-start'>
                 <p className='border-dashed border-b-4  border-black text-black '>Project 2</p>
                 <p className='mt-5 text-black'>
-                    I am an Images app.
+                    I am an Images app made with React, ExpressJS, NodeJS, MongoDB.
                 </p>
            
             </div>
@@ -82,7 +85,7 @@ function MainPage() {
                 <p className='mt-5 text-black
                 
                 '>
-                    I am a Speech Recognition app. 
+                    I am a Speech Recognition app made with React Native, Expo, NodeJS, ExpressJS, Google Speech-To-Text API. 
                 </p>
            
             </div>
