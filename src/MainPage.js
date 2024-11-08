@@ -17,7 +17,7 @@ function MainPage() {
                 <p className='mt-5 text-2xl lg:text-4xl 
                 
                 '>My name is Jay Zenith. I'm a developer interested in full stack development but realized im more interested in compilers and such. 
-                I have a timeline of a month to get cracked.
+                I have a timeline of a month to get cracked. Excuse my mediocre projects below, I will do better.
                 </p> 
                 <br />
 
