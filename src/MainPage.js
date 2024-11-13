@@ -8,42 +8,40 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function MainPage() {
  
  return (
-    <div className=' mt-16 lg:mt-10 text-black flex flex-col items-center
-      justify-center h-auto  w-screen text-2xl lg:text-4xl'>
-        <div className=' w-64 lg:w-2/3 h-auto  
-        flex flex-col lg:flex-row '>
-            <div className='w-80 h-auto lg:mt-10  lg:w-4/5   lg:h-full   lg:pl-16 text-xl flex flex-col items-start'>
-                <p className='border-dashed border-b-4  border-black '></p>
-                <p className='mt-5 text-2xl lg:text-4xl 
-                
-                '>My name is Jay Zenith. I'm a developer interested in full stack development but realized im more interested in compilers and such. 
-                I have a timeline of a month to get cracked. Excuse my mediocre projects below, I will do better.
+    <div className='p-10 mt-36 lg:mt-10 text-black flex flex-col items-center
+      justify-center h-auto lg:text-4xl'>
+        <div className='lg:w-2/3 h-auto lg:flex-row '>
+            <div className='h-auto lg:mt-10  lg:w-4/5  lg:h-full  lg:pl-16 '>
+                <div className=' w-full border-b-8 border-black text-3xl'>Intro.</div>
+                <br />
+                <p className='text-xl lg:text-4xl'>
+                My name is Jay Zenith. I'm a developer fascinated in deconstructing how computers work
+                under the hood and will document my journey here.
                 </p> 
+                <br />
+                <p className='text-xl lg:text-4xl'>
+                    I graduated with a Computer Science degree from UCSC 
+                    but i'm now on a mission to not be a mediocre dev. 
+                </p>
+                <br />
+                <p className='text-xl lg:text-4xl'>
+                    I am currently working on building a compiler using the 
+                    Crafting Interpreters book by Robert Nystrom as a main resource. 
+                </p>
                 <br />
 
             </div>
             
-            <div className='mt-0 lg:mt-10 w-full lg:w-1/4 lg:pl-16  flex flex-col items-start'>
-                <p className='border-dashed border-b-2  border-black text-black'>Links</p>
-                <ul className='mt-5 lg:mt-5 w-full '>
-                
-
-                    <li className='flex flex-row items-center w-auto h-auto'><i class="bi bi-arrow-right"></i><a href="https://github.com/JayZenith" className='underline text-black '>Github</a></li>
-                    <li className='mt-3 text-black '><a href="https://x.com/JayZenith_" className='underline'><i class="bi bi-arrow-right"></i>X</a></li>
-                    <li className=' mt-3 flex flex-row text-black underline break-all '><i class="bi bi-arrow-right"></i><ButtonMailto label="jayzenith248@gmail.com" mailto="mailto:jayzenith248@gmail.com" /></li>
-
-                </ul>
-            </div>
+            
         </div>
-        
-    
             
 
-        <div className='mt-10 w-2/3 border-b-8  border-black'></div>
+        <div className='mt-10 w-full border-b-8 border-black text-3xl'>Projects</div>
+       
         
-        <div className='pt-10 w-64 lg:w-2/3  h-auto lg:h-72 flex flex-col items-start lg:flex-row '>
-            <div className='mt-10 lg:mt-0 w-full lg:w-3/4 lg:pl-16 flex flex-col items-start'>
-                <p className='border-dashed border-b-4  border-black text-black '>Project 1</p>
+        <div className='mt-10 lg:w-2/3 h-auto lg:h-72 lg:flex-row '>
+            <div className='lg:w-3/4 lg:pl-16 '>
+                <p className='text-black text-2xl'>Project 1</p>
                 <p className='mt-5 text-black'>
                     I am a review site made with React, ExpressJS, NodeJS, MySQL. 
                 </p>
