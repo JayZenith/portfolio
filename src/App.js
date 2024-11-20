@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "rea
 import './App.css';
 import ButtonMailto from "./ButtonMailto";
 import MainPage from './MainPage';
+import Compiler from './Compiler';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/compiler" element={<Compiler />} />
           
           </Routes>
           
