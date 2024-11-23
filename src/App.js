@@ -19,8 +19,8 @@ function App() {
                 </a>
               </li>
               <div className="flex flex-row gap-5">
-                <li><a className="text-red-400 text-2xl underline" href="">X</a></li>
-                <li><a className="text-red-400 text-2xl underline" href=" ">GitHub</a></li>
+                <li><a className="text-red-400 text-2xl underline" href="https://twitter.com/jayz3nith">X</a></li>
+                <li><a className="text-red-400 text-2xl underline" href="https://github.com/JayZenith">GitHub</a></li>
               </div>
               
             </ul>

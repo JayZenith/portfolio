@@ -9,35 +9,34 @@ function MainPage() {
  
  return (
     <div className='p-10 mt-24 lg:mt-10 text-black flex flex-col items-center
-      justify-center h-auto lg:text-4xl'>
+      justify-center h-auto lg:text-xl'>
         <div className='lg:w-2/3 h-auto lg:flex-row '>
-            <div className='h-auto lg:mt-10  lg:w-4/5  lg:h-full  lg:pl-16 '>
+            <div className='h-auto lg:mt-10  lg:w-4/5  lg:h-full  '>
                 <div className=' w-full border-b-4 border-black text-2xl'>Intro.</div>
                 <br />
-                <p className=' lg:text-4xl'>
+                <p className=''>
                 My name is Jay. I'm a developer fascinated with deconstructing how computers work
                 under the hood and will document my journey here.
                 </p> 
                 <br />
-                <p className=' lg:text-4xl'>
+                <p className=''>
                     I graduated with a Com Sci degree from UCSC 
                     but am now on a mission to not be a mediocre dev.
                 </p>
                 <br />
-                <p className='lg:text-4xl'>
-                    I am currently working on building a compiler using
-                    "Crafting Interpreters" by Robert Nystrom as a main resource. 
+                <p className=''>
+                    I am currently interested in compilers/interpreters, bytecode interpreters, programming langauge theory, wasm and ML. 
                 </p>
                 <br />
 
             </div>
-            <div className='mt-10 w-full border-b-4 border-black text-lg'>The project I actually care about and am working on now</div>
+            <div className='mt-10 w-full border-b-4 border-black text-2xl'>The project I am working on now</div>
             <div className='mt-4'>I talk about my process of building a <span className=''> compiler </span><span className='text-red-700 underline'><a className="" href="/compiler">here</a></span></div>
             
         </div>
             
 
-        <div className='mt-10 w-full border-b-4 border-black text-lg'>Some full stack projects I made</div>
+        <div className='mt-10 border-b-4 w-full lg:w-2/3 border-black text-lg'>Some full stack projects I made</div>
        
         
         <div className='mt-2 h-auto  lg:w-2/3 lg:h-72 lg:flex-row '>
