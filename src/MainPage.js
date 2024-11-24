@@ -15,7 +15,7 @@ function MainPage() {
                 <div className=' w-full border-b-4 border-black text-2xl'>Intro.</div>
                 <br />
                 <p className=''>
-                My name is Jay. I'm a developer fascinated with deconstructing how computers work
+                I'm Jay. I'm a developer fascinated with deconstructing how computers work
                 under the hood and will document my journey here.
                 </p> 
                 <br />
