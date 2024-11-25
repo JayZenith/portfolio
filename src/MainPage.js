@@ -25,7 +25,7 @@ function MainPage() {
                 </p>
                 <br />
                 <p className=''>
-                    I am currently interested in compilers/interpreters, bytecode interpreters, programming langauge theory, wasm and ML. 
+                    I am currently interested in compilers/interpreters, bytecode interpreters, programming langauge theory, functional programming, wasm and ML. 
                 </p>
                 <br />
 

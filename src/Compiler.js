@@ -3,8 +3,7 @@ import React from 'react'
 function Compiler() {
   return (
     <div className='mt-32 p-10'>
-        <p>I am creating a compiler written in C++ for a language inspired by that of the "Crafting Interpreters" 
-            by Robert Nystrom. 
+        <p>I am creating a compiler written in C++. 
         </p>
         <br></br>
         <p>So the first step is the <span className='underline'>lexical analysis</span> where we create a scanner
@@ -12,7 +11,7 @@ function Compiler() {
             tokens which was straightforward. 
         </p>
         <br></br>
-        <p>I enjoyed designating how to tokenize lexemes such as '!' and '!=' since we have to decipher whether ! was a standalone
+        <p>I enjoyed designating how to tokenize lexemes such as '!' and '!=' since we have to decipher whether ! is a standalone
           character or paired with '='. The same concept goes for determining whether we run into a single '/' as a division operator 
           or the start of a comment which is '//'. 
         </p>
