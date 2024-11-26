@@ -52,7 +52,7 @@ function MainPage() {
             <div className='mt-5 lg:mt-0 flex flex-col lg:items-center  items-center  '>
                 <li className='list-none  '><i class="bi bi-arrow-down font-bold text-2xl"></i></li>
                 <div className='w-32 h-32 lg:w-32 lg:h-32'>
-                    <a href="https://github.com/JayZenith" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
+                    <a href="https://github.com/JayZenith/Review-Application" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
                           transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
                 </div>
             </div>
@@ -70,7 +70,7 @@ function MainPage() {
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
                 <li className='list-none  '><i class="bi bi-arrow-down font-bold text-2xl"></i></li>
-                <div className='=w-32 h-32 lg:w-32 lg:h-32'>
+                <div className='w-32 h-32 lg:w-32 lg:h-32'>
                     <a href="https://github.com/JayZenith/TheCollage" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
                           transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
                 </div>
@@ -90,7 +90,7 @@ function MainPage() {
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
                 <li className='list-none  '><i class="bi bi-arrow-down font-bold text-2xl"></i></li>
-                <div className='=w-32 h-32 lg:w-32 lg:h-32'>
+                <div className='w-32 h-32 lg:w-32 lg:h-32'>
                     <a href="https://github.com/JayZenith/Speech-To-Text" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
                           transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
                 </div>
