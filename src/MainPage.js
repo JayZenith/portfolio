@@ -10,9 +10,11 @@ function MainPage() {
  return (
     <div className='p-10 mt-24 lg:mt-10 text-black flex flex-col items-center
       justify-center h-auto lg:text-xl'>
+    
+        <div className='mt-5 border-b-4 w-full lg:w-2/3 border-black text-lg font-bold'>Intro.</div>
+       
         <div className='lg:w-2/3 h-auto lg:flex-row '>
-            <div className='h-auto lg:mt-10  lg:w-4/5  lg:h-full  '>
-                <div className=' w-full border-b-4 border-black text-2xl'>Intro.</div>
+            <div className='h-auto lg:w-4/5  lg:h-full  '>
                 <br />
                 <p className=''>
                 I am Jay. I'm a developer fascinated with deconstructing how computers work
@@ -25,18 +27,18 @@ function MainPage() {
                 </p>
                 <br />
                 <p className=''>
-                    I am currently interested in compilers/interpreters, bytecode interpreters, programming langauge theory, functional programming, wasm and ML. 
+                    I am interested in compilers/interpreters, VMs, programming langauge theory, functional programming, and ML. 
                 </p>
                 <br />
 
             </div>
-            <div className='mt-10 w-full border-b-4 border-black text-2xl'>The project I am working on now</div>
+            <div className='mt-10 w-full border-b-4 border-black text-xl font-bold'>The project I am working on now</div>
             <div className='mt-4'>I talk about my process of building a <span className=''> compiler </span><span className='text-red-700 underline'><a className="" href="/compiler">here</a></span></div>
             
         </div>
             
 
-        <div className='mt-10 border-b-4 w-full lg:w-2/3 border-black text-lg'>Some full stack projects I made</div>
+        <div className='mt-10 border-b-4 w-full lg:w-2/3 border-black text-xl'>Some full stack projects I made</div>
        
         
         <div className='mt-2 h-auto  lg:w-2/3 lg:h-72 lg:flex-row '>
@@ -48,7 +50,7 @@ function MainPage() {
            
             </div>
             <div className='mt-5 lg:mt-0 flex flex-col lg:items-center  items-center  '>
-                <li className='list-none  '>Click.</li>
+                <li className='list-none  '><i class="bi bi-arrow-down font-bold text-2xl"></i></li>
                 <div className='w-32 h-32 lg:w-32 lg:h-32'>
                     <a href="https://github.com/JayZenith" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
                           transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
@@ -56,7 +58,7 @@ function MainPage() {
             </div>
         </div>
 
-        <p className='mt-10 w-2/3 h-auto  border-b-4 border-black'></p>
+        {/*<p className='mt-10 w-2/3 h-auto  border-b-4 border-black'></p>*/}
 
         <div className='mt-2 h-auto  lg:w-2/3 lg:h-72 lg:flex-row '>
             <div className='lg:w-3/4 lg:pl-16 '>
@@ -67,7 +69,7 @@ function MainPage() {
            
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
-                <li className='list-none  '>Click.</li>
+                <li className='list-none  '><i class="bi bi-arrow-down font-bold text-2xl"></i></li>
                 <div className='=w-32 h-32 lg:w-32 lg:h-32'>
                     <a href="https://github.com/JayZenith/TheCollage" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
                           transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
@@ -75,7 +77,7 @@ function MainPage() {
             </div>
         </div>
 
-        <p className='mt-10 w-2/3 border-b-4 border-black'></p>
+        {/*<p className='mt-10 w-2/3 border-b-4 border-black'></p>*/}
 
 
         <div className='mt-2 h-auto  lg:w-2/3 lg:h-72 lg:flex-row '>
@@ -87,7 +89,7 @@ function MainPage() {
            
             </div>
             <div className='mt-10 lg:mt-0 flex flex-col lg:items-center  items-center  '>
-                <li className='list-none  '>Click.</li>
+                <li className='list-none  '><i class="bi bi-arrow-down font-bold text-2xl"></i></li>
                 <div className='=w-32 h-32 lg:w-32 lg:h-32'>
                     <a href="https://github.com/JayZenith/Speech-To-Text" className='underline text-black'><img className='w-full h-full lg:h-full lg:w-full 
                           transition-transform duration-500 ease-in-out  hover:rotate-180'  src={redBox}></img></a>
