@@ -3,6 +3,7 @@ import './App.css';
 import ButtonMailto from "./ButtonMailto";
 import MainPage from './MainPage';
 import Compiler from './Compiler';
+import Regex from './Regex';
 
 
 
@@ -28,6 +29,8 @@ function App() {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/compiler" element={<Compiler />} />
+            <Route path="/regex" element={<Regex />} />
+
           
           </Routes>
           

@@ -1,5 +1,4 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
-import mainImage from './blackmonolith.webp'
 import redBox from './redBox.png'
 import ButtonMailto from "./ButtonMailto";
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -32,13 +31,14 @@ function MainPage() {
                 <br />
 
             </div>
-            <div className='mt-10 w-full border-b-4 border-black text-xl font-bold'>The project I am working on now</div>
-            <div className='mt-4'>I talk about my process of building a <span className=''> compiler </span><span className='text-red-700 underline'><a className="" href="/compiler">here</a></span></div>
+            <div className='mt-10 w-full border-b-4 border-black text-xl font-bold'>The projects I care about</div>
+            <div className='mt-4'>I talk about my process of building a Regex Library in Rust <span className=''></span><span className='text-red-700 underline'><a className="" href="/regex">here</a></span></div>
+            
             
         </div>
             
 
-        <div className='mt-10 border-b-4 w-full lg:w-2/3 border-black text-xl'>Some full stack projects I made</div>
+        <div className='mt-10 border-b-4 w-full lg:w-2/3 border-black text-xl'>Some full stack projects I made </div>
        
         
         <div className='mt-2 h-auto  lg:w-2/3 lg:h-72 lg:flex-row '>
