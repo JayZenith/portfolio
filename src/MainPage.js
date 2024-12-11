@@ -26,7 +26,7 @@ function MainPage() {
                 </p>
                 <br />
                 <p className=''>
-                    I am interested in compilers/interpreters, VMs, programming langauge theory, functional programming, and ML. 
+                    I am interested in compilers/interpreters, programming langauge theory, functional programming, and ML. 
                 </p>
                 <br />
 
