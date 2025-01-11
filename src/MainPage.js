@@ -99,7 +99,7 @@ function MainPage() {
             <div className='lg:w-3/4 lg:pl-16 '>
                 <p className='text-lg'>Project 1</p>
                 <p className='mt-2 '>
-                    I am a review site made with React, ExpressJS, NodeJS, MySQL. 
+                    Review site made with React, ExpressJS, NodeJS, MySQL. 
                 </p>
            
             </div>
@@ -118,7 +118,7 @@ function MainPage() {
             <div className='lg:w-3/4 lg:pl-16 '>
                 <p className='text-lg'>Project 2</p>
                 <p className='mt-2 '>
-                    I am an Images app made with React, ExpressJS, NodeJS, MongoDB.
+                    Images app made with React, ExpressJS, NodeJS, MongoDB.
                 </p>
            
             </div>
@@ -138,7 +138,7 @@ function MainPage() {
             <div className='lg:w-3/4 lg:pl-16 '>
                 <p className='text-lg'>Project 3</p>
                 <p className='mt-2 '>
-                    I am a Speech Recognition app made with React Native, Expo, NodeJS, ExpressJS, Google Speech-To-Text API. 
+                    Speech Recognition app made with React Native, Expo, NodeJS, ExpressJS, Google Speech-To-Text API. 
                 </p>
            
             </div>
