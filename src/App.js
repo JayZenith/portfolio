@@ -2,8 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "rea
 import './App.css';
 import ButtonMailto from "./ButtonMailto";
 import MainPage from './MainPage';
-import Compiler from './Compiler';
-import Regex from './Regex';
 
 
 
@@ -28,8 +26,7 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/compiler" element={<Compiler />} />
-            <Route path="/regex" element={<Regex />} />
+ 
 
           
           </Routes>
