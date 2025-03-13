@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-.basis{
+.AppBackground{
   background-color: rgb(44, 57, 22);
 }
 
@@ -21,26 +21,23 @@
   text-align: left;
   margin-left: 13%;
   margin-right: 13%;
-  padding: 10px;
+  padding:3%;
   background-color: rgb(44, 57, 22);
   height: 100vh;
 }
 
 .App-header {
   /*background-color: #282c34;*/
-  margin-top: 20px;
   color: white;
-  border-radius: 10px;
   font-weight: bold;
   font-size: large;
 }
 
 .App-sub-header{
-  margin-top: 10px;
   display: flex;
-  align-items: center;
   text-decoration: underline;
-  color: red;
+  color:rgb(205, 29, 29);
+  margin-top: 5px;
   font-size:medium;
 }
 
@@ -53,10 +50,14 @@
   color: white;
 }
 
-.Content h1{
+.Content .Content-Intro{
   margin-top: 40px;
   font-size: x-large;
   font-weight: bold;
+}
+
+.Content .Intro{
+  margin-top: 5px;
 }
 
 .projects {
