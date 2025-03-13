@@ -6,48 +6,33 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function MainPage() {
  
- return (
-    <div className='p-10 mt-24 lg:mt-10 text-black flex flex-col items-center
-      justify-center h-auto lg:text-xl'>
-    
-        <div className='mt-5 border-b-4 w-full border-black text-lg font-bold'>Intro.</div>
-       
-        <div className=' h-auto lg:flex-row '>
-            <div className='h-auto  lg:h-full  '>
-                <br />
-                <p className=''>
-                I am Jay. I'm a developer fascinated with deconstructing how computers work
-                under the hood and will document my journey here.
-                </p> 
-                <br />
-                
-                <br />
-                <p className=''>
-                    I am interested in compilers/interpreters, programming langauge theory, and ML. 
-                </p>
-                <br />
-
+    return (
+        <div className="App">
+          <header className="App-header">
+            <h1>JayZ3nith</h1>
+            <div className='App-sub-header'>
+                <h2><a href="https://twitter.com/jayz3nith">X</a></h2>
+                <h2><a href="https://github.com/JayZenith">GitHub</a></h2>
             </div>
-          
-            
+          </header>
+          <section className="Content">
+            <h1>Intro. </h1>
+            <p>I'm Jay and I am fascinated with how computers work under the hood.</p>
+            <br />
+            <p>I'm interested in compilers/interpreters and machine learning.</p>
+            {/*
+            <div className="projects">
+              <h2>My Projects</h2>
+              <ul>
+                <li>Project 1</li>
+                <li>Project 2</li>
+                <li>Project 3</li>
+              </ul>
+            </div>
+            */}
+          </section>
         </div>
-
-       
-        
-
-        <p className='mt-10 w-full border-b-4 border-black'></p>
-        <div className='mt-5'>
-            <p>
-                Thank you for visiting. Hit me on <a href="https://twitter.com/jayz3nith"><span className='underline text-red-600'>X</span></a>
-            </p>
-        </div>
-
-
-        
-    </div>
-    
-   
- )
+      );
 }
 
 
