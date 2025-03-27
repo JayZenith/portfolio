@@ -23,7 +23,10 @@ function MainPage() {
               <br />
               <p>I'm interested in compilers/interpreters, machine learning, program language theory, etc.
                 and the future of it all.</p>
+              <br></br>
+              <p className='tunnl-link'><a href="https://jayzenith.github.io/tunnl.github.io/">My Scripting Language tunnl</a></p>
             </div>
+            
             
             
           </section>
