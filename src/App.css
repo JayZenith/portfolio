@@ -28,17 +28,23 @@
 
 .App-header {
   /*background-color: #282c34;*/
+  margin-top: 20px;
   color: white;
   font-weight: bold;
   font-size: large;
 }
 
-.App-sub-header, .tunnl-link{
+.App-sub-header{
   display: flex;
   text-decoration: underline;
   color:rgb(205, 29, 29);
   margin-top: 5px;
   font-size:medium;
+}
+
+.tunnl-link{
+  display: inline;
+  color:rgb(205, 29, 29);
 }
 
 
