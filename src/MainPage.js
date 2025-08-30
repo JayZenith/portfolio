@@ -24,12 +24,12 @@ function MainPage() {
           <div className="Projects">
             <h2>Projects</h2>
             <div className="Project-list">
-              <a href="https://your-wasm-link.com" className="Project-card">
+              <a href="https://cpp-wasm-interpreter-playground.vercel.app/" className="Project-card">
                 <h3>WASM C++ Interpreter Playground</h3>
                 <p>Run C++ code safely in the browser using WebAssembly sandboxing.</p>
               </a>
 
-              <a href="https://your-tf-link.com" className="Project-card">
+              <a href="https://ai-typescript-boxing-predictor.vercel.app/" className="Project-card">
                 <h3>AI Boxing Predictor</h3>
                 <p>Interactive AI demo running entirely client-side.</p>
               </a>
