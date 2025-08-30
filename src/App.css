@@ -1,10 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');/*
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 /* Global reset */
 * {
@@ -13,57 +11,58 @@
   box-sizing: border-box;
 }
 
-.AppBackground{
+html, body {
+  height: 100%;
   background-color: rgb(10, 10, 10);
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.AppBackground {
+  background-color: rgb(10, 10, 10);
+  min-height: 100%;
 }
 
 .App {
   text-align: left;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding:3%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 3%;
   background-color: rgb(10, 10, 10);
-  height: 100vh;
+  min-height: 100vh; /* fixes white gap on mobile */
 }
 
 .App-header {
-  /*background-color: #282c34;*/
   margin-top: 20px;
   color: white;
   font-weight: bold;
   font-size: large;
 }
 
-.App-sub-header{
+.App-sub-header {
   display: flex;
   text-decoration: underline;
-  color:rgb(205, 29, 29);
+  color: rgb(205, 29, 29);
   margin-top: 5px;
-  font-size:medium;
+  font-size: medium;
 }
 
-.tunnl-link{
-  display: inline;
-  color:rgb(205, 29, 29);
-}
-
-
-.App-sub-header :nth-child(2){
+.App-sub-header :nth-child(2) {
   margin-left: 10px;
 }
 
 .Content {
-  
   color: white;
 }
 
-.Content .Content-Intro{
+.Content .Content-Intro {
   margin-top: 40px;
   font-size: large;
   font-weight: bold;
 }
 
-
+.Intro p {
+  margin-bottom: 15px;
+}
 
 .projects {
   margin-top: 20px;
@@ -78,25 +77,7 @@
   margin-bottom: 10px;
 }
 
-
-
-
-@media (max-width: 768px) {
-  .App {
-    margin-left: 15%;
-    margin-right: 15%;
-  }
-}
-
-@media (max-width: 480px) {
-  .App {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-
-
-
+/* Project cards */
 .Project-card {
   display: block;
   background: #1a1a1a;
@@ -110,9 +91,24 @@
 
 .Project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .Project-card h3 {
   margin: 0 0 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .App {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
