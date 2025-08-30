@@ -94,3 +94,25 @@
     margin-right: 10%;
   }
 }
+
+
+
+.Project-card {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.Project-card h3 {
+  margin: 0 0 10px 0;
+}
