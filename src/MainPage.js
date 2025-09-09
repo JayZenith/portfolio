@@ -9,6 +9,7 @@ function MainPage() {
         <div className="App-sub-header">
           <h2><a href="https://twitter.com/jayz3nith">X</a></h2>
           <h2><a href="https://github.com/JayZenith">GitHub</a></h2>
+          <h2><a href="https://jayzenith.substack.com/">substack</a></h2>
         </div>
       </header>
 
