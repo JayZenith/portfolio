@@ -17,7 +17,7 @@ function MainPage() {
         <h2 className="Content-Intro">Intro</h2>
         <div className="Intro">
           <p>
-            I’m Jay. I like breaking things apart to see how they really work. From compilers and interpreters to small AI models in the browser, I build tools and apps that bridge low-level systems thinking with real-world products.
+            I’m Jay. I like breaking things apart to see how they really work. From compilers and interpreters to AI models, I build tools and apps that bridge low-level systems thinking with real-world products.
           </p>
           <p>
             Some of my work:
@@ -25,6 +25,16 @@ function MainPage() {
           <div className="Projects">
             <h2>Projects</h2>
             <div className="Project-list">
+              <a href="https://github.com/JayZenith/x86_compiler" className="Project-card">
+                <h3>x86 Compiler</h3>
+                <p>Clone and run locally: toy compiler exploring parsing, ASTs, and code generation.</p>
+              </a>
+
+              <a href="https://github.com/JayZenith/distilgpt2-lora-finetune" className="Project-card">
+                <h3>Fine-tune DistilGPT2 using LoRA</h3>
+                <p>Fine-tune DistilGPT2 on a Q/A-style dataset using LoRA for parameter-efficient training.</p>
+              </a>
+
               <a href="https://cpp-wasm-interpreter-playground.vercel.app/" className="Project-card">
                 <h3>WASM C++ Interpreter Playground</h3>
                 <p>Run C++ code safely in the browser using WebAssembly sandboxing.</p>
@@ -35,11 +45,7 @@ function MainPage() {
                 <p>Interactive AI demo running entirely client-side.</p>
               </a>
 
-              <a href="https://github.com/JayZenith/x86_compiler" className="Project-card">
-                <h3>x86 Compiler</h3>
-                <p>Clone and run locally: toy compiler exploring parsing, ASTs, and code generation.</p>
-              </a>
-
+              
               <a href="https://github.com/JayZenith/Review-Application" className="Project-card">
                 <h3>Full-stack Review App</h3>
                 <p>Signup, database, and user interactions (screenshots included).</p>
