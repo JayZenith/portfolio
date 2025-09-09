@@ -48,7 +48,7 @@ html, body {
   font-size: medium;
 }
 
-.App-sub-header :nth-child(3) {
+.App-sub-header {
   margin-left: 10px;
 }
 
