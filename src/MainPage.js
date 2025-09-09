@@ -8,8 +8,8 @@ function MainPage() {
         <h1>Jay Zenith</h1>
         <div className="App-sub-header">
           <h2><a href="https://twitter.com/jayz3nith">X</a></h2>
-          <h2><a href="https://github.com/JayZenith">GitHub</a></h2>
-          <h2><a href="https://jayzenith.substack.com/">substack</a></h2>
+          <h2 className='idk'><a href="https://github.com/JayZenith">GitHub</a></h2>
+          <h2 className='idk'><a href="https://jayzenith.substack.com/">substack</a></h2>
         </div>
       </header>
 
@@ -31,7 +31,7 @@ function MainPage() {
               </a>
 
               <a href="https://github.com/JayZenith/distilgpt2-lora-finetune" className="Project-card">
-                <h3>Fine-tune DistilGPT2 using LoRA</h3>
+                <h3>Fine-tuned GPT2 model using LoRA</h3>
                 <p>Fine-tune DistilGPT2 on a Q/A-style dataset using LoRA for parameter-efficient training.</p>
               </a>
 
