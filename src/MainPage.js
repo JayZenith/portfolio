@@ -30,9 +30,9 @@ function MainPage() {
                 <p>Clone and run locally: compiler exploring parsing, ASTs, and code generation.</p>
               </a>
 
-              <a href="https://github.com/JayZenith/LORA-finetune" className="Project-card">
-                <h3>Fine-tuned Llama-3.2-1B model using LoRA</h3>
-                <p>Fine-tuned an llm locally to predict paper categories using LORA adapters.</p>
+              <a href="https://github.com/JayZenith/CausalLMExplorer" className="Project-card">
+                <h3>End-to-End Causal Language Model Exploration with Llama-3.2-1B</h3>
+                <p>An end-to-end demonstration of loading, generating, analyzing, and fine-tuning causal language models using Hugging Face Transformers and PyTorch. .</p>
               </a>
 
               {/* <a href="https://cpp-wasm-interpreter-playground.vercel.app/" className="Project-card">
