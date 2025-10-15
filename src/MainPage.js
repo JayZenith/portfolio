@@ -27,25 +27,29 @@ function MainPage() {
             <div className="Project-list">
               <a href="https://github.com/JayZenith/x86_compiler" className="Project-card">
                 <h3>x86 Compiler</h3>
-                <p>Clone and run locally: toy compiler exploring parsing, ASTs, and code generation.</p>
+                <p>Clone and run locally: compiler exploring parsing, ASTs, and code generation.</p>
               </a>
 
-              <a href="https://github.com/JayZenith/distilgpt2-lora-finetune" className="Project-card">
-                <h3>Fine-tuned GPT2 model using LoRA</h3>
-                <p>Fine-tune DistilGPT2 on a Q/A-style dataset using LoRA for parameter-efficient training.</p>
+              <a href="https://github.com/JayZenith/LORA-finetune" className="Project-card">
+                <h3>Fine-tuned Llama-3.2-1B model using LoRA</h3>
+                <p>Fine-tuned an llm locally to predict paper categories using LORA adapters.</p>
               </a>
 
-              <a href="https://cpp-wasm-interpreter-playground.vercel.app/" className="Project-card">
+              {/* <a href="https://cpp-wasm-interpreter-playground.vercel.app/" className="Project-card">
                 <h3>WASM C++ Interpreter Playground</h3>
                 <p>Run C++ code safely in the browser using WebAssembly sandboxing.</p>
-              </a>
+              </a> */}
 
-              <a href="https://ai-typescript-boxing-predictor.vercel.app/" className="Project-card">
+              {/* <a href="https://ai-typescript-boxing-predictor.vercel.app/" className="Project-card">
                 <h3>AI Boxing Predictor</h3>
                 <p>Interactive AI demo running entirely client-side.</p>
+              </a> */}
+              <a href="https://github.com/JayZenith/tunnl_interpreter" className="Project-card">
+                <h3>Interpreter</h3>
+                <p> tunnl is a scripting language that is imperative, dynamically typed, and interpreted.</p>
               </a>
 
-              
+
               <a href="https://github.com/JayZenith/Review-Application" className="Project-card">
                 <h3>Full-stack Review App</h3>
                 <p>Signup, database, and user interactions (screenshots included).</p>
