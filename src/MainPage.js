@@ -9,7 +9,6 @@ function MainPage() {
         <div className="App-sub-header">
           <h2><a href="https://twitter.com/jayz3nith">X</a></h2>
           <h2 className='idk'><a href="https://github.com/JayZenith">GitHub</a></h2>
-          <h2 className='idk'><a href="https://jayzenith.substack.com/">substack</a></h2>
         </div>
       </header>
 
@@ -17,10 +16,7 @@ function MainPage() {
         <h2 className="Content-Intro">Intro</h2>
         <div className="Intro">
           <p>
-            I’m Jay. I like breaking things apart to see how they really work. From compilers and interpreters to AI models, I build tools and apps that bridge low-level systems thinking with real-world products.
-          </p>
-          <p>
-            Some of my work:
+            I like breaking things apart to see how they really work. From compilers and interpreters to AI models, I build tools and apps that bridge low-level systems thinking with real-world products.
           </p>
           <div className="Projects">
             <h2>Projects</h2>
@@ -50,15 +46,15 @@ function MainPage() {
               </a>
 
 
-              <a href="https://github.com/JayZenith/Review-Application" className="Project-card">
-                <h3>Full-stack Review App</h3>
-                <p>Signup, database, and user interactions (screenshots included).</p>
+              <a href="https://github.com/JayZenith/CUDA_NN_Inference_Engine" className="Project-card">
+                <h3>CUDA NN Inference Engine </h3>
+                <p>Simple feedforward neural network on the GPU using CUDA, demonstrating high-performance matrix operations and GPU acceleration. .</p>
               </a>
             </div>
           </div>
 
           <p>
-            I’m interested in compilers, interpreters, machine learning, WebAssembly, and the future of software tooling and infrastructure.
+            I’m interested in compilers, interpreters, machine learning, CUDA, and the future of software tooling and infrastructure.
           </p>
         </div>
       </section>
