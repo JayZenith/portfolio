@@ -13,49 +13,39 @@ function MainPage() {
       </header>
 
       <section className="Content">
-        <h2 className="Content-Intro">Intro</h2>
+        <h2 className="Content-Intro"></h2>
         <div className="Intro">
           <p>
-            I like breaking things apart to see how they really work. From compilers and interpreters to AI models, I build tools and apps that bridge low-level systems thinking with real-world products.
+            Breaking things apart to see how they really work.
           </p>
+          <p>My interests span compilers, interpreters, CUDA, machine learning, and the future of software tooling, infrastructure, & AI.</p>
+      
           <div className="Projects">
             <h2>Projects</h2>
             <div className="Project-list">
               <a href="https://github.com/JayZenith/x86_compiler" className="Project-card">
                 <h3>x86 Compiler</h3>
-                <p>Clone and run locally: compiler exploring parsing, ASTs, and code generation.</p>
+                <p>Exploring parsing, ASTs, and generating real x86 code from scratch.</p>
               </a>
 
               <a href="https://github.com/JayZenith/CausalLMExplorer" className="Project-card">
-                <h3>End-to-End Causal Language Model Exploration with Llama-3.2-1B</h3>
-                <p>An end-to-end demonstration of loading, generating, analyzing, and fine-tuning causal language models using Hugging Face Transformers and PyTorch. .</p>
+                <h3>Causal Language Model Exploration with Llama-3.2-1B</h3>
+                <p>Loading, generating, analyzing, and fine-tuning causal language models using Hugging Face Transformers and PyTorch.</p>
               </a>
-
-              {/* <a href="https://cpp-wasm-interpreter-playground.vercel.app/" className="Project-card">
-                <h3>WASM C++ Interpreter Playground</h3>
-                <p>Run C++ code safely in the browser using WebAssembly sandboxing.</p>
-              </a> */}
-
-              {/* <a href="https://ai-typescript-boxing-predictor.vercel.app/" className="Project-card">
-                <h3>AI Boxing Predictor</h3>
-                <p>Interactive AI demo running entirely client-side.</p>
-              </a> */}
               <a href="https://github.com/JayZenith/tunnl_interpreter" className="Project-card">
                 <h3>Interpreter</h3>
-                <p> tunnl is a scripting language that is imperative, dynamically typed, and interpreted.</p>
+                <p>Built from the ground up to understand interpreter internals and runtime behavior.</p>
               </a>
 
 
               <a href="https://github.com/JayZenith/CUDA_NN_Inference_Engine" className="Project-card">
                 <h3>CUDA NN Inference Engine </h3>
-                <p>Simple feedforward neural network on the GPU using CUDA, demonstrating high-performance matrix operations and GPU acceleration. .</p>
+                <p>High-performance feedforward neural network leveraging GPU matrix operations.</p>
               </a>
             </div>
           </div>
 
-          <p>
-            I’m interested in compilers, interpreters, machine learning, CUDA, and the future of software tooling and infrastructure.
-          </p>
+          
         </div>
       </section>
     </div>
