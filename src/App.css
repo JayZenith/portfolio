@@ -62,7 +62,7 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(1.85rem, 3vw, 2.15rem);
   line-height: 1.08;
   font-weight: 600;
   max-width: 15ch;
@@ -74,7 +74,7 @@ body {
 .bottom-strip p:last-child,
 .focus-block li {
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.7;
 }
 
@@ -168,7 +168,7 @@ body {
 
 .work-card h2,
 .section-head h2 {
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   line-height: 1.25;
   font-weight: 600;
   margin-bottom: 10px;
