@@ -29,50 +29,48 @@ const featuredWork = [
 
 const focusAreas = [
   'LLM inference and model-serving systems',
-  'GPU kernels, profiling, and performance bottlenecks',
+  'GPU kernels and performance bottlenecks',
   'Distributed inference tradeoffs and benchmarking',
   'Open-source contributions that move real codepaths'
 ];
 
 const links = [
   { label: 'GitHub', href: 'https://github.com/JayZenith' },
-  { label: 'X', href: 'https://twitter.com/jayz3nith' },
+  { label: 'X', href: 'https://twitter.com/jayz3nith' }
 ];
 
 function MainPage() {
   return (
     <div className="app-shell">
       <main className="page">
-        <section className="hero">
-          <div className="hero-copy">
-            <p className="eyebrow">Jay Zenith</p>
-            <h1>Inference engineer focused on GPU systems, distributed serving, and measurable performance wins.</h1>
-            <p className="lede">
-              I work on the parts of LLM systems that actually decide whether they run fast,
-              scale cleanly, and hold up under load. Right now that means inference kernels,
-              serving infrastructure, benchmarking, and upstream OSS contributions.
-            </p>
-            <div className="link-row">
-              {links.map((link) => (
-                <a key={link.label} href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'} rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}>
-                  {link.label}
-                </a>
-              ))}
-            </div>
+        <header className="hero">
+          <p className="eyebrow">Jay Zenith</p>
+          <h1>Inference engineer focused on GPU systems, distributed serving, and measurable performance wins.</h1>
+          <p className="lede">
+            I work on the parts of LLM systems that decide whether they run fast,
+            scale cleanly, and hold up under load. Right now that means inference kernels,
+            serving infrastructure, benchmarking, and upstream OSS contributions.
+          </p>
+          <div className="link-row">
+            {links.map((link) => (
+              <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                {link.label}
+              </a>
+            ))}
           </div>
-          <aside className="hero-panel">
-            <span className="panel-label">Current lane</span>
-            <ul>
-              {focusAreas.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </aside>
+        </header>
+
+        <section className="focus-block">
+          <p className="eyebrow">Current Focus</p>
+          <ul>
+            {focusAreas.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </section>
 
         <section className="section-head">
           <p className="eyebrow">My Work</p>
-          <h2>Work that best represents how I think about inference systems now.</h2>
           <p>
             This is not a generic portfolio. These are the projects and contributions that best
             represent how I think about inference systems now.
@@ -83,7 +81,7 @@ function MainPage() {
           {featuredWork.map((item) => (
             <a key={item.title} className="work-card" href={item.href} target="_blank" rel="noreferrer">
               <div className="work-meta">{item.meta}</div>
-              <h3>{item.title}</h3>
+              <h2>{item.title}</h2>
               <p>{item.text}</p>
             </a>
           ))}
@@ -99,8 +97,7 @@ function MainPage() {
           <div>
             <p className="eyebrow">What I optimize for</p>
             <p>
-              Lower latency, higher throughput, fewer regressions, better evidence, and less
-              hand-wavy systems work.
+              Lower latency, higher throughput, fewer regressions, better evidence, and less hand-wavy systems work.
             </p>
           </div>
         </section>
