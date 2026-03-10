@@ -1,116 +1,256 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #0b0f14;
+  --bg-soft: #121922;
+  --panel: rgba(15, 24, 34, 0.88);
+  --panel-strong: #182231;
+  --text: #f3f0e8;
+  --muted: #a8b3c4;
+  --accent: #ef8354;
+  --accent-soft: rgba(239, 131, 84, 0.18);
+  --border: rgba(243, 240, 232, 0.12);
+  --shadow: 0 22px 80px rgba(0, 0, 0, 0.35);
+}
 
-/* Global reset */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  background-color: rgb(10, 10, 10);
-  font-family: sans-serif;
-  
-}
-
-.AppBackground {
-  background-color: rgb(10, 10, 10);
+html,
+body,
+#root {
   min-height: 100%;
 }
 
-.App {
-  text-align: left;
-  margin-left: 15%;
-  margin-right: 15%;
-  padding: 3%;
-  background-color: rgb(10, 10, 10);
-  min-height: 100vh; /* fixes white gap on mobile */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(239, 131, 84, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(83, 124, 172, 0.14), transparent 24%),
+    linear-gradient(180deg, #0b0f14 0%, #0f1620 100%);
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
-.App-header {
-  margin-top: 20px;
-  color: white;
-  font-weight: bold;
-  font-size: large;
+.AppBackground {
+  min-height: 100vh;
 }
 
-.App-sub-header {
+.app-shell {
+  min-height: 100vh;
+  padding: 48px 20px 64px;
+}
+
+.page {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.8fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.hero-copy,
+.hero-panel,
+.work-card,
+.bottom-strip {
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  background: linear-gradient(160deg, rgba(17, 24, 33, 0.96), rgba(10, 15, 20, 0.92));
+  border-radius: 26px;
+  padding: 38px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.3rem, 5vw, 4.6rem);
+  line-height: 0.96;
+  max-width: 12ch;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.75;
+  margin-top: 22px;
+  max-width: 58ch;
+}
+
+.link-row {
   display: flex;
-  text-decoration: underline;
-  color: rgb(205, 29, 29);
-  margin-top: 5px;
-  font-size: medium;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
 }
 
-.App-sub-header .idk {
-  margin-left: 10px;
+.link-row a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.Content {
-  color: white;
+.link-row a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(239, 131, 84, 0.55);
+  background: var(--accent-soft);
 }
 
-.Content .Content-Intro {
-  margin-top: 40px;
-  font-size: large;
-  font-weight: bold;
+.hero-panel {
+  background: linear-gradient(180deg, rgba(24, 34, 49, 0.94), rgba(12, 18, 26, 0.92));
+  border-radius: 26px;
+  padding: 28px;
 }
 
-.Intro p {
-  margin-bottom: 15px;
+.panel-label {
+  color: var(--muted);
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
-.projects {
-  margin-top: 20px;
+.hero-panel ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
 }
 
-.projects ul {
-  list-style-type: none;
+.hero-panel li {
+  border-top: 1px solid rgba(243, 240, 232, 0.1);
+  color: var(--text);
+  line-height: 1.55;
+  padding-top: 14px;
 }
 
-.projects li {
-  font-size: 1.2em;
+.section-head {
+  margin: 56px 0 24px;
+  max-width: 760px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
   margin-bottom: 10px;
 }
 
-/* Project cards */
-.Project-card {
-  display: block;
-  background: #1a1a1a;
-  color: #fff;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
+.section-head p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.work-card {
+  background: linear-gradient(180deg, rgba(17, 24, 33, 0.95), rgba(14, 19, 27, 0.92));
+  border-radius: 22px;
+  color: var(--text);
+  padding: 24px;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.Project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239, 131, 84, 0.45);
+  background: linear-gradient(180deg, rgba(25, 32, 42, 0.98), rgba(17, 24, 33, 0.94));
 }
 
-.Project-card h3 {
-  margin: 0 0 10px 0;
+.work-meta {
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .App {
-    margin-left: 10%;
-    margin-right: 10%;
+.work-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.work-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.bottom-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  background: linear-gradient(180deg, rgba(15, 24, 34, 0.9), rgba(12, 18, 26, 0.94));
+  border-radius: 24px;
+  margin-top: 24px;
+  padding: 28px;
+}
+
+.bottom-strip p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .work-grid,
+  .bottom-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .App {
-    margin-left: 5%;
-    margin-right: 5%;
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 22px 14px 36px;
+  }
+
+  .hero-copy,
+  .hero-panel,
+  .work-card,
+  .bottom-strip {
+    border-radius: 18px;
+  }
+
+  .hero-copy,
+  .hero-panel,
+  .work-card,
+  .bottom-strip {
+    padding: 20px;
+  }
+
+  .lede,
+  .work-card p,
+  .bottom-strip p:last-child {
+    font-size: 0.98rem;
   }
 }
