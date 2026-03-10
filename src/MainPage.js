@@ -37,7 +37,6 @@ const focusAreas = [
 const links = [
   { label: 'GitHub', href: 'https://github.com/JayZenith' },
   { label: 'X', href: 'https://twitter.com/jayz3nith' },
-  { label: 'Resume', href: 'mailto:jayzenith248@gmail.com?subject=Jay%20Zenith%20Resume' }
 ];
 
 function MainPage() {
@@ -72,8 +71,8 @@ function MainPage() {
         </section>
 
         <section className="section-head">
-          <p className="eyebrow">Selected Work</p>
-          <h2>Work that matches the roles I want.</h2>
+          <p className="eyebrow">My Work</p>
+          <h2>Work that best represents how I think about inference systems now.</h2>
           <p>
             This is not a generic portfolio. These are the projects and contributions that best
             represent how I think about inference systems now.
@@ -92,10 +91,9 @@ function MainPage() {
 
         <section className="bottom-strip">
           <div>
-            <p className="eyebrow">What I want to do</p>
+            <p className="eyebrow">What I do</p>
             <p>
-              I am targeting inference, ML systems, distributed serving, performance, and
-              backend/platform roles at AI companies.
+              I focus on inference, ML systems, distributed serving, performance, and backend/platform work around AI systems.
             </p>
           </div>
           <div>
