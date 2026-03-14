@@ -41,68 +41,63 @@ const links = [
 
 function MainPage() {
   return (
-    <div className="app-shell">
-      <main className="page">
-        <header className="hero">
-          <p className="eyebrow">Jay Zenith</p>
-          <h1>Inference engineer focused on GPU systems, distributed serving, and measurable performance wins.</h1>
-          <p className="lede">
-            I work on the parts of LLM systems that decide whether they run fast,
-            scale cleanly, and hold up under load. Right now that means inference kernels,
-            serving infrastructure, benchmarking, and upstream OSS contributions.
-          </p>
-          <div className="link-row">
-            {links.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </header>
-
-        <section className="focus-block">
-          <p className="eyebrow">Current Focus</p>
-          <ul>
-            {focusAreas.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="section-head">
-          <p className="eyebrow">My Work</p>
-          <p>
-            This is not a generic portfolio. These are the projects and contributions that best
-            represent how I think about inference systems now.
-          </p>
-        </section>
-
-        <section className="work-grid">
-          {featuredWork.map((item) => (
-            <a key={item.title} className="work-card" href={item.href} target="_blank" rel="noreferrer">
-              <div className="work-meta">{item.meta}</div>
-              <h2>{item.title}</h2>
-              <p>{item.text}</p>
+    <main className="simple-page">
+      <header className="hero">
+        <p className="name">Jay Zenith</p>
+        <h1>Inference engineer focused on GPU systems, distributed serving, and measurable performance wins.</h1>
+        <p className="lede">
+          I work on the parts of LLM systems that decide whether they run fast,
+          scale cleanly, and hold up under load. Right now that means inference kernels,
+          serving infrastructure, benchmarking, and upstream OSS contributions.
+        </p>
+        <div className="link-row" aria-label="social links">
+          {links.map((link) => (
+            <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+              {link.label}
             </a>
           ))}
-        </section>
+        </div>
+      </header>
 
-        <section className="bottom-strip">
-          <div>
-            <p className="eyebrow">What I do</p>
-            <p>
-              I focus on inference, ML systems, distributed serving, performance, and backend/platform work around AI systems.
-            </p>
-          </div>
-          <div>
-            <p className="eyebrow">What I optimize for</p>
-            <p>
-              Lower latency, higher throughput, fewer regressions, better evidence, and less hand-wavy systems work.
-            </p>
-          </div>
-        </section>
-      </main>
-    </div>
+      <section className="section">
+        <h2>Current focus</h2>
+        <ul className="plain-list">
+          {focusAreas.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="section">
+        <h2>Selected work</h2>
+        <p className="section-copy">
+          These are the projects and contributions that best represent how I think about inference systems right now.
+        </p>
+        <div className="work-list">
+          {featuredWork.map((item) => (
+            <article key={item.title} className="work-item">
+              <h3>
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  {item.title}
+                </a>
+              </h3>
+              <p className="work-meta">{item.meta}</p>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-last">
+        <h2>What I do</h2>
+        <p className="section-copy">
+          I focus on inference, ML systems, distributed serving, performance, and backend/platform work around AI systems.
+        </p>
+        <p className="section-copy">
+          I optimize for lower latency, higher throughput, fewer regressions, better evidence, and less hand-wavy systems work.
+        </p>
+      </section>
+    </main>
   );
 }
 
