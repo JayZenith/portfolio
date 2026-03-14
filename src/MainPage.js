@@ -44,7 +44,6 @@ function MainPage() {
     <main className="simple-page">
       <header className="hero">
         <p className="name">Jay Zenith</p>
-        <h1>Inference engineer focused on GPU systems, distributed serving, and measurable performance wins.</h1>
         <p className="lede">
           I work on the parts of LLM systems that decide whether they run fast,
           scale cleanly, and hold up under load. Right now that means inference kernels,
