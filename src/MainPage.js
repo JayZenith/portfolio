@@ -4,14 +4,14 @@ const work = [
   {
     title: 'glyph',
     href: 'https://github.com/JayZenith/glyph',
-    meta: 'format design / sft / rl',
-    text: 'A structured trace format for LLM agents. Validator-driven evals; isolated the load-bearing fix in a 2×2 ablation; LM judge confirms the same conclusion. RL stage in progress.'
+    meta: 'format / sft / rl',
+    text: 'A structured trace format for LLM agents. Validator-driven evals, ablations to isolate what actually moves the model, LM-judge for semantic feedback. RL stage in progress.'
   },
   {
     title: 'llama.cpp — CUDA upstream',
     href: 'https://github.com/ggml-org/llama.cpp/pull/17851',
     meta: 'cuda / merged',
-    text: 'Added GGML_OP_FILL on the CUDA backend for the Qwen3-Next path. Removed a CPU fallback. Merged.'
+    text: 'Added GGML_OP_FILL on the CUDA backend for the Qwen3-Next path; removed a CPU fallback. Merged upstream.'
   },
   {
     title: 'llama.cpp — sampling hot path',
@@ -23,13 +23,13 @@ const work = [
     title: 'mini-sglang — Mistral support',
     href: 'https://jayzenith.github.io/mistral-support-minisgl.github.io/',
     meta: 'pytorch / flashattention-3 / h100',
-    text: 'Sliding-window attention for Mistral-7B. Validated against Hugging Face past 6k tokens.'
+    text: 'Sliding-window attention for Mistral-7B, validated against Hugging Face past 6k tokens.'
   },
   {
     title: 'pd disaggregation benchmark',
     href: 'https://jayzenith.github.io/colocated-pd-disagg-blog/',
     meta: 'ray serve / vllm / 4×3090',
-    text: 'A/B harness for prefill/decode split vs colocated. Where it actually wins, where it doesn\'t.'
+    text: 'A/B harness for prefill/decode split vs colocated serving.'
   },
 ];
 
@@ -55,11 +55,9 @@ function MainPage() {
       <div className="scan" aria-hidden="true" />
 
       <header className="hero">
-        <p className="tag">// node 2093</p>
         <h1 className="name">JAY ZENITH<Cursor /></h1>
         <p className="lede">
-          building the rails for agents that can be trusted —
-          format, eval, reward.
+          training, inference, and agent systems.
         </p>
         <p className="status">
           <span className="dot" /> currently: rl on a structured trace format
@@ -91,16 +89,12 @@ function MainPage() {
       <section className="block">
         <p className="prompt">$ cat focus.txt</p>
         <ul className="focus">
-          <li>format-as-substrate for verifiable LLM agents</li>
-          <li>evals that catch what loss curves can't see</li>
-          <li>reward shapes that don't get hacked</li>
-          <li>upstream contributions to inference stacks</li>
+          <li>structured formats and evals for agent training</li>
+          <li>reward shaping for RL on tool-using models</li>
+          <li>inference performance — kernels, serving, throughput</li>
+          <li>upstream contributions to OSS inference stacks</li>
         </ul>
       </section>
-
-      <footer className="foot">
-        <p>// signal &gt; volume</p>
-      </footer>
     </main>
   );
 }
