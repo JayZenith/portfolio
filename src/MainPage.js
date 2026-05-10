@@ -57,10 +57,10 @@ function MainPage() {
       <header className="hero">
         <h1 className="name">JAY ZENITH<Cursor /></h1>
         <p className="lede">
-          training, inference, and agent systems.
+          training, evals, and inference for LLM agents.
         </p>
         <p className="status">
-          <span className="dot" /> currently: rl on a structured trace format
+          <span className="dot" /> <strong>currently</strong> rl on a structured trace format
         </p>
         <div className="links">
           {links.map((l) => (
