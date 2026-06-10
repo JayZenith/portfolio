@@ -42,16 +42,10 @@ const links = [
 function MainPage() {
   return (
     <main className="page">
-      <div className="grain" aria-hidden="true" />
-      <div className="scan" aria-hidden="true" />
-
       <header className="hero">
         <h1 className="name">JAY ZENITH</h1>
         <p className="lede">
           training, evals, and inference for LLM agents.
-        </p>
-        <p className="status">
-          <span className="dot" /> <strong>currently</strong> writing the glyph postmortem: what verifier RL actually did to a tool-use agent
         </p>
         <div className="links">
           {links.map((l) => (
