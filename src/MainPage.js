@@ -38,15 +38,7 @@ function MainPage() {
   return (
     <main className="page">
       <header className="hero">
-        <h1 className="name">JAY ZENITH</h1>
-        <p className="lede">
-          I work on training, evals, and inference for LLM agents. The current
-          project is glyph: a Rust tool-use agent I took from SFT through
-          verifier RL, with strict whole-trace evals and a postmortem of what
-          RL actually changed. Before that: CUDA and sampling work merged into
-          llama.cpp, Mistral support in mini-sglang, and serving benchmarks on
-          vLLM.
-        </p>
+        <h1 className="name">I am Jay Zenith. I train, eval, and serve LLM agents.</h1>
         <div className="links">
           {links.map((l) => (
             <a key={l.label} href={l.href} target="_blank" rel="noreferrer">
