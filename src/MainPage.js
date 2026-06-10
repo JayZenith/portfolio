@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const work = [
   {
     title: 'glyph',
     href: 'https://github.com/JayZenith/glyph',
-    meta: 'format / sft / rl',
-    text: 'A structured trace format for LLM agents. Validator-driven evals, ablations to isolate what actually moves the model, LM-judge for semantic feedback. RL stage in progress.'
+    meta: 'sft / rlvr / evals',
+    text: 'Rust tool-use agent on a 4B model. SFT learned the full CALL/RESULT/FINAL contract; strict whole-trace evals; then an end-to-end RLVR audit. Honest result: RL reshuffled the solved set instead of improving it, and most apparent collapses were harness bugs. Full postmortem in the repo.'
   },
   {
     title: 'llama.cpp — CUDA upstream',
@@ -39,15 +39,6 @@ const links = [
   { label: 'x', href: 'https://twitter.com/jayz3nith' }
 ];
 
-function Cursor() {
-  const [on, setOn] = useState(true);
-  useEffect(() => {
-    const t = setInterval(() => setOn((v) => !v), 530);
-    return () => clearInterval(t);
-  }, []);
-  return <span className={`cursor ${on ? 'on' : 'off'}`}>█</span>;
-}
-
 function MainPage() {
   return (
     <main className="page">
@@ -55,12 +46,12 @@ function MainPage() {
       <div className="scan" aria-hidden="true" />
 
       <header className="hero">
-        <h1 className="name">JAY ZENITH<Cursor /></h1>
+        <h1 className="name">JAY ZENITH</h1>
         <p className="lede">
           training, evals, and inference for LLM agents.
         </p>
         <p className="status">
-          <span className="dot" /> <strong>currently</strong> rl on a structured trace format
+          <span className="dot" /> <strong>currently</strong> shipping the glyph postmortem: what verifier RL actually did to a tool-use agent
         </p>
         <div className="links">
           {links.map((l) => (
@@ -72,7 +63,7 @@ function MainPage() {
       </header>
 
       <section className="block">
-        <p className="prompt">$ ls work/</p>
+        <p className="prompt">work</p>
         <ul className="list">
           {work.map((w) => (
             <li key={w.title}>
@@ -87,7 +78,7 @@ function MainPage() {
       </section>
 
       <section className="block">
-        <p className="prompt">$ cat focus.txt</p>
+        <p className="prompt">focus</p>
         <ul className="focus">
           <li>structured formats and evals for agent training</li>
           <li>reward shaping for RL on tool-using models</li>

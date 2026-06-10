@@ -81,9 +81,9 @@ body {
 
 /* hero */
 .hero {
-  padding-bottom: 56px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 
 .tag {
@@ -103,14 +103,6 @@ body {
   margin-bottom: 22px;
   display: inline-block;
 }
-
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  color: var(--accent);
-  text-shadow: 0 0 12px var(--accent);
-}
-.cursor.off { opacity: 0; }
 
 .lede {
   color: var(--text);
