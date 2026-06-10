@@ -51,7 +51,7 @@ function MainPage() {
           training, evals, and inference for LLM agents.
         </p>
         <p className="status">
-          <span className="dot" /> <strong>currently</strong> shipping the glyph postmortem: what verifier RL actually did to a tool-use agent
+          <span className="dot" /> <strong>currently</strong> writing the glyph postmortem: what verifier RL actually did to a tool-use agent
         </p>
         <div className="links">
           {links.map((l) => (
