@@ -47,7 +47,7 @@ function MainPage() {
           ))}
         </div>
         <p className="lede">
-          I'm Jay Zenith. I enjoy training, evaluating, and serving LLM
+          I enjoy training, evaluating, and serving LLM
           agents — right now that's glyph, a Rust tool-use agent taken from
           SFT through verifier RL against strict whole-trace evals. I also do
           OSS work on inference stacks, including CUDA and sampling patches
