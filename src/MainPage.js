@@ -38,7 +38,7 @@ function MainPage() {
   return (
     <main className="page">
       <header className="hero">
-        <h1 className="name">I am Jay Zenith. I train, eval, and serve LLM agents.</h1>
+        <h1 className="name">JAY ZENITH</h1>
         <div className="links">
           {links.map((l) => (
             <a key={l.label} href={l.href} target="_blank" rel="noreferrer">
@@ -46,6 +46,13 @@ function MainPage() {
             </a>
           ))}
         </div>
+        <p className="lede">
+          I'm Jay Zenith. I enjoy training, evaluating, and serving LLM
+          agents — right now that's glyph, a Rust tool-use agent taken from
+          SFT through verifier RL against strict whole-trace evals. I also do
+          OSS work on inference stacks, including CUDA and sampling patches
+          merged into llama.cpp and Mistral support in mini-sglang.
+        </p>
       </header>
 
       <section className="block">

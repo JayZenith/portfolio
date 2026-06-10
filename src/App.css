@@ -51,15 +51,23 @@ body {
 }
 
 .name {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
 }
 
 .links {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 64ch;
 }
 
 .links a {
@@ -115,6 +123,5 @@ body {
 @media (max-width: 640px) {
   body { font-size: 13px; }
   .page { padding: 32px 0 48px; }
-  .name { font-size: 20px; }
   .row { flex-direction: column; gap: 2px; }
   }
