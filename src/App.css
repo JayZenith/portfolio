@@ -56,12 +56,6 @@ body {
   margin-bottom: 8px;
 }
 
-.lede {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
 .links {
   display: flex;
   gap: 20px;
