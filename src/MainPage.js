@@ -4,7 +4,7 @@ const work = [
   {
     title: 'glyph',
     href: 'https://jayzenith.github.io/glyph/',
-    text: 'CHECKOUT THE BLOG!'
+    text: 'Rust tool-use agent on a 4B model, taken from SFT through verifier RL against strict whole-trace evals — owning the whole stack from synthetic data to pass@k analysis. CHECKOUT THE BLOG!'
   },
   {
     title: 'llama.cpp — CUDA upstream',
