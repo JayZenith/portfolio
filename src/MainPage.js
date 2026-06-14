@@ -3,8 +3,8 @@ import React from 'react';
 const work = [
   {
     title: 'glyph',
-    href: 'https://github.com/JayZenith/glyph',
-    text: 'Rust tool-use agent on a 4B model. SFT learned the full CALL/RESULT/FINAL contract; strict whole-trace evals; then an end-to-end RLVR audit. Honest result: RL reshuffled the solved set instead of improving it, and most apparent collapses were harness bugs. Full postmortem in the repo.'
+    href: 'https://jayzenith.github.io/glyph/',
+    text: 'CHECKOUT THE BLOG!'
   },
   {
     title: 'llama.cpp — CUDA upstream',
@@ -50,9 +50,8 @@ function MainPage() {
         <p className="lede">
           I enjoy training, evaluating, and serving LLM
           agents — right now that's glyph, a Rust tool-use agent taken from
-          SFT through verifier RL against strict whole-trace evals. I also do
-          OSS work on inference stacks, including CUDA and sampling patches
-          merged into llama.cpp and Mistral support in mini-sglang.
+          SFT through verifier RL against strict whole-trace evals. I also did
+          OSS work on llama.cpp.
         </p>
       </header>
 
