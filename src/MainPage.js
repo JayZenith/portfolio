@@ -32,8 +32,7 @@ const work = [
 const links = [
   { label: 'github', href: 'https://github.com/JayZenith' },
   { label: 'huggingface', href: 'https://huggingface.co/JayZenith' },
-  { label: 'x', href: 'https://twitter.com/jayz3nith' },
-  { label: 'blog', href: 'https://jayzenith.github.io/glyph/' }
+  { label: 'x', href: 'https://twitter.com/jayz3nith' }
 ];
 
 function MainPage() {
@@ -68,7 +67,7 @@ function MainPage() {
                   <>
                     {' '}
                     <a className="blog-link" href={w.blog} target="_blank" rel="noreferrer">
-                      CHECKOUT THE BLOG!
+                      [blog]
                     </a>
                   </>
                 )}
