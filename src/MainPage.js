@@ -4,7 +4,8 @@ const work = [
   {
     title: 'glyph',
     href: 'https://jayzenith.github.io/glyph/',
-    text: 'Rust tool-use agent on a 4B model, taken from SFT through verifier RL against strict whole-trace evals — owning the whole stack from synthetic data to pass@k analysis. CHECKOUT THE BLOG!'
+    text: 'Rust tool-use agent on a 4B model, taken from SFT through verifier RL against strict whole-trace evals — owning the whole stack from synthetic data to pass@k analysis.',
+    blog: 'https://jayzenith.github.io/glyph/'
   },
   {
     title: 'llama.cpp — CUDA upstream',
@@ -50,8 +51,7 @@ function MainPage() {
         <p className="lede">
           I enjoy training, evaluating, and serving LLM
           agents — right now that's glyph, a Rust tool-use agent taken from
-          SFT through verifier RL against strict whole-trace evals. I also did
-          OSS work on llama.cpp.
+          SFT through verifier RL against strict whole-trace evals.
         </p>
       </header>
 
@@ -62,7 +62,17 @@ function MainPage() {
               <a href={w.href} target="_blank" rel="noreferrer" className="row">
                 <span className="title">{w.title}</span>
               </a>
-              <p className="desc">{w.text}</p>
+              <p className="desc">
+                {w.text}
+                {w.blog && (
+                  <>
+                    {' '}
+                    <a className="blog-link" href={w.blog} target="_blank" rel="noreferrer">
+                      CHECKOUT THE BLOG!
+                    </a>
+                  </>
+                )}
+              </p>
             </li>
           ))}
         </ul>

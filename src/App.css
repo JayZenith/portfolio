@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #050a05;
-  --text: #d6f5d6;
-  --muted: #6e9c6e;
-  --dim: #2e4a2e;
-  --line: #1a2e1a;
-  --accent: #00ff66;
-  --accent-soft: #4caf50;
+  --bg: #000;
+  --text: #f7f7f2;
+  --muted: #8d938d;
+  --soft: #d8ddd6;
+  --line: #242824;
+  --accent: #22c55e;
+  --accent-soft: #86efac;
 }
 
 * {
@@ -27,11 +27,14 @@ body,
 
 body {
   color: var(--text);
-  font-family: 'JetBrains Mono', 'Berkeley Mono', 'IBM Plex Mono', 'SF Mono', ui-monospace, monospace;
+  font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.6;
+  letter-spacing: -.005em;
   -webkit-font-smoothing: antialiased;
 }
+
+::selection { background: var(--accent); color: #000; }
 
 .AppBackground {
   min-height: 100vh;
@@ -65,7 +68,7 @@ body {
 }
 
 .lede {
-  color: var(--muted);
+  color: var(--soft);
   font-size: 13px;
   max-width: 64ch;
 }
@@ -114,10 +117,22 @@ body {
 }
 
 .desc {
-  color: var(--muted);
+  color: var(--soft);
   font-size: 13px;
   max-width: 64ch;
   margin-top: 2px;
+}
+
+.blog-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.blog-link:hover {
+  color: var(--accent-soft);
 }
 
 @media (max-width: 640px) {
