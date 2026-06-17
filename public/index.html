@@ -5,7 +5,25 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#050a05" />
-    <meta name="description" content="Jay Zenith — training, evals, and inference for LLM agents." />
+    <meta
+      name="description"
+      content="Jay Zenith works on LLM agent training, evals, inference, CUDA kernels, and serving systems."
+    />
+    <meta name="author" content="Jay Zenith" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Jay Zenith - LLM training, evals, inference" />
+    <meta
+      property="og:description"
+      content="Portfolio of Jay Zenith: LLM agents, verifier RL, CUDA upstream work, inference performance, and serving benchmarks."
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Jay Zenith" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jay Zenith - LLM training, evals, inference" />
+    <meta
+      name="twitter:description"
+      content="LLM agent training, evals, inference performance, CUDA kernels, and serving systems."
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,11 +46,89 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>jay zenith — llm training, evals, inference</title>
+    <title>Jay Zenith - LLM training, evals, inference</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <noscript>
+      <main class="page">
+        <header class="hero">
+          <h1 class="name">JAY ZENITH</h1>
+          <p class="lede">
+            I enjoy training, evaluating, and serving LLM agents, including
+            glyph, a Rust tool-use agent taken from SFT through verifier RL
+            against strict whole-trace evals.
+          </p>
+        </header>
+      </main>
+    </noscript>
+    <div id="root">
+      <main class="page">
+        <header class="hero">
+          <h1 class="name">JAY ZENITH</h1>
+          <div class="links">
+            <a href="https://github.com/JayZenith">[github]</a>
+            <a href="https://huggingface.co/JayZenith">[huggingface]</a>
+            <a href="https://twitter.com/jayz3nith">[x]</a>
+          </div>
+          <p class="lede">
+            I enjoy training, evaluating, and serving LLM agents - right now
+            that's glyph, a Rust tool-use agent taken from SFT through verifier
+            RL against strict whole-trace evals.
+          </p>
+        </header>
+
+        <section class="block">
+          <ul class="list">
+            <li>
+              <a href="https://jayzenith.github.io/glyph/" class="row">
+                <span class="title">glyph</span>
+              </a>
+              <p class="desc">
+                Rust tool-use agent on a 4B model, taken from SFT through
+                verifier RL against strict whole-trace evals - owning the whole
+                stack from synthetic data to pass@k analysis.
+                <a class="blog-link" href="https://jayzenith.github.io/glyph/">[blog]</a>
+              </p>
+            </li>
+            <li>
+              <a href="https://github.com/ggml-org/llama.cpp/pull/17851" class="row">
+                <span class="title">llama.cpp - CUDA upstream</span>
+              </a>
+              <p class="desc">
+                Added GGML_OP_FILL on the CUDA backend for the Qwen3-Next path;
+                removed a CPU fallback. Merged upstream.
+              </p>
+            </li>
+            <li>
+              <a href="https://jayzenith.github.io/llama-perf-blog/" class="row">
+                <span class="title">llama.cpp - sampling hot path</span>
+              </a>
+              <p class="desc">
+                Cut a redundant O(vocab) allocation from token sampling.
+                1.9-2.2x on the sampling microbench.
+              </p>
+            </li>
+            <li>
+              <a href="https://jayzenith.github.io/mistral-support-minisgl.github.io/" class="row">
+                <span class="title">mini-sglang - Mistral support</span>
+              </a>
+              <p class="desc">
+                Sliding-window attention for Mistral-7B, validated against
+                Hugging Face past 6k tokens.
+              </p>
+            </li>
+            <li>
+              <a href="https://jayzenith.github.io/colocated-pd-disagg-blog/" class="row">
+                <span class="title">pd disaggregation benchmark</span>
+              </a>
+              <p class="desc">
+                A/B harness for prefill/decode split vs colocated serving.
+              </p>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
