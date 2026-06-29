@@ -12,14 +12,14 @@
   --line: #21422f;
   --blue: #45a3ff;
   --cyan: #24f0ff;
-  --green: #39ff88;
-  --green-soft: #9fffc1;
-  --green-dim: #4fbd73;
+  --green: #24d366;
+  --green-soft: #6ee894;
+  --green-dim: #36aa5d;
   --amber: #ffe94a;
   --purple: #c678ff;
   --scroll-track: #07100b;
-  --scroll-thumb: #2bdc73;
-  --scroll-thumb-hover: #8cffb4;
+  --scroll-thumb: #1fa85a;
+  --scroll-thumb-hover: #52d879;
 }
 
 * {
@@ -163,7 +163,7 @@ a:hover {
 }
 
 .result-note strong {
-  color: var(--amber);
+  color: var(--green);
   font-weight: 650;
 }
 
@@ -209,7 +209,7 @@ a:hover {
 
 .trace-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 110px;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
   padding: 16px;
   border-bottom: 1px solid var(--line);
@@ -218,7 +218,7 @@ a:hover {
 
 .trace-label {
   display: block;
-  color: var(--green);
+  color: var(--text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
   font-weight: 700;
@@ -227,7 +227,7 @@ a:hover {
 .model-label {
   display: inline-block;
   margin-top: 7px;
-  color: var(--green-soft);
+  color: var(--green);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
 }
@@ -236,6 +236,17 @@ a:hover {
   margin: 8px 0 0;
   color: var(--text);
   font-size: 14px;
+}
+
+.trace-metadata {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  color: var(--green-dim);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  white-space: nowrap;
 }
 
 .crate-source {
@@ -329,26 +340,6 @@ a:hover {
   background: #121925;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 11px;
-}
-
-.trace-score {
-  display: grid;
-  align-content: start;
-  gap: 5px;
-  text-align: right;
-}
-
-.trace-score span {
-  color: var(--green-dim);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
-.trace-score strong {
-  color: var(--green);
-  font-size: 28px;
-  line-height: 1;
 }
 
 .trace-turns {
@@ -550,8 +541,9 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  .trace-score {
-    text-align: left;
+  .trace-metadata {
+    align-items: flex-start;
+    margin-top: 10px;
   }
 
   .turn {

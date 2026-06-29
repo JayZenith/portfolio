@@ -10,8 +10,13 @@ const profileLinks = [
 const glyphLinks = [
   { label: 'Code', href: 'https://github.com/JayZenith/glyph' },
   { label: 'Writeup', href: 'https://jayzenith.github.io/glyph/' },
-  { label: 'Models', href: 'https://huggingface.co/JayZenith' },
+  { label: 'SFT', href: 'https://huggingface.co/JayZenith/SFT_HALF_A_V8' },
+  { label: 'RLVR', href: 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10' },
 ];
+
+const modelLinks = {
+  'JayZenith/RLVR_VFINAL_STEP10': 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10',
+};
 
 const oss = [
   {
@@ -203,7 +208,8 @@ function MainPage() {
           </p>
           <p className="result-note">
             <strong>+3.7 pass@8</strong> lift on 150 held-out crates, from 97.3 to 101.0 valid traces
-            across 3 seeds.
+            across 3 seeds — small but reproducible (t-test p ≈ 0.06). A single run showed +7;
+            replication showed that was seed noise.
           </p>
         </article>
       </section>
@@ -231,13 +237,19 @@ function MainPage() {
           <div className="trace-summary">
             <div>
               <span className="trace-label">{trace.label}</span>
-              <span className="model-label">{trace.model}</span>
+              <a
+                className="model-label"
+                href={modelLinks[trace.model] ?? 'https://huggingface.co/JayZenith'}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {trace.model}
+              </a>
               <p>{exampleDescription}</p>
             </div>
-            <div className="trace-score">
-              <span>reward</span>
-              <strong>{trace.reward}</strong>
-              <span>{trace.turns.length} turns</span>
+            <div className="trace-metadata" aria-label="Trace metadata">
+              <span>RL reward {trace.reward}</span>
+              <span>{trace.turns.length} trace turns</span>
             </div>
           </div>
           {crateSource && (
