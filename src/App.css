@@ -117,8 +117,7 @@ a:hover {
 }
 
 .project-section,
-.trace-section,
-.content-band {
+.trace-section {
   margin-top: 34px;
 }
 
@@ -473,40 +472,6 @@ a:hover {
   font-weight: 700;
 }
 
-.artifact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.artifact-card {
-  display: block;
-  padding: 14px;
-  color: inherit;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--panel);
-  text-decoration: none;
-}
-
-.artifact-card:hover {
-  border-color: var(--dim);
-  text-decoration: none;
-}
-
-.artifact-card h3 {
-  margin: 0;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 650;
-}
-
-.artifact-card p {
-  margin: 8px 0 0;
-  color: var(--text);
-  font-size: 14px;
-}
-
 .rust-code,
 .trace-turns,
 .turn-body {
@@ -561,8 +526,7 @@ a:hover {
     margin-top: 10px;
   }
 
-  .trace-summary,
-  .artifact-grid {
+  .trace-summary {
     grid-template-columns: 1fr;
   }
 

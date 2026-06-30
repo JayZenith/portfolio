@@ -19,19 +19,6 @@ const modelLinks = {
   'JayZenith/RLVR_VFINAL_STEP10': 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10',
 };
 
-const oss = [
-  {
-    title: 'llama.cpp - CUDA FILL op merge',
-    href: 'https://github.com/ggml-org/llama.cpp/pull/17851',
-    text: 'GGML_OP_FILL on the CUDA backend; removed a CPU fallback.',
-  },
-  {
-    title: 'llama.cpp - sampling hot path merge',
-    href: 'https://github.com/ggml-org/llama.cpp/pull/18365',
-    text: 'Reused the token-data buffer in sampling - 1.9-2.2x on the microbench.',
-  },
-];
-
 const systemPrompt = 'You are a Rust coding agent. Use tools when needed. After FINAL, stop immediately.';
 
 const exampleDescriptions = {
@@ -296,20 +283,6 @@ function MainPage() {
             </div>
           </div>
         </article>
-      </section>
-
-      <section className="content-band bottom-band">
-        <div className="section-heading">
-          <h2>open source work</h2>
-        </div>
-        <div className="artifact-grid">
-          {oss.map((work) => (
-            <a className="artifact-card" href={work.href} target="_blank" rel="noreferrer" key={work.title}>
-              <h3>{work.title}</h3>
-              <p>{work.text}</p>
-            </a>
-          ))}
-        </div>
       </section>
     </main>
   );
