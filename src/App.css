@@ -58,7 +58,7 @@ a:hover {
 }
 
 .site-shell {
-  width: min(920px, calc(100% - 36px));
+  width: min(760px, calc(100% - 40px));
   margin: 0 auto;
   padding: 42px 0 64px;
 }
