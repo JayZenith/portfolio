@@ -43,6 +43,16 @@ const exampleDescriptions = {
     'A longer RLVR rollout where the agent recovers from bad edits and uses repeated test feedback to fix trimming and signed-number parsing.',
 };
 
+const exampleNotes = {
+  'clean-solve':
+    'Verifier gap, not a clean win: the patch also flips tls from direct-first to ' +
+    'profile-first, the opposite of the stated precedence rule. No test sets ' +
+    'conflicting direct/profile tls values, so cargo_test still passes 3/3, and the ' +
+    'FINAL message ("tls, which was already correct") is true of the original code but ' +
+    'glosses over the regression its own edit just introduced. A strict cargo-pass + ' +
+    'clean-FINAL reward does not catch this — the test suite would need to.',
+};
+
 function ExternalLink({ href, children, className = '' }) {
   return (
     <a className={`external-link ${className}`} href={href} target="_blank" rel="noreferrer">
@@ -159,6 +169,7 @@ function MainPage() {
   const trace = traces[activeTrace];
   const crateSource = crateSources[trace.id];
   const exampleDescription = exampleDescriptions[trace.id];
+  const exampleNote = exampleNotes[trace.id];
   const fullTurns = [
     { role: 'system', content: systemPrompt },
     { role: 'user', content: trace.task },
@@ -255,6 +266,7 @@ function MainPage() {
                 {trace.model}
               </a>
               <p>{exampleDescription}</p>
+              {exampleNote && <p className="trace-note">{exampleNote}</p>}
             </div>
             <div className="trace-metadata" aria-label="Trace metadata">
               <span>RL reward {trace.reward}</span>
