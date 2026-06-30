@@ -9,8 +9,8 @@ const profileLinks = [
 ];
 
 const glyphLinks = [
-  { label: 'Code', href: 'https://github.com/JayZenith/glyph' },
-  { label: 'Writeup', href: 'https://jayzenith.github.io/glyph/' },
+  { label: 'Code', href: 'https://github.com/JayZenith/GLYPH' },
+  { label: 'Writeup', href: 'https://jayzenith.github.io/GLYPH/' },
   { label: 'SFT', href: 'https://huggingface.co/JayZenith/SFT_HALF_A_V8' },
   { label: 'RLVR', href: 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10' },
 ];
@@ -212,7 +212,7 @@ function MainPage() {
             next move — a more "principled" reward graded on actual compiler output — tested as a
             controlled A/B against it, and <strong>lost</strong>. Full diagnosis, training curves,
             and why in the{' '}
-            <ExternalLink href="https://jayzenith.github.io/glyph/">writeup →</ExternalLink>
+            <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
           </p>
           <div className="result-chart">
             <img
