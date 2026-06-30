@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import crateSources from './crateSources';
 import traces from './traces.json';
+import valid8Chart from './valid8_chart.svg';
 
 const profileLinks = [
   { label: 'GitHub', href: 'https://github.com/JayZenith' },
@@ -203,14 +204,22 @@ function MainPage() {
             GLYPH is an end-to-end experiment stack for a Rust tool-use coding agent. The model
             emits tool calls, the tools run against real Rust crates, and a valid trace must end with
             cargo passing and a clean FINAL. I used it to compare SFT and RLVR, diagnose why sparse
-            rewards struggled on hard recovery cases, and test denser reward signals. The examples
-            below show RLVR model rollouts on real crates.
+            rewards struggled on hard recovery cases, and run controlled A/Bs on the reward shape
+            itself. The examples below show RLVR model rollouts on real crates.
           </p>
           <p className="result-note">
-            <strong>+3.7 pass@8</strong> lift on 150 held-out crates, from 97.3 to 101.0 valid traces
-            across 3 seeds — small but reproducible (t-test p ≈ 0.06). A single run showed +7;
-            replication showed that was seed noise.
+            A dense reward fix gave <strong>+3.7 pass@8</strong> on a flat RLVR run. The obvious
+            next move — a more "principled" reward graded on actual compiler output — tested as a
+            controlled A/B against it, and <strong>lost</strong>. Full diagnosis, training curves,
+            and why in the{' '}
+            <ExternalLink href="https://jayzenith.github.io/glyph/">writeup →</ExternalLink>
           </p>
+          <div className="result-chart">
+            <img
+              src={valid8Chart}
+              alt="valid@8 per seed across SFT base, dense reward, and compiler-aware reward"
+            />
+          </div>
         </article>
       </section>
 

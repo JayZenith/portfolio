@@ -167,6 +167,21 @@ a:hover {
   font-weight: 650;
 }
 
+.result-chart {
+  max-width: 640px;
+  margin-top: 16px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+.result-chart img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .trace-heading {
   align-items: start;
 }

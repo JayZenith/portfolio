@@ -1,0 +1,41 @@
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<rect x="0" y="0" width="640" height="300" fill="#090c12" rx="6"/>
+<line x1="46" y1="256.0" x2="624" y2="256.0" stroke="#21422f" stroke-width="1"/>
+<text x="39" y="259.0" text-anchor="end" font-size="9.5" fill="#6aaa81">85</text>
+<line x1="46" y1="198.0" x2="624" y2="198.0" stroke="#21422f" stroke-width="1"/>
+<text x="39" y="201.0" text-anchor="end" font-size="9.5" fill="#6aaa81">90</text>
+<line x1="46" y1="140.0" x2="624" y2="140.0" stroke="#21422f" stroke-width="1"/>
+<text x="39" y="143.0" text-anchor="end" font-size="9.5" fill="#6aaa81">95</text>
+<line x1="46" y1="82.0" x2="624" y2="82.0" stroke="#21422f" stroke-width="1"/>
+<text x="39" y="85.0" text-anchor="end" font-size="9.5" fill="#6aaa81">100</text>
+<line x1="46" y1="24.0" x2="624" y2="24.0" stroke="#21422f" stroke-width="1"/>
+<text x="39" y="27.0" text-anchor="end" font-size="9.5" fill="#6aaa81">105</text>
+<rect x="46.0" y="140.0" width="52.0" height="116.0" fill="#45a3ff" opacity="0.92" rx="2"/>
+<text x="72.0" y="134.0" text-anchor="middle" font-size="10" fill="#f4fff8">95</text>
+<rect x="105.0" y="116.8" width="52.0" height="139.2" fill="#45a3ff" opacity="0.92" rx="2"/>
+<text x="131.0" y="110.8" text-anchor="middle" font-size="10" fill="#f4fff8">97</text>
+<rect x="164.0" y="82.0" width="52.0" height="174.0" fill="#45a3ff" opacity="0.92" rx="2"/>
+<text x="190.0" y="76.0" text-anchor="middle" font-size="10" fill="#f4fff8">100</text>
+<line x1="46.0" y1="112.9" x2="216.0" y2="112.9" stroke="#fff" stroke-width="1.3" stroke-dasharray="3,2"/>
+<text x="131.0" y="273.0" text-anchor="middle" font-size="10.5" fill="#f4fff8">SFT base</text>
+<text x="131.0" y="286.0" text-anchor="middle" font-size="9" fill="#6aaa81">mean 97.3</text>
+<rect x="250.0" y="58.8" width="52.0" height="197.2" fill="#24d366" opacity="0.92" rx="2"/>
+<text x="276.0" y="52.8" text-anchor="middle" font-size="10" fill="#f4fff8">102</text>
+<rect x="309.0" y="58.8" width="52.0" height="197.2" fill="#24d366" opacity="0.92" rx="2"/>
+<text x="335.0" y="52.8" text-anchor="middle" font-size="10" fill="#f4fff8">102</text>
+<rect x="368.0" y="93.6" width="52.0" height="162.4" fill="#24d366" opacity="0.92" rx="2"/>
+<text x="394.0" y="87.6" text-anchor="middle" font-size="10" fill="#f4fff8">99</text>
+<line x1="250.0" y1="70.4" x2="420.0" y2="70.4" stroke="#fff" stroke-width="1.3" stroke-dasharray="3,2"/>
+<text x="335.0" y="273.0" text-anchor="middle" font-size="10.5" fill="#f4fff8">Dense reward</text>
+<text x="335.0" y="286.0" text-anchor="middle" font-size="9" fill="#6aaa81">mean 101.0</text>
+<rect x="454.0" y="140.0" width="52.0" height="116.0" fill="#ffe94a" opacity="0.92" rx="2"/>
+<text x="480.0" y="134.0" text-anchor="middle" font-size="10" fill="#f4fff8">95</text>
+<rect x="513.0" y="128.4" width="52.0" height="127.6" fill="#ffe94a" opacity="0.92" rx="2"/>
+<text x="539.0" y="122.4" text-anchor="middle" font-size="10" fill="#f4fff8">96</text>
+<rect x="572.0" y="151.6" width="52.0" height="104.4" fill="#ffe94a" opacity="0.92" rx="2"/>
+<text x="598.0" y="145.6" text-anchor="middle" font-size="10" fill="#f4fff8">94</text>
+<line x1="454.0" y1="140.0" x2="624.0" y2="140.0" stroke="#fff" stroke-width="1.3" stroke-dasharray="3,2"/>
+<text x="539.0" y="273.0" text-anchor="middle" font-size="10.5" fill="#f4fff8">Compiler-aware</text>
+<text x="539.0" y="286.0" text-anchor="middle" font-size="9" fill="#6aaa81">mean 95.0</text>
+<text x="46" y="15" font-size="10.5" fill="#6aaa81">valid@8 / 150 held-out crates (pass@8, T=0.8, 3 seeds; dashed = mean)</text>
+</svg>
