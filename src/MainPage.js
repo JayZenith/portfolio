@@ -11,6 +11,7 @@ const profileLinks = [
 const glyphLinks = [
   { label: 'Code', href: 'https://github.com/JayZenith/GLYPH' },
   { label: 'Writeup', href: 'https://jayzenith.github.io/GLYPH/' },
+  { label: 'Environments Hub', href: 'https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph' },
   { label: 'SFT', href: 'https://huggingface.co/JayZenith/SFT_HALF_A_V8' },
   { label: 'RLVR', href: 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10' },
 ];
