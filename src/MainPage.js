@@ -209,7 +209,8 @@ function MainPage() {
             itself. The examples below show RLVR model rollouts on real crates.
           </p>
           <p className="result-note">
-            A dense reward fix gave <strong>+3.7 pass@8</strong> on a flat RLVR run. The obvious
+            A dense reward measured <strong>+3.7 valid@8</strong> over a flat sparse-RLVR
+            control (directionally consistent, p ≈ 0.14 — not significant). The obvious
             next move — a more "principled" reward graded on actual compiler output — tested as a
             controlled A/B against it, and <strong>lost</strong>. Full diagnosis, training curves,
             and why in the{' '}
@@ -218,7 +219,7 @@ function MainPage() {
           <div className="result-chart">
             <img
               src={valid8Chart}
-              alt="valid@8 per seed across SFT base, dense reward, and compiler-aware reward"
+              alt="valid@8 per run across SFT base, sparse, dense, and compiler-aware rewards"
             />
           </div>
         </article>
