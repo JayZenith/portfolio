@@ -6,6 +6,20 @@ import valid8Chart from './valid8_chart.svg';
 const profileLinks = [
   { label: 'GitHub', href: 'https://github.com/JayZenith' },
   { label: 'X', href: 'https://twitter.com/jayz3nith' },
+  { label: 'llama.cpp', href: 'https://github.com/ggml-org/llama.cpp/pulls?q=is%3Apr+author%3AJayZenith+is%3Amerged' },
+];
+
+const llamaCppPrs = [
+  {
+    label: 'PR #17851',
+    href: 'https://github.com/ggml-org/llama.cpp/pull/17851',
+    text: 'CUDA/backend support for GGML_OP_FILL, removing the CPU fallback in the Qwen3-Next path.',
+  },
+  {
+    label: 'PR #18365',
+    href: 'https://github.com/ggml-org/llama.cpp/pull/18365',
+    text: 'Removed a redundant per-token O(vocab) allocation from the sampling hot path — ~1.9–2.2× microbenchmark speedup.',
+  },
 ];
 
 const glyphLinks = [
@@ -222,6 +236,19 @@ function MainPage() {
               alt="valid@8 per run across SFT base, sparse, dense, and compiler-aware rewards"
             />
           </div>
+        </article>
+      </section>
+
+      <section className="project-section">
+        <div className="section-title">
+          <h2>llama.cpp (merged upstream)</h2>
+        </div>
+        <article className="project-copy">
+          {llamaCppPrs.map((pr) => (
+            <p key={pr.label}>
+              <ExternalLink href={pr.href}>{pr.label}</ExternalLink> — {pr.text}
+            </p>
+          ))}
         </article>
       </section>
 
