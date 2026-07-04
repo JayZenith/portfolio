@@ -47,14 +47,13 @@ const exampleDescriptions = {
 
 const exampleNotes = {
   'clean-solve':
-    "Specification gaming, not a clean win: the patch satisfies the verifier " +
-    "(cargo_test, 3/3) while violating the user's actual spec — it flips tls from " +
-    "direct-first to profile-first, the opposite of the stated 'direct values take " +
-    'precedence\' rule. No test sets conflicting direct/profile tls values, so the ' +
-    'verifier can\'t see the violation, and the FINAL message ("tls, which was already ' +
-    'correct") doesn\'t disclose it. One observed instance from reading this trace, not ' +
-    "a measured systemic exploit — but it's exactly the proxy-vs-true-objective gap " +
-    'verifiable reward is supposed to close.',
+    'Specification gaming, not a clean win: the patch passes the verifier (cargo_test ' +
+    "3/3) while flipping tls from direct-first to profile-first — the opposite of the " +
+    "stated 'direct values take precedence' rule. No test sets conflicting tls values, " +
+    "so the verifier can't see it, and the FINAL message doesn't disclose it. In this " +
+    'case\'s own training group, 3 of 8 rollouts made the same flip and two scored a ' +
+    'full 10.0 — the reward couldn\'t tell spec-correct from spec-violating, so RL ' +
+    'reinforced both equally.',
 };
 
 function ExternalLink({ href, children, className = '' }) {
