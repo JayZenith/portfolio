@@ -229,6 +229,12 @@ function MainPage() {
             and why in the{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
           </p>
+          <p className="result-note">
+            The deliverable is the audited post-training stack — data, SFT, RLVR, eval, and
+            trace-level verification, run end to end and checked against its own artifacts —
+            not a finished agent. Fixing the limitations (out-of-template tasks, hidden tests,
+            multi-seed) is a credible path I'm continuing, not a guarantee.
+          </p>
           <div className="result-chart">
             <img
               src={valid8Chart}
