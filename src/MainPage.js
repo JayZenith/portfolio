@@ -244,19 +244,6 @@ function MainPage() {
         </article>
       </section>
 
-      <section className="project-section">
-        <div className="section-title">
-          <h2>llama.cpp (merged upstream)</h2>
-        </div>
-        <article className="project-copy">
-          {llamaCppPrs.map((pr) => (
-            <p key={pr.label}>
-              <ExternalLink href={pr.href}>{pr.label}</ExternalLink> — {pr.text}
-            </p>
-          ))}
-        </article>
-      </section>
-
       <section className="trace-section">
         <div className="section-heading trace-heading">
           <div>
@@ -316,6 +303,19 @@ function MainPage() {
               ))}
             </div>
           </div>
+        </article>
+      </section>
+
+      <section className="project-section">
+        <div className="section-title">
+          <h2>llama.cpp (merged upstream)</h2>
+        </div>
+        <article className="project-copy">
+          {llamaCppPrs.map((pr) => (
+            <p key={pr.label}>
+              <ExternalLink href={pr.href}>{pr.label}</ExternalLink> — {pr.text}
+            </p>
+          ))}
         </article>
       </section>
     </main>
