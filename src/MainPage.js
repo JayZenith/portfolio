@@ -231,10 +231,12 @@ function MainPage() {
           </p>
           <p className="result-note">
             The deliverable is the audited post-training stack — data, SFT, RLVR, eval, and
-            trace-level verification, run end to end and checked against its own artifacts. At this
-            scale an in-distribution RLVR lift sits below the eval's noise floor; a resolvable lift
-            needs broad task coverage, not a bigger reward or more seeds. The honest null is the
-            product of that rigor.
+            trace-level verification, run end to end and checked against its own artifacts.
+            Pooling every run localizes the residual movement to exactly where GRPO theory
+            predicts: frontier prompts the model solves sometimes (+3 points there, zero on
+            never-solved and near-ceiling prompts) — a band too thin at this scale to reach
+            significance. A resolvable lift needs broad frontier coverage, not a bigger reward
+            or more seeds. The honest null is the product of that rigor.
           </p>
           <div className="result-chart">
             <img
