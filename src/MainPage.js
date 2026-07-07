@@ -222,18 +222,19 @@ function MainPage() {
             itself. The examples below show RLVR model rollouts on real crates.
           </p>
           <p className="result-note">
-            A dense reward measured <strong>+3.7 valid@8</strong> over a flat sparse-RLVR
-            control (directionally consistent, p ≈ 0.14 — not significant). The obvious
-            next move — a more "principled" reward graded on actual compiler output — tested as a
-            controlled A/B against it, and <strong>lost</strong>. Full diagnosis, training curves,
-            and why in the{' '}
+            No reward shape beat SFT significantly: the dense arm's <strong>+3.7 valid@8</strong>
+            over a flat sparse control is directional but within run-to-run noise (p ≈ 0.14), and
+            the only significant effect was negative — a more "principled" reward graded on actual
+            compiler output, tested as a controlled A/B, <strong>lost</strong>. Full diagnosis and
+            training curves in the{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
           </p>
           <p className="result-note">
             The deliverable is the audited post-training stack — data, SFT, RLVR, eval, and
-            trace-level verification, run end to end and checked against its own artifacts —
-            not a finished agent. Fixing the limitations (out-of-template tasks, hidden tests,
-            multi-seed) is a credible path I'm continuing, not a guarantee.
+            trace-level verification, run end to end and checked against its own artifacts. At this
+            scale an in-distribution RLVR lift sits below the eval's noise floor; a resolvable lift
+            needs broad task coverage, not a bigger reward or more seeds. The honest null is the
+            product of that rigor.
           </p>
           <div className="result-chart">
             <img
