@@ -223,20 +223,16 @@ function MainPage() {
           </p>
           <p className="result-note">
             No reward shape beat SFT significantly: the dense arm's <strong>+3.7 valid@8</strong>
-            over a flat sparse control is directional but within run-to-run noise (p ≈ 0.14), and
-            the only significant effect was negative — a more "principled" reward graded on actual
-            compiler output, tested as a controlled A/B, <strong>lost</strong>. Full diagnosis and
-            training curves in the{' '}
+            over a flat sparse control is within run-to-run noise (p ≈ 0.14), and a "smarter"
+            compiler-graded reward, tested as a controlled A/B, <strong>lost</strong>. Full
+            diagnosis in the{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
           </p>
           <p className="result-note">
-            The deliverable is the audited post-training stack — data, SFT, RLVR, eval, and
-            trace-level verification, run end to end and checked against its own artifacts.
-            Pooling every run localizes the residual movement to exactly where GRPO theory
-            predicts: frontier prompts the model solves sometimes (+3 points there, zero on
-            never-solved and near-ceiling prompts) — a band too thin at this scale to reach
-            significance. A resolvable lift needs broad frontier coverage, not a bigger reward
-            or more seeds. The honest null is the product of that rigor.
+            Pooling every eval run localizes the residual movement to exactly where GRPO theory
+            predicts: frontier prompts the model solves sometimes (+3 points there, zero
+            elsewhere) — a band too thin at this scale to reach significance. The deliverable is
+            the audited stack and that finding: an honest null, with the mechanism.
           </p>
           <div className="result-chart">
             <img
