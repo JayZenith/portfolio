@@ -38,22 +38,20 @@ const systemPrompt = 'You are a Rust coding agent. Use tools when needed. After 
 
 const exampleDescriptions = {
   'clean-solve':
-    'An RLVR-trained agent reads a small Rust config-merge crate, follows failed-test feedback, patches the merge precedence, and confirms the tests pass.',
+    'Reads a config-merge crate, follows failed-test feedback, patches the merge precedence, confirms tests pass.',
   recovery:
-    'An RLVR-trained agent fixes sorting first, then uses failed-test output to notice the missing shared-rank behavior and patch the ranking logic.',
+    'Fixes sorting first, then uses failed-test output to spot the missing shared-rank behavior and patch it.',
   'long-recovery':
-    'A longer RLVR rollout where the agent recovers from bad edits and uses repeated test feedback to fix trimming and signed-number parsing.',
+    'A long rollout: recovers from bad edits via repeated test feedback, fixes trimming and signed-number parsing.',
 };
 
 const exampleNotes = {
   'clean-solve':
-    'Specification gaming, not a clean win: the patch passes the verifier (cargo_test ' +
-    "3/3) while flipping tls from direct-first to profile-first — the opposite of the " +
-    "stated 'direct values take precedence' rule. No test sets conflicting tls values, " +
-    "so the verifier can't see it, and the FINAL message doesn't disclose it. In this " +
-    'case\'s own training group, 3 of 8 rollouts made the same flip and two scored a ' +
-    'full 10.0 — the reward couldn\'t tell spec-correct from spec-violating, so RL ' +
-    'reinforced both equally.',
+    'Specification gaming: the patch passes the verifier (cargo_test 3/3) while flipping ' +
+    'tls precedence — the opposite of the stated rule. No test covers conflicting tls ' +
+    "values, so the verifier can't see it, and the FINAL doesn't disclose it. In this " +
+    "crate's own training group, 3 of 8 rollouts made the same flip — the reward " +
+    'reinforced gaming and correctness equally.',
 };
 
 function ExternalLink({ href, children, className = '' }) {
@@ -194,10 +192,9 @@ function MainPage() {
         </div>
 
         <p>
-          I am interested in LLM agents that can use tools against real software, post-training
-          methods that improve them, and evals that measure whether they actually solve the task.
-          GLYPH below is where those interests meet: a verifiable RL environment for coding agents
-          working on Rust crates.
+          I post-train LLM agents against real software and build the evals that catch what
+          scores miss. GLYPH below is the proof: a verifiable RL environment for Rust coding
+          agents — data, SFT, RLVR, evals, built from scratch.
         </p>
       </header>
 
