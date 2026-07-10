@@ -221,17 +221,18 @@ function MainPage() {
             cases, and run controlled A/Bs on the reward shape itself. The examples below show RLVR model rollouts on real crates.
           </p>
           <p className="result-note">
-            No reward shape beat SFT significantly: the dense arm's <strong>+3.7 valid@8</strong>
-            over a flat sparse control is within run-to-run noise (p ≈ 0.14), and a "smarter"
-            compiler-graded reward, tested as a controlled A/B, <strong>lost</strong>. Full
-            diagnosis in the{' '}
+            No reward shape beat SFT significantly: on trace-retained runs the dense arm scored{' '}
+            <strong>+7 valid@8</strong> (p ≈ 0.12), the sparse control was flat, and a "smarter"
+            compiler-graded reward, tested as a controlled A/B, <strong>beat neither</strong>.
+            Full diagnosis in the{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
           </p>
           <p className="result-note">
-            Pooling every eval run localizes the residual movement to exactly where GRPO theory
-            predicts: frontier prompts the model solves sometimes (+3 points there, zero
-            elsewhere) — a band too thin at this scale to reach significance. The deliverable is
-            the audited stack and that finding: an honest null, with the mechanism.
+            Then I adversarially audited my own stack: rebased every claim on trace-auditable
+            runs, scanned 41k patch calls for reward tampering (one baseline test-flip found, no
+            counts affected), and demoted the frontier localization to an exploratory hypothesis
+            — its CIs include zero. The deliverable is the audited infrastructure and the honest
+            null.
           </p>
           <div className="result-chart">
             <img
