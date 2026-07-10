@@ -217,9 +217,11 @@ function MainPage() {
           <p>
             GLYPH is an end-to-end experiment stack for a Rust tool-use coding agent. The model
             emits tool calls, the tools run against real Rust crates, and a valid trace must end with
-            cargo passing and a clean FINAL. I used it to compare SFT and RLVR, diagnose why sparse
-            rewards struggled on hard recovery cases, and run controlled A/Bs on the reward shape
-            itself. The examples below show RLVR model rollouts on real crates.
+            cargo passing and a clean FINAL. One execution runtime serves all three stages — SFT
+            traces are materialized through the same real-cargo executor that later scores RL
+            rollouts and judges evals, so every compiler message the model ever saw was real. I used
+            it to compare SFT and RLVR, diagnose why sparse rewards struggled on hard recovery
+            cases, and run controlled A/Bs on the reward shape itself. The examples below show RLVR model rollouts on real crates.
           </p>
           <p className="result-note">
             No reward shape beat SFT significantly: the dense arm's <strong>+3.7 valid@8</strong>
