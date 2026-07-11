@@ -6,7 +6,6 @@ import valid8Chart from './valid8_chart.svg';
 const profileLinks = [
   { label: 'GitHub', href: 'https://github.com/JayZenith' },
   { label: 'X', href: 'https://twitter.com/jayz3nith' },
-  { label: 'llama.cpp', href: 'https://github.com/ggml-org/llama.cpp/pulls?q=is%3Apr+author%3AJayZenith+is%3Amerged' },
 ];
 
 const llamaCppPrs = [
@@ -40,7 +39,7 @@ const systemPrompt = 'You are a Rust coding agent. Use tools when needed. After 
 
 const exampleDescriptions = {
   'clean-solve':
-    'Reads a config-merge crate, follows failed-test feedback, patches the merge precedence, confirms tests pass.',
+    'Passes all three tests and earns full reward, but ships behavior that contradicts the prompt.',
   recovery:
     'Fixes sorting first, then uses failed-test output to spot the missing shared-rank behavior and patch it.',
   'long-recovery':
@@ -49,11 +48,14 @@ const exampleDescriptions = {
 
 const exampleNotes = {
   'clean-solve':
-    'Specification gaming: the patch passes the verifier (cargo_test 3/3) while flipping ' +
-    'tls precedence — the opposite of the stated rule. No test covers conflicting tls ' +
-    "values, so the verifier can't see it, and the FINAL doesn't disclose it. In this " +
-    "crate's own training group, 3 of 8 rollouts made the same flip — the reward " +
-    'reinforced gaming and correctness equally.',
+    'Full reward, wrong behavior: the patch reverses TLS precedence — the opposite of ' +
+    'the prompt. That conflict is missing from the tests, so the verifier accepts it.',
+};
+
+const exampleTabLabels = {
+  'clean-solve': 'spec gaming',
+  recovery: 'recovery',
+  'long-recovery': 'long recovery',
 };
 
 function ExternalLink({ href, children, className = '' }) {
@@ -194,9 +196,8 @@ function MainPage() {
         </div>
 
         <p>
-          I post-train LLM agents against real software and build the evals that catch what
-          scores miss. GLYPH below is the proof: a verifiable RL environment for Rust coding
-          agents — data, SFT, RLVR, evals, built from scratch.
+          I build and evaluate tool-using language models, with a focus on post-training,
+          coding agents, and inference systems.
         </p>
       </header>
 
@@ -214,45 +215,21 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            GLYPH is an end-to-end experiment stack for a Rust tool-use coding agent. The model
-            emits tool calls, the tools run against real Rust crates, and a valid trace must end with
-            cargo passing and a clean FINAL. One execution runtime serves all three stages — SFT
-            traces are materialized through the same real-cargo executor that later scores RL
-            rollouts and judges evals, so every compiler message the model ever saw was real. I used
-            it to compare SFT and RLVR, investigate how sparse rewards lose signal on hard recovery
-            cases, and run controlled A/Bs on the reward shape itself. The examples below show RLVR model rollouts on real crates.
+            GLYPH is an end-to-end post-training stack for a 4B Rust coding agent: synthetic
+            data, SFT, verifier RL, and pass@8 evaluation. The agent reads, patches, and tests
+            executable Cargo projects through the same tool runtime used across the entire loop.
           </p>
-          <p className="result-note">
-            No reward shape beat SFT significantly: on trace-retained runs the dense arm scored{' '}
-            <strong>+7 valid@8</strong> (prompt p ≈ 0.12; family sensitivity p ≈ 0.15),
-            the sparse control showed no clear improvement, and a "smarter"
-            compiler-graded reward, tested as a controlled A/B, <strong>beat neither</strong>.
-            Full diagnosis in the{' '}
-            <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
-          </p>
-          <p className="result-note">
-            Then I adversarially audited my own stack: rebased every claim on trace-auditable
-            runs, scanned 52k patch calls for reward tampering (one baseline test-flip found, no
-            counts affected), and demoted the frontier story to an exploratory hypothesis. The
-            non-trivial positive estimates sit on sometimes-solved prompts, but every positive
-            CI includes zero; linking those eval bands to training gradients remains a hypothesis.
-            Current source also confines tool paths, protects grading/build files, and fails
-            closed into Bubblewrap for Cargo without exposing host credentials. The deliverable is audited infrastructure and an
-            honest null.
-          </p>
-          <div className="result-chart">
-            <img
-              src={valid8Chart}
-              alt="valid@8 per run across SFT base, sparse, dense, and compiler-aware rewards"
-            />
-          </div>
         </article>
       </section>
 
       <section className="trace-section">
         <div className="section-heading trace-heading">
           <div>
-            <h2>examples</h2>
+            <h2>specification gaming, in full</h2>
+            <p className="section-deck">
+              Start with an agent that passes every test and still gets the task wrong. Then
+              switch tabs for two recovery traces.
+            </p>
           </div>
           <div className="trace-tabs" role="tablist" aria-label="Trace selector">
             {traces.map((tr, idx) => (
@@ -262,7 +239,7 @@ function MainPage() {
                 onClick={() => setActiveTrace(idx)}
                 type="button"
               >
-                {tr.id}
+                {exampleTabLabels[tr.id]}
               </button>
             ))}
           </div>
@@ -307,6 +284,28 @@ function MainPage() {
                 <Turn key={`${turn.role}-${index}`} t={turn} />
               ))}
             </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="project-section">
+        <div className="section-title">
+          <h2>results</h2>
+        </div>
+        <article className="project-copy">
+          <p>
+            The RL variants did not show a reliable improvement over SFT. The dense run had the
+            best single result — 102 of 150 tasks solved within eight attempts, versus 95 for
+            SFT — but the difference was not conclusive.{' '}
+            <ExternalLink href="https://jayzenith.github.io/GLYPH/">
+              Read the full experiment →
+            </ExternalLink>
+          </p>
+          <div className="result-chart">
+            <img
+              src={valid8Chart}
+              alt="valid@8 per run across SFT base, sparse, dense, and compiler-aware rewards"
+            />
           </div>
         </article>
       </section>

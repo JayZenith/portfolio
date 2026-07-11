@@ -181,6 +181,14 @@ a:hover {
   align-items: start;
 }
 
+.section-deck {
+  max-width: 650px;
+  margin: 8px 0 0;
+  color: var(--dim);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 .trace-tabs {
   display: flex;
   flex-wrap: wrap;
