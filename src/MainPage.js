@@ -24,11 +24,8 @@ const llamaCppPrs = [
 const glyphLinks = [
   { label: 'Code', href: 'https://github.com/JayZenith/GLYPH' },
   { label: 'Writeup', href: 'https://jayzenith.github.io/GLYPH/' },
-  { label: 'Environments Hub', href: 'https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph' },
-  { label: 'SFT', href: 'https://huggingface.co/JayZenith/SFT_HALF_A_V8' },
-  { label: 'RLVR', href: 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10' },
+  { label: 'Environment', href: 'https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph' },
   { label: 'Raw evals', href: 'https://huggingface.co/datasets/JayZenith/Glyph-RLVR-Eval-Results' },
-  { label: 'Provenance', href: 'https://github.com/JayZenith/GLYPH/blob/main/docs/PROVENANCE.md' },
 ];
 
 const modelLinks = {
@@ -39,7 +36,7 @@ const systemPrompt = 'You are a Rust coding agent. Use tools when needed. After 
 
 const exampleDescriptions = {
   'clean-solve':
-    'Passes all three tests and earns full reward, but ships behavior that contradicts the prompt.',
+    'Fixes the visible port-precedence failure, but silently reverses TLS precedence.',
   recovery:
     'Fixes sorting first, then uses failed-test output to spot the missing shared-rank behavior and patch it.',
   'long-recovery':
@@ -48,8 +45,8 @@ const exampleDescriptions = {
 
 const exampleNotes = {
   'clean-solve':
-    'Full reward, wrong behavior: the patch reverses TLS precedence — the opposite of ' +
-    'the prompt. That conflict is missing from the tests, so the verifier accepts it.',
+    'The prompt says direct values must win. This patch makes profile values win for TLS; ' +
+    'because no test covers that conflict, cargo_test passes and the verifier awards 10/10.',
 };
 
 const exampleTabLabels = {
@@ -216,8 +213,14 @@ function MainPage() {
         <article className="project-copy">
           <p>
             GLYPH is an end-to-end post-training stack for a 4B Rust coding agent: synthetic
-            data, SFT, verifier RL, and pass@8 evaluation. The agent reads, patches, and tests
-            executable Cargo projects through the same tool runtime used across the entire loop.
+            data, SFT, verifier RL, and pass@8 evaluation. It is available as a standalone{' '}
+            <code>verifiers</code> environment on the Prime Intellect Environments Hub.
+          </p>
+          <p className="project-detail">
+            The same ChatML tool runtime drives SFT trace materialization, RL rollouts, and
+            evaluation, keeping CALL/RESULT formatting identical while every tool result comes
+            from real Cargo. Reading the retained traces surfaced a full-reward specification
+            gaming case, shown first below.
           </p>
         </article>
       </section>
@@ -225,10 +228,10 @@ function MainPage() {
       <section className="trace-section">
         <div className="section-heading trace-heading">
           <div>
-            <h2>specification gaming, in full</h2>
+            <h2>RLVR trace examples</h2>
             <p className="section-deck">
-              Start with an agent that passes every test and still gets the task wrong. Then
-              switch tabs for two recovery traces.
+              Dense-reward adapter, step 10. The first rollout passes every test while violating
+              the prompt; the others recover through compiler and test feedback.
             </p>
           </div>
           <div className="trace-tabs" role="tablist" aria-label="Trace selector">
