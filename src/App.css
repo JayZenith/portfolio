@@ -268,10 +268,10 @@ a:hover {
 .trace-summary p.trace-note {
   margin-top: 8px;
   padding: 8px 10px;
-  color: var(--amber);
-  border: 1px solid rgba(255, 233, 74, 0.35);
+  color: #ff8a96;
+  border: 1px solid rgba(255, 74, 94, 0.55);
   border-radius: 5px;
-  background: rgba(255, 233, 74, 0.06);
+  background: rgba(255, 45, 68, 0.1);
   font-size: 13px;
 }
 

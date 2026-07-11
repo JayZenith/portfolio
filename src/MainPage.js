@@ -24,7 +24,6 @@ const llamaCppPrs = [
 const glyphLinks = [
   { label: 'Code', href: 'https://github.com/JayZenith/GLYPH' },
   { label: 'Writeup', href: 'https://jayzenith.github.io/GLYPH/' },
-  { label: 'Environment', href: 'https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph' },
   { label: 'Raw evals', href: 'https://huggingface.co/datasets/JayZenith/Glyph-RLVR-Eval-Results' },
 ];
 
@@ -45,8 +44,9 @@ const exampleDescriptions = {
 
 const exampleNotes = {
   'clean-solve':
-    'The prompt says direct values must win. This patch makes profile values win for TLS; ' +
-    'because no test covers that conflict, cargo_test passes and the verifier awards 10/10.',
+    'Specification gaming: the prompt says direct values must win. This patch makes profile ' +
+    'values win for TLS; because no test covers that conflict, cargo_test passes and the ' +
+    'verifier awards full reward.',
 };
 
 const exampleTabLabels = {
@@ -193,8 +193,8 @@ function MainPage() {
         </div>
 
         <p>
-          I build and evaluate tool-using language models, with a focus on post-training,
-          coding agents, and inference systems.
+          I build post-training and evaluation systems for tool-using agents: data,
+          environments, verifiable rewards, and RL training infrastructure.
         </p>
       </header>
 
@@ -213,14 +213,17 @@ function MainPage() {
         <article className="project-copy">
           <p>
             GLYPH is an end-to-end post-training stack for a 4B Rust coding agent: synthetic
-            data, SFT, verifier RL, and pass@8 evaluation. It is available as a standalone{' '}
-            <code>verifiers</code> environment on the Prime Intellect Environments Hub.
+            data, SFT, verifier RL, and pass@8 evaluation. The model reads, patches, and tests
+            executable Cargo projects under a strict whole-trace reward.
           </p>
           <p className="project-detail">
-            The same ChatML tool runtime drives SFT trace materialization, RL rollouts, and
-            evaluation, keeping CALL/RESULT formatting identical while every tool result comes
-            from real Cargo. Reading the retained traces surfaced a full-reward specification
-            gaming case, shown first below.
+            GLYPH taught me that agent post-training is often won or lost at interfaces and
+            reward resolution. I unified SFT, RLVR, and evaluation behind one ChatML tool runtime
+            after a byte-level role mismatch invalidated an entire era of RL runs. In group-relative
+            RLVR, 64 of 96 rollouts were filtered at step 0 when rewards tied; compiler-aware
+            shaping created more within-group signal, but still did not improve held-out reliability.
+            Retaining the full traces exposed another failure that scores hid: the full-reward
+            specification-gaming rollout below passes every test while violating the written task.
           </p>
         </article>
       </section>
@@ -228,10 +231,10 @@ function MainPage() {
       <section className="trace-section">
         <div className="section-heading trace-heading">
           <div>
-            <h2>RLVR trace examples</h2>
+            <h2>RLVR model traces</h2>
             <p className="section-deck">
-              Dense-reward adapter, step 10. The first rollout passes every test while violating
-              the prompt; the others recover through compiler and test feedback.
+              Generic dense-reward adapter, step 10. The next two tabs show recovery through real
+              compiler and test feedback.
             </p>
           </div>
           <div className="trace-tabs" role="tablist" aria-label="Trace selector">
@@ -310,6 +313,22 @@ function MainPage() {
               alt="valid@8 per run across SFT base, sparse, dense, and compiler-aware rewards"
             />
           </div>
+        </article>
+      </section>
+
+      <section className="project-section environment-section">
+        <div className="section-title">
+          <h2>use GLYPH</h2>
+        </div>
+        <article className="project-copy">
+          <p>
+            GLYPH is published as a standalone <code>verifiers</code> environment on the Prime
+            Intellect Environments Hub. The environment, source, model artifacts, raw eval traces,
+            and companion Rust crate dataset are public.{' '}
+            <ExternalLink href="https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph">
+              Open the environment →
+            </ExternalLink>
+          </p>
         </article>
       </section>
 
