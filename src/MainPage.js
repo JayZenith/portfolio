@@ -28,6 +28,8 @@ const glyphLinks = [
   { label: 'Environments Hub', href: 'https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph' },
   { label: 'SFT', href: 'https://huggingface.co/JayZenith/SFT_HALF_A_V8' },
   { label: 'RLVR', href: 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10' },
+  { label: 'Raw evals', href: 'https://huggingface.co/datasets/JayZenith/Glyph-RLVR-Eval-Results' },
+  { label: 'Provenance', href: 'https://github.com/JayZenith/GLYPH/blob/main/docs/PROVENANCE.md' },
 ];
 
 const modelLinks = {
@@ -217,22 +219,26 @@ function MainPage() {
             cargo passing and a clean FINAL. One execution runtime serves all three stages — SFT
             traces are materialized through the same real-cargo executor that later scores RL
             rollouts and judges evals, so every compiler message the model ever saw was real. I used
-            it to compare SFT and RLVR, diagnose why sparse rewards struggled on hard recovery
+            it to compare SFT and RLVR, investigate how sparse rewards lose signal on hard recovery
             cases, and run controlled A/Bs on the reward shape itself. The examples below show RLVR model rollouts on real crates.
           </p>
           <p className="result-note">
             No reward shape beat SFT significantly: on trace-retained runs the dense arm scored{' '}
-            <strong>+7 valid@8</strong> (p ≈ 0.12), the sparse control was flat, and a "smarter"
+            <strong>+7 valid@8</strong> (prompt p ≈ 0.12; family sensitivity p ≈ 0.15),
+            the sparse control showed no clear improvement, and a "smarter"
             compiler-graded reward, tested as a controlled A/B, <strong>beat neither</strong>.
             Full diagnosis in the{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">writeup →</ExternalLink>
           </p>
           <p className="result-note">
             Then I adversarially audited my own stack: rebased every claim on trace-auditable
-            runs, scanned 41k patch calls for reward tampering (one baseline test-flip found, no
-            counts affected), and demoted the frontier localization to an exploratory hypothesis
-            — its CIs include zero. The deliverable is the audited infrastructure and the honest
-            null.
+            runs, scanned 52k patch calls for reward tampering (one baseline test-flip found, no
+            counts affected), and demoted the frontier story to an exploratory hypothesis. The
+            non-trivial positive estimates sit on sometimes-solved prompts, but every positive
+            CI includes zero; linking those eval bands to training gradients remains a hypothesis.
+            Current source also confines tool paths, protects grading/build files, and fails
+            closed into Bubblewrap for Cargo without exposing host credentials. The deliverable is audited infrastructure and an
+            honest null.
           </p>
           <div className="result-chart">
             <img
