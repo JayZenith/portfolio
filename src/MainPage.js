@@ -25,6 +25,7 @@ const glyphLinks = [
   { label: 'Code', href: 'https://github.com/JayZenith/GLYPH' },
   { label: 'Writeup', href: 'https://jayzenith.github.io/GLYPH/' },
   { label: 'Raw evals', href: 'https://huggingface.co/datasets/JayZenith/Glyph-RLVR-Eval-Results' },
+  { label: 'TUI demo', href: 'https://github.com/JayZenith/GLYPH#interactive-tui-smoke-test' },
 ];
 
 const modelLinks = {
@@ -224,6 +225,14 @@ function MainPage() {
             shaping created more within-group signal, but still did not improve held-out reliability.
             Retaining the full traces exposed another failure that scores hid: the full-reward
             specification-gaming rollout below passes every test while violating the written task.
+          </p>
+          <p className="project-detail">
+            I also built a Textual TUI that serves the model remotely with vLLM while the local
+            machine runs the same Rust tools against disposable eval-crate copies. A smoke run used
+            the original held-out prompt for
+            <code> eval100_013_patch_test_pass_014_dispatch_policy_match_order</code> through an
+            SSH-forwarded Vast.ai endpoint; the README records the exact clone, venv, vLLM, tunnel,
+            and sandbox opt-out commands.
           </p>
         </article>
       </section>
