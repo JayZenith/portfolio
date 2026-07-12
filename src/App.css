@@ -4,7 +4,7 @@
   --panel-2: #121925;
   --text: #f4fff8;
   --muted: #f4fff8;
-  --dim: #6aaa81;
+  --dim: #9aa5a0;
   --line: #21422f;
   --blue: #45a3ff;
   --cyan: #24f0ff;
@@ -192,9 +192,7 @@ a:hover {
   padding: 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(36, 211, 102, 0.12), transparent 34%),
-    var(--panel);
+  background: var(--panel);
 }
 
 .demo-video {
@@ -204,6 +202,12 @@ a:hover {
   border: 1px solid rgba(36, 211, 102, 0.28);
   border-radius: 5px;
   background: #020704;
+}
+
+.demo-caption {
+  margin-top: 12px !important;
+  color: var(--dim) !important;
+  font-size: 14px !important;
 }
 
 .trace-heading {

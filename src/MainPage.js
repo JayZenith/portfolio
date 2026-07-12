@@ -218,10 +218,27 @@ function MainPage() {
             executable Cargo projects under a strict whole-trace reward.
           </p>
           <p className="project-detail">
-            The demo below is an out-of-distribution Rust task running through the live GLYPH TUI:
-            the model is served remotely with vLLM, the local machine exposes the same ChatML tool
-            loop used in evaluation, and the trace shows system, user, assistant, tool, patch, test,
-            and final turns as the model edits a Cargo crate it was not trained or evaluated on.
+            GLYPH taught me that agent post-training is often won or lost at interfaces and
+            reward resolution. I unified SFT, RLVR, and evaluation behind one ChatML tool runtime
+            after a byte-level role mismatch invalidated an entire era of RL runs. In group-relative
+            RLVR, 64 of 96 rollouts were filtered at step 0 when rewards tied; compiler-aware
+            shaping created more within-group signal, but still did not improve held-out reliability.
+            Retaining the full traces exposed another failure that scores hid: the full-reward
+            specification-gaming rollout below passes every test while violating the written task.
+          </p>
+        </article>
+      </section>
+
+      <section className="project-section demo-section">
+        <div className="section-title">
+          <h2>GLYPH TUI · out-of-distribution demo</h2>
+        </div>
+        <article className="project-copy">
+          <p>
+            This is the model working live, not a scripted playback. A remote vLLM server runs the
+            trained adapter while the local TUI renders the exact ChatML conversation and executes
+            each read, patch, and Cargo test against a disposable crate. The task shown here,
+            <code> score_summary</code>, appears in neither the training data nor the eval suite.
           </p>
           <div className="demo-video-frame">
             <video
@@ -237,14 +254,15 @@ function MainPage() {
               Your browser does not support embedded video.
             </video>
           </div>
-          <p className="project-detail">
-            GLYPH taught me that agent post-training is often won or lost at interfaces and
-            reward resolution. I unified SFT, RLVR, and evaluation behind one ChatML tool runtime
-            after a byte-level role mismatch invalidated an entire era of RL runs. In group-relative
-            RLVR, 64 of 96 rollouts were filtered at step 0 when rewards tied; compiler-aware
-            shaping created more within-group signal, but still did not improve held-out reliability.
-            Retaining the full traces exposed another failure that scores hid: the full-reward
-            specification-gaming rollout below passes every test while violating the written task.
+          <p className="demo-caption">
+            The model reads the unfamiliar crate, patches it, uses compiler feedback to repair its
+            first change, passes all four tests, and emits a clean <code>FINAL</code>. More involved
+            OOD trials exhausted their tool budgets on incorrect or non-compiling patches, so this
+            demonstrates transfer of the agent loop and limited easy-task generalization—not broad
+            medium-difficulty Rust competence.{' '}
+            <ExternalLink href="https://github.com/JayZenith/GLYPH/tree/main/demo_tui">
+              Run the demo →
+            </ExternalLink>
           </p>
         </article>
       </section>
@@ -349,14 +367,6 @@ function MainPage() {
             <ExternalLink href="https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph">
               Open the environment →
             </ExternalLink>
-          </p>
-          <p className="project-detail">
-            I also built a Textual TUI that serves the model remotely with vLLM while the local
-            machine runs the same Rust tools against disposable eval-crate copies. A smoke run used
-            the original held-out prompt for
-            <code> eval100_013_patch_test_pass_014_dispatch_policy_match_order</code> through an
-            SSH-forwarded Vast.ai endpoint; the README records the exact clone, venv, vLLM, tunnel,
-            and sandbox opt-out commands.
           </p>
         </article>
       </section>
