@@ -226,14 +226,6 @@ function MainPage() {
             Retaining the full traces exposed another failure that scores hid: the full-reward
             specification-gaming rollout below passes every test while violating the written task.
           </p>
-          <p className="project-detail">
-            I also built a Textual TUI that serves the model remotely with vLLM while the local
-            machine runs the same Rust tools against disposable eval-crate copies. A smoke run used
-            the original held-out prompt for
-            <code> eval100_013_patch_test_pass_014_dispatch_policy_match_order</code> through an
-            SSH-forwarded Vast.ai endpoint; the README records the exact clone, venv, vLLM, tunnel,
-            and sandbox opt-out commands.
-          </p>
         </article>
       </section>
 
@@ -327,7 +319,7 @@ function MainPage() {
 
       <section className="project-section environment-section">
         <div className="section-title">
-          <h2>use GLYPH</h2>
+          <h2>use GLYPH on Prime Intellect Environments Hub</h2>
         </div>
         <article className="project-copy">
           <p>
@@ -337,6 +329,14 @@ function MainPage() {
             <ExternalLink href="https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph">
               Open the environment →
             </ExternalLink>
+          </p>
+          <p className="project-detail">
+            I also built a Textual TUI that serves the model remotely with vLLM while the local
+            machine runs the same Rust tools against disposable eval-crate copies. A smoke run used
+            the original held-out prompt for
+            <code> eval100_013_patch_test_pass_014_dispatch_policy_match_order</code> through an
+            SSH-forwarded Vast.ai endpoint; the README records the exact clone, venv, vLLM, tunnel,
+            and sandbox opt-out commands.
           </p>
         </article>
       </section>
