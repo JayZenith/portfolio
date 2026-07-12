@@ -218,6 +218,25 @@ function MainPage() {
             executable Cargo projects under a strict whole-trace reward.
           </p>
           <p className="project-detail">
+            The demo below is an out-of-distribution Rust task running through the live GLYPH TUI:
+            the model is served remotely with vLLM, the local machine exposes the same ChatML tool
+            loop used in evaluation, and the trace shows system, user, assistant, tool, patch, test,
+            and final turns as the model edits a Cargo crate it was not trained or evaluated on.
+          </p>
+          <div className="demo-video-frame">
+            <video
+              className="demo-video"
+              controls
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="GLYPH TUI OOD Rust demo screencast"
+            >
+              <source src="/OOD.webm" type="video/webm" />
+              Your browser does not support embedded WebM video.
+            </video>
+          </div>
+          <p className="project-detail">
             GLYPH taught me that agent post-training is often won or lost at interfaces and
             reward resolution. I unified SFT, RLVR, and evaluation behind one ChatML tool runtime
             after a byte-level role mismatch invalidated an entire era of RL runs. In group-relative
@@ -338,19 +357,6 @@ function MainPage() {
             SSH-forwarded Vast.ai endpoint; the README records the exact clone, venv, vLLM, tunnel,
             and sandbox opt-out commands.
           </p>
-          <div className="demo-video-frame">
-            <video
-              className="demo-video"
-              controls
-              muted
-              playsInline
-              preload="metadata"
-              aria-label="GLYPH TUI OOD Rust demo screencast"
-            >
-              <source src="/OOD.webm" type="video/webm" />
-              Your browser does not support embedded WebM video.
-            </video>
-          </div>
         </article>
       </section>
 
