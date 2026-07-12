@@ -232,8 +232,9 @@ function MainPage() {
               preload="metadata"
               aria-label="GLYPH TUI OOD Rust demo screencast"
             >
+              <source src="/OOD.mp4" type="video/mp4" />
               <source src="/OOD.webm" type="video/webm" />
-              Your browser does not support embedded WebM video.
+              Your browser does not support embedded video.
             </video>
           </div>
           <p className="project-detail">
