@@ -186,6 +186,26 @@ a:hover {
   height: auto;
 }
 
+.demo-video-frame {
+  max-width: 720px;
+  margin-top: 16px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(36, 211, 102, 0.12), transparent 34%),
+    var(--panel);
+}
+
+.demo-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(36, 211, 102, 0.28);
+  border-radius: 5px;
+  background: #020704;
+}
+
 .trace-heading {
   align-items: start;
 }

@@ -338,6 +338,19 @@ function MainPage() {
             SSH-forwarded Vast.ai endpoint; the README records the exact clone, venv, vLLM, tunnel,
             and sandbox opt-out commands.
           </p>
+          <div className="demo-video-frame">
+            <video
+              className="demo-video"
+              controls
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="GLYPH TUI OOD Rust demo screencast"
+            >
+              <source src="/OOD.webm" type="video/webm" />
+              Your browser does not support embedded WebM video.
+            </video>
+          </div>
         </article>
       </section>
 
