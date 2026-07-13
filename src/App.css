@@ -161,9 +161,39 @@ a:hover {
   color: var(--dim);
 }
 
-.project-copy .lesson-point {
-  margin-top: 12px;
+.lesson-list {
+  max-width: 820px;
+  border-top: 1px solid var(--line);
+}
+
+.lesson-item {
+  position: relative;
+  padding: 15px 0 16px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lesson-item::before {
+  position: absolute;
+  top: 19px;
+  bottom: 20px;
+  left: 0;
+  width: 2px;
+  background: var(--green-dim);
+  content: "";
+}
+
+.lesson-item h3 {
+  margin: 0 0 5px;
   color: var(--text);
+  font-size: 16px;
+  font-weight: 680;
+  line-height: 1.35;
+}
+
+.lesson-item p {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
 }
 
 .project-copy .result-note {

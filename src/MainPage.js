@@ -255,20 +255,32 @@ function MainPage() {
         <div className="section-title">
           <h2>What GLYPH taught me</h2>
         </div>
-        <article className="project-copy">
-          <p>
-            Agent post-training depends on interface consistency. A byte-level role mismatch made
-            RL rollouts differ from the ChatML used in SFT and invalidated an entire era of runs, so
-            I unified SFT, RLVR, evaluation, and the TUI behind one tool runtime.
-          </p>
-          <p className="lesson-point">
-            Reward resolution matters too. In group-relative RLVR, 64 of 96 rollouts were filtered
-            at step 0 when tied rewards produced no learning signal. Compiler-aware shaping created
-            more distinctions between partial failures, but it still did not reliably improve
-            held-out performance. Full traces revealed what aggregate scores missed: one rollout
-            earned full reward by passing every test while violating the written specification.
-          </p>
-        </article>
+        <div className="lesson-list">
+          <article className="lesson-item">
+            <h3>Keep every stage byte-identical</h3>
+            <p>
+              A role-format mismatch made RL rollouts differ from the ChatML used in SFT and
+              invalidated an entire era of runs. I learned to treat the interface as part of the
+              model: SFT, RLVR, evaluation, and the TUI now share one tool runtime.
+            </p>
+          </article>
+          <article className="lesson-item">
+            <h3>Reward meaningful progress</h3>
+            <p>
+              In group-relative RLVR, tied rewards create no learning signal; 64 of 96 rollouts
+              were filtered at step 0. Compiler-aware shaping distinguished more partial failures,
+              but the extra reward resolution still did not reliably improve held-out performance.
+            </p>
+          </article>
+          <article className="lesson-item">
+            <h3>Audit behavior, not just scores</h3>
+            <p>
+              Aggregate success hid a specification-gaming rollout that passed every test while
+              violating the written task. Retaining full traces made that failure visible and
+              showed why verifier success cannot automatically be treated as intent alignment.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section className="trace-section">
