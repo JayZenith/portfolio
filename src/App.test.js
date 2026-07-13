@@ -16,7 +16,12 @@ test('renders portfolio intro and sections', () => {
     'https://jayzenith.github.io/GLYPH/#full-verifier-gap-trace'
   );
   expect(screen.getByText(/Each model has one role in the comparison/i)).toBeInTheDocument();
-  expect(screen.getByText(/Working explanation:/i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'What the evidence says' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Next: isolate the bottleneck' })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Methodology →' })).toHaveAttribute(
+    'href',
+    'https://jayzenith.github.io/GLYPH/#methodology'
+  );
   expect(
     screen.getByRole('heading', { name: 'use GLYPH on Prime Intellect Environments Hub' })
   ).toBeInTheDocument();

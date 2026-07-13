@@ -181,15 +181,14 @@ Tests: 3/3 pass.{"\n"}
               <thead>
                 <tr>
                   <th>Model</th>
-                  <th>Trace-retained</th>
-                  <th>Counts only</th>
+                  <th>valid@8 (retained)</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>SFT control</td><td>95</td><td>97 / 100</td></tr>
-                <tr><td>Sparse RLVR</td><td>98 / 96 / 98</td><td>—</td></tr>
-                <tr><td>Dense RLVR</td><td>102</td><td>102 / 99</td></tr>
-                <tr><td>Compiler-aware</td><td>95 / 96 / 94</td><td>—</td></tr>
+                <tr><td>SFT</td><td>95</td></tr>
+                <tr><td>Sparse RLVR</td><td>98 / 96 / 98</td></tr>
+                <tr><td>Dense RLVR</td><td>102</td></tr>
+                <tr><td>Compiler-aware</td><td>95 / 96 / 94</td></tr>
               </tbody>
             </table>
           </div>
@@ -200,26 +199,31 @@ Tests: 3/3 pass.{"\n"}
             />
           </div>
           <p className="result-note">
-            <strong>Result:</strong> no RL variant showed a reliable improvement over SFT. Dense
-            produced the best retained evaluation—102 versus 95 for SFT—but the paired-prompt
-            comparison was p≈0.12, or p≈0.15 when related task families were grouped. Count-only
-            repetitions remain visible for context but are excluded from claims because their
-            rollouts were not saved.{' '}
-            <ExternalLink href="https://jayzenith.github.io/GLYPH/">
-              Read the full experiment →
+            <strong>No retained-run comparison reached p&lt;0.05.</strong>{' '}
+            <ExternalLink href="https://jayzenith.github.io/GLYPH/#methodology">
+              Methodology →
             </ExternalLink>
           </p>
-          <p className="result-note">
-            <strong>Working explanation:</strong> both the curriculum and the reward limited the
-            learning frontier. The synthetic data taught the tool protocol and recurring task
-            patterns well, leaving little headroom on easy cases, but likely did not provide enough
-            diverse, intermediate-difficulty Rust work to build the capability needed for the hard
-            tail. Sparse rewards then collapsed different hard-case failures into ties. Denser
-            rewards exposed partial progress, but could not substitute for capability the SFT
-            curriculum had not established. This remains a hypothesis: each reward arm came from
-            one training run, so curriculum, training variance, and reward shape were not isolated
-            causally.
-          </p>
+          <div className="experiment-summary">
+            <h3>What the evidence says</h3>
+            <p><strong>SFT saturated the protocol.</strong> Sparse RLVR reached 150/150 correct syntax versus 149/150 for SFT. The bottleneck was task execution, not formatting.</p>
+            <p><strong>Sparse reward could not separate the hard tail.</strong> At step 0, 64 of 96 rollouts belonged to tied groups and were filtered, even when some compiled or passed partial tests.</p>
+            <p><strong>I still cannot isolate the cause.</strong> Without a matched base-model evaluation, I cannot separate model capacity, narrow synthetic-data coverage, or post-training regression.</p>
+
+            <h3>Next: isolate the bottleneck</h3>
+            <p>Run base → SFT → RL on independently authored Rust tasks.</p>
+            <div className="results-table-wrap">
+              <table className="results-table interpretation-table">
+                <thead><tr><th>Result</th><th>Evidence for</th></tr></thead>
+                <tbody>
+                  <tr><td>Base fails; SFT improves</td><td>Post-training added capability</td></tr>
+                  <tr><td>Base passes; SFT fails</td><td>Post-training caused regression</td></tr>
+                  <tr><td>All fail</td><td>Test targeted data or a stronger base</td></tr>
+                  <tr><td>SFT improves only same-family tasks</td><td>Specialization, not broad transfer</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </article>
       </section>
 

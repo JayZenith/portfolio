@@ -245,6 +245,36 @@ a:hover {
   font-weight: 650;
 }
 
+.experiment-summary {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.experiment-summary h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.experiment-summary h3:not(:first-child) {
+  margin-top: 28px;
+}
+
+.experiment-summary p + p {
+  margin-top: 12px;
+}
+
+.interpretation-table td {
+  vertical-align: top;
+}
+
+.interpretation-table td:not(:first-child) {
+  font-family: inherit;
+  text-align: left;
+  white-space: normal;
+}
+
 .result-chart {
   max-width: 640px;
   margin-top: 16px;
