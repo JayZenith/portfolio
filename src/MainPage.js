@@ -253,7 +253,7 @@ function MainPage() {
 
       <section className="project-section lessons-section">
         <div className="section-title">
-          <h2>What GLYPH taught me</h2>
+          <h2>Key lessons from building GLYPH</h2>
         </div>
         <div className="lesson-list">
           <article className="lesson-item">

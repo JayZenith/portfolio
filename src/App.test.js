@@ -5,7 +5,9 @@ test('renders portfolio intro and sections', () => {
   render(<App />);
   expect(screen.getByText(/I build post-training and evaluation systems/i)).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'GLYPH' })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'What GLYPH taught me' })).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', { name: 'Key lessons from building GLYPH' })
+  ).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Explore RLVR model traces' })).toBeInTheDocument();
   const traceSelector = screen.getByRole('combobox', { name: 'Choose a trace' });
   expect(traceSelector).toHaveValue('0');
