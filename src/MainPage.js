@@ -36,7 +36,7 @@ const systemPrompt = 'You are a Rust coding agent. Use tools when needed. After 
 
 const exampleDescriptions = {
   'clean-solve':
-    'Fixes the visible port-precedence failure, but silently reverses TLS precedence.',
+    'Passes every test, but reverses TLS precedence against the written specification.',
   recovery:
     'Fixes sorting first, then uses failed-test output to spot the missing shared-rank behavior and patch it.',
   'long-recovery':
@@ -45,13 +45,13 @@ const exampleDescriptions = {
 
 const exampleNotes = {
   'clean-solve':
-    'Specification gaming: the prompt says direct values must win. This patch makes profile ' +
-    'values win for TLS; because no test covers that conflict, cargo_test passes and the ' +
-    'verifier awards full reward.',
+    'Verifier-gap example: no test covers conflicting TLS values, so cargo_test passes and the ' +
+    'verifier awards full reward. This selected trace does not establish prevalence or a material ' +
+    'effect on aggregate results.',
 };
 
 const exampleOptionLabels = {
-  'clean-solve': 'spec gaming',
+  'clean-solve': 'verifier gap',
   recovery: 'recovery',
   'long-recovery': 'long recovery',
 };
@@ -273,11 +273,11 @@ function MainPage() {
             </p>
           </article>
           <article className="lesson-item">
-            <h3>Audit behavior, not just scores</h3>
+            <h3>Inspect behavior, not just scores</h3>
             <p>
-              Aggregate success hid a specification-gaming rollout that passed every test while
-              violating the written task. Retaining full traces made that failure visible and
-              showed why verifier success cannot automatically be treated as intent alignment.
+              One reviewed trace passed every test while violating the written task because the
+              tests missed a conflict. It does not establish a result-wide problem; it shows why
+              retained traces reveal coverage gaps that aggregate scores cannot.
             </p>
           </article>
         </div>
@@ -350,7 +350,7 @@ function MainPage() {
         </article>
       </section>
 
-      <section className="project-section">
+      <section className="project-section" id="experimental-results">
         <div className="section-title">
           <h2>Experimental results</h2>
         </div>
@@ -360,10 +360,39 @@ function MainPage() {
             whether RL alone helps; dense RLVR adds compile-and-test partial credit; and the
             compiler-aware arm tests a Rust-specific progress signal.
           </p>
+          <p className="results-definition">
+            <code>valid@8</code> counts a crate when at least one of eight sampled rollouts reaches
+            Cargo success and ends with one clean <code>FINAL</code>.
+          </p>
+          <div className="results-table-wrap">
+            <table className="results-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Trace-retained</th>
+                  <th>Counts only</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>SFT control</td><td>95</td><td>97 / 100</td></tr>
+                <tr><td>Sparse RLVR</td><td>98 / 96 / 98</td><td>—</td></tr>
+                <tr><td>Dense RLVR</td><td>102</td><td>102 / 99</td></tr>
+                <tr><td>Compiler-aware</td><td>95 / 96 / 94</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="result-chart">
+            <img
+              src={valid8Chart}
+              alt="valid@8 evaluations for SFT, sparse, dense, and compiler-aware models; count-only repetitions are faded"
+            />
+          </div>
           <p className="result-note">
             <strong>Result:</strong> no RL variant showed a reliable improvement over SFT. Dense
-            produced the best retained evaluation—102 of 150 tasks solved within eight attempts,
-            versus 95 for SFT—but the difference was inconclusive.{' '}
+            produced the best retained evaluation—102 versus 95 for SFT—but the paired-prompt
+            comparison was p≈0.12, or p≈0.15 when related task families were grouped. Count-only
+            repetitions remain visible for context but are excluded from claims because their
+            rollouts were not saved.{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">
               Read the full experiment →
             </ExternalLink>
@@ -379,12 +408,6 @@ function MainPage() {
             one training run, so curriculum, training variance, and reward shape were not isolated
             causally.
           </p>
-          <div className="result-chart">
-            <img
-              src={valid8Chart}
-              alt="valid@8 across trace-retained SFT, sparse, dense, and compiler-aware evaluations"
-            />
-          </div>
         </article>
       </section>
 

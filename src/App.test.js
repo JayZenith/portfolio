@@ -11,7 +11,7 @@ test('renders portfolio intro and sections', () => {
   expect(screen.getByRole('heading', { name: 'Explore RLVR model traces' })).toBeInTheDocument();
   const traceSelector = screen.getByRole('combobox', { name: 'Choose a trace' });
   expect(traceSelector).toHaveValue('0');
-  expect(screen.getByText(/Specification gaming: the prompt says direct values must win/i)).toBeInTheDocument();
+  expect(screen.getByText(/Verifier-gap example:/i)).toBeInTheDocument();
   fireEvent.change(traceSelector, { target: { value: '1' } });
   expect(traceSelector).toHaveValue('1');
   expect(screen.getByText(/missing shared-rank behavior/i)).toBeInTheDocument();
