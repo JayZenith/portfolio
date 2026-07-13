@@ -290,6 +290,40 @@ a:hover {
   line-height: 1.55;
 }
 
+.verifier-gap-panel {
+  max-width: 820px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+.verifier-gap-diff {
+  margin: 0 0 12px;
+  overflow-x: auto;
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.gap-before {
+  color: var(--green);
+}
+
+.gap-after {
+  color: #ff8a96;
+}
+
+.gap-result {
+  color: var(--amber);
+}
+
+.full-trace-link {
+  font-weight: 650;
+}
+
 .trace-selector {
   display: grid;
   flex: 0 0 190px;

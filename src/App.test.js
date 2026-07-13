@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders portfolio intro and sections', () => {
@@ -8,13 +8,13 @@ test('renders portfolio intro and sections', () => {
   expect(
     screen.getByRole('heading', { name: 'Key lessons from building GLYPH' })
   ).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'Explore RLVR model traces' })).toBeInTheDocument();
-  const traceSelector = screen.getByRole('combobox', { name: 'Choose a trace' });
-  expect(traceSelector).toHaveValue('0');
-  expect(screen.getByText(/Verifier-gap example:/i)).toBeInTheDocument();
-  fireEvent.change(traceSelector, { target: { value: '1' } });
-  expect(traceSelector).toHaveValue('1');
-  expect(screen.getByText(/missing shared-rank behavior/i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'One verifier gap' })).toBeInTheDocument();
+  expect(screen.getByText(/Before \(spec-correct\)/i)).toBeInTheDocument();
+  expect(screen.getByText(/Spec: violated. Verifier: blind./i)).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Full trace →' })).toHaveAttribute(
+    'href',
+    'https://jayzenith.github.io/GLYPH/#full-verifier-gap-trace'
+  );
   expect(screen.getByText(/Each model has one role in the comparison/i)).toBeInTheDocument();
   expect(screen.getByText(/Working explanation:/i)).toBeInTheDocument();
   expect(

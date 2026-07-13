@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import crateSources from './crateSources';
-import traces from './traces.json';
+import React from 'react';
 import valid8Chart from './valid8_chart.svg';
 
 const profileLinks = [
@@ -28,34 +26,6 @@ const glyphLinks = [
   { label: 'TUI demo', href: 'https://github.com/JayZenith/GLYPH#interactive-tui-smoke-test' },
 ];
 
-const modelLinks = {
-  'JayZenith/RLVR_VFINAL_STEP10': 'https://huggingface.co/JayZenith/RLVR_VFINAL_STEP10',
-};
-
-const systemPrompt = 'You are a Rust coding agent. Use tools when needed. After FINAL, stop immediately.';
-
-const exampleDescriptions = {
-  'clean-solve':
-    'Passes every test, but reverses TLS precedence against the written specification.',
-  recovery:
-    'Fixes sorting first, then uses failed-test output to spot the missing shared-rank behavior and patch it.',
-  'long-recovery':
-    'A long rollout: recovers from bad edits via repeated test feedback, fixes trimming and signed-number parsing.',
-};
-
-const exampleNotes = {
-  'clean-solve':
-    'Verifier-gap example: no test covers conflicting TLS values, so cargo_test passes and the ' +
-    'verifier awards full reward. This selected trace does not establish prevalence or a material ' +
-    'effect on aggregate results.',
-};
-
-const exampleOptionLabels = {
-  'clean-solve': 'verifier gap',
-  recovery: 'recovery',
-  'long-recovery': 'long recovery',
-};
-
 function ExternalLink({ href, children, className = '' }) {
   return (
     <a className={`external-link ${className}`} href={href} target="_blank" rel="noreferrer">
@@ -64,121 +34,7 @@ function ExternalLink({ href, children, className = '' }) {
   );
 }
 
-const rustTokenPattern =
-  /("(?:\\.|[^"\\])*")|\b(pub|struct|fn|let|mut|mod|use|super|impl|for|in|if|else|match|return|true|false|None|Some|Option|Vec|String|usize|u32|u16|i32|bool|str)\b|(\b\d+\b)|(#\[[^\]]+\])/g;
-
-function RustCode({ code }) {
-  const lines = code.split('\n');
-
-  return (
-    <pre className="rust-code" aria-label="src/lib.rs">
-      {lines.map((line, lineIndex) => {
-        const parts = [];
-        let lastIndex = 0;
-
-        line.replace(rustTokenPattern, (match, string, keyword, number, attr, offset) => {
-          if (offset > lastIndex) {
-            parts.push(line.slice(lastIndex, offset));
-          }
-
-          let cls = 'rust-token';
-          if (string) cls += ' rust-string';
-          else if (keyword) cls += ' rust-keyword';
-          else if (number) cls += ' rust-number';
-          else if (attr) cls += ' rust-attr';
-
-          parts.push(
-            <span className={cls} key={`${lineIndex}-${offset}`}>
-              {match}
-            </span>
-          );
-          lastIndex = offset + match.length;
-          return match;
-        });
-
-        if (lastIndex < line.length) {
-          parts.push(line.slice(lastIndex));
-        }
-
-        return (
-          <span className="rust-line" key={lineIndex}>
-            <span className="rust-line-number">{lineIndex + 1}</span>
-            <span className="rust-line-code">{parts}</span>
-          </span>
-        );
-      })}
-    </pre>
-  );
-}
-
-const traceTokenPattern =
-  /\b(CALL|RESULT|FINAL|status:|success|failed|read_file|apply_patch|cargo_test|stdout:|stderr:)\b/g;
-
-function TraceText({ content }) {
-  const parts = [];
-  let lastIndex = 0;
-
-  content.replace(traceTokenPattern, (match, _token, offset) => {
-    if (offset > lastIndex) {
-      parts.push(content.slice(lastIndex, offset));
-    }
-
-    let cls = 'trace-token';
-    if (match === 'CALL') cls += ' trace-call-token';
-    else if (match === 'RESULT') cls += ' trace-result-token';
-    else if (match === 'FINAL') cls += ' trace-final-token';
-    else if (match === 'success') cls += ' trace-success-token';
-    else if (match === 'failed') cls += ' trace-failed-token';
-    else if (match.endsWith(':')) cls += ' trace-label-token';
-    else cls += ' trace-tool-token';
-
-    parts.push(
-      <span className={cls} key={offset}>
-        {match}
-      </span>
-    );
-    lastIndex = offset + match.length;
-    return match;
-  });
-
-  if (lastIndex < content.length) {
-    parts.push(content.slice(lastIndex));
-  }
-
-  return parts;
-}
-
-function Turn({ t }) {
-  const content = t.content.trim();
-  const isFinal = content.startsWith('FINAL:');
-  const isCall = content.startsWith('CALL');
-  let cls = 'turn-body';
-  if (isFinal) cls += ' turn-final';
-  else if (isCall) cls += ' turn-call';
-  else if (t.role === 'tool') cls += ' turn-result';
-
-  return (
-    <div className={`turn turn-${t.role}`}>
-      <div className="turn-role">{t.role}</div>
-      <pre className={cls}>
-        <TraceText content={content} />
-      </pre>
-    </div>
-  );
-}
-
 function MainPage() {
-  const [activeTrace, setActiveTrace] = useState(0);
-  const trace = traces[activeTrace];
-  const crateSource = crateSources[trace.id];
-  const exampleDescription = exampleDescriptions[trace.id];
-  const exampleNote = exampleNotes[trace.id];
-  const fullTurns = [
-    { role: 'system', content: systemPrompt },
-    { role: 'user', content: trace.task },
-    ...trace.turns,
-  ];
-
   return (
     <main className="site-shell">
       <header className="intro" id="top">
@@ -284,69 +140,25 @@ function MainPage() {
       </section>
 
       <section className="trace-section">
-        <div className="section-heading trace-heading">
+        <div className="section-heading">
           <div>
-            <h2>Explore RLVR model traces</h2>
+            <h2>One verifier gap</h2>
             <p className="section-deck">
-              Step-10 dense-reward adapter. Compare specification gaming with short and long
-              recovery through real compiler and test feedback.
+              A retained RLVR trace passed every test after reversing the written TLS precedence.
             </p>
           </div>
-          <label className="trace-selector">
-            <span>Choose a trace</span>
-            <select
-              value={activeTrace}
-              onChange={(event) => setActiveTrace(Number(event.target.value))}
-            >
-              {traces.map((tr, idx) => (
-                <option key={tr.id} value={idx}>
-                  {exampleOptionLabels[tr.id]}
-                </option>
-              ))}
-            </select>
-          </label>
         </div>
-
-        <article className="trace-panel">
-          <div className="trace-summary">
-            <div>
-              <span className="trace-label">{trace.label}</span>
-              <a
-                className="model-label"
-                href={modelLinks[trace.model] ?? 'https://huggingface.co/JayZenith'}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {trace.model}
-              </a>
-              <p>{exampleDescription}</p>
-              {exampleNote && <p className="trace-note">{exampleNote}</p>}
-            </div>
-            <div className="trace-metadata" aria-label="Trace metadata">
-              <span>RL reward {trace.reward}</span>
-              <span>{trace.turns.length} trace turns</span>
-            </div>
-          </div>
-          {crateSource && (
-            <div className="crate-source">
-              <div className="crate-source-header">
-                <strong>crate source</strong>
-                <span>src/lib.rs</span>
-              </div>
-              <RustCode code={crateSource} />
-            </div>
-          )}
-          <div className="actions-panel">
-            <div className="actions-header">
-              <strong>full trace</strong>
-              <span>system, user, assistant, tool</span>
-            </div>
-            <div className="trace-turns">
-              {fullTurns.map((turn, index) => (
-                <Turn key={`${turn.role}-${index}`} t={turn} />
-              ))}
-            </div>
-          </div>
+        <article className="verifier-gap-panel">
+          <pre className="verifier-gap-diff"><span className="gap-before">Before (spec-correct): tls = direct.or_else(profile).or(defaults)</span>{'\n'}
+<span className="gap-after">After (model's patch): tls = profile.or_else(direct).or(defaults)</span>{'\n'}
+Tests: 3/3 pass.{"\n"}
+<span className="gap-result">Spec: violated. Verifier: blind.</span></pre>
+          <ExternalLink
+            className="full-trace-link"
+            href="https://jayzenith.github.io/GLYPH/#full-verifier-gap-trace"
+          >
+            Full trace →
+          </ExternalLink>
         </article>
       </section>
 
