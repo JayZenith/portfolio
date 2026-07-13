@@ -204,12 +204,6 @@ a:hover {
   background: #020704;
 }
 
-.demo-caption {
-  margin-top: 12px !important;
-  color: var(--dim) !important;
-  font-size: 14px !important;
-}
-
 .trace-heading {
   align-items: start;
 }
@@ -222,33 +216,42 @@ a:hover {
   line-height: 1.55;
 }
 
-.trace-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
+.trace-selector {
+  display: grid;
+  flex: 0 0 190px;
+  gap: 5px;
+  color: var(--dim);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.trace-tab {
-  min-height: 32px;
-  padding: 0 10px;
-  color: var(--green-soft);
+.trace-selector select {
+  width: 100%;
+  min-height: 36px;
+  padding: 0 34px 0 10px;
+  color: var(--text);
   cursor: pointer;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: transparent;
+  background: var(--panel-2);
+  color-scheme: dark;
   font-size: 13px;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
-.trace-tab:hover {
-  color: var(--text);
-  text-decoration: none;
+.trace-selector select:hover,
+.trace-selector select:focus {
+  border-color: var(--green-dim);
+  outline: none;
 }
 
-.trace-tab.active {
-  color: var(--bg);
+.trace-selector select:focus-visible {
+  box-shadow: 0 0 0 2px rgba(36, 211, 102, 0.18);
   border-color: var(--green);
-  background: var(--green);
 }
 
 .trace-panel {
@@ -557,10 +560,14 @@ a:hover {
   }
 
   .profile-links,
-  .project-links,
-  .trace-tabs {
+  .project-links {
     justify-content: flex-start;
     margin-top: 10px;
+  }
+
+  .trace-selector {
+    width: min(100%, 260px);
+    margin-top: 12px;
   }
 
   .trace-summary {

@@ -50,7 +50,7 @@ const exampleNotes = {
     'verifier awards full reward.',
 };
 
-const exampleTabLabels = {
+const exampleOptionLabels = {
   'clean-solve': 'spec gaming',
   recovery: 'recovery',
   'long-recovery': 'long recovery',
@@ -217,15 +217,6 @@ function MainPage() {
             data, SFT, verifier RL, and pass@8 evaluation. The model reads, patches, and tests
             executable Cargo projects under a strict whole-trace reward.
           </p>
-          <p className="project-detail">
-            GLYPH taught me that agent post-training is often won or lost at interfaces and
-            reward resolution. I unified SFT, RLVR, and evaluation behind one ChatML tool runtime
-            after a byte-level role mismatch invalidated an entire era of RL runs. In group-relative
-            RLVR, 64 of 96 rollouts were filtered at step 0 when rewards tied; compiler-aware
-            shaping created more within-group signal, but still did not improve held-out reliability.
-            Retaining the full traces exposed another failure that scores hid: the full-reward
-            specification-gaming rollout below passes every test while violating the written task.
-          </p>
         </article>
       </section>
 
@@ -235,10 +226,13 @@ function MainPage() {
         </div>
         <article className="project-copy">
           <p>
-            This is the model working live, not a scripted playback. A remote vLLM server runs the
-            trained adapter while the local TUI renders the exact ChatML conversation and executes
-            each read, patch, and Cargo test against a disposable crate. The task shown here,
-            <code> score_summary</code>, appears in neither the training data nor the eval suite.
+            The TUI renders GLYPH's exact ChatML conversation while executing each read, patch, and
+            Cargo test against a disposable local crate. This demo uses <code>score_summary</code>,
+            an out-of-distribution task that appears in neither the training data nor the eval
+            suite.{' '}
+            <ExternalLink href="https://github.com/JayZenith/GLYPH/tree/main/demo_tui">
+              Run the demo →
+            </ExternalLink>
           </p>
           <div className="demo-video-frame">
             <video
@@ -254,15 +248,25 @@ function MainPage() {
               Your browser does not support embedded video.
             </video>
           </div>
-          <p className="demo-caption">
-            The model reads the unfamiliar crate, patches it, uses compiler feedback to repair its
-            first change, passes all four tests, and emits a clean <code>FINAL</code>. More involved
-            OOD trials exhausted their tool budgets on incorrect or non-compiling patches, so this
-            demonstrates transfer of the agent loop and limited easy-task generalization—not broad
-            medium-difficulty Rust competence.{' '}
-            <ExternalLink href="https://github.com/JayZenith/GLYPH/tree/main/demo_tui">
-              Run the demo →
-            </ExternalLink>
+        </article>
+      </section>
+
+      <section className="project-section lessons-section">
+        <div className="section-title">
+          <h2>What GLYPH taught me</h2>
+        </div>
+        <article className="project-copy">
+          <p>
+            Agent post-training depends on interface consistency. A byte-level role mismatch made
+            RL rollouts differ from the ChatML used in SFT and invalidated an entire era of runs, so
+            I unified SFT, RLVR, evaluation, and the TUI behind one tool runtime.
+          </p>
+          <p className="project-detail">
+            Reward resolution matters too. In group-relative RLVR, 64 of 96 rollouts were filtered
+            at step 0 when tied rewards produced no learning signal. Compiler-aware shaping created
+            more distinctions between partial failures, but it still did not reliably improve
+            held-out performance. Full traces revealed what aggregate scores missed: one rollout
+            earned full reward by passing every test while violating the written specification.
           </p>
         </article>
       </section>
@@ -270,24 +274,25 @@ function MainPage() {
       <section className="trace-section">
         <div className="section-heading trace-heading">
           <div>
-            <h2>RLVR model traces</h2>
+            <h2>Explore RLVR model traces</h2>
             <p className="section-deck">
-              Generic dense-reward adapter, step 10. The next two tabs show recovery through real
-              compiler and test feedback.
+              Step-10 dense-reward adapter. Compare specification gaming with short and long
+              recovery through real compiler and test feedback.
             </p>
           </div>
-          <div className="trace-tabs" role="tablist" aria-label="Trace selector">
-            {traces.map((tr, idx) => (
-              <button
-                key={tr.id}
-                className={`trace-tab${idx === activeTrace ? ' active' : ''}`}
-                onClick={() => setActiveTrace(idx)}
-                type="button"
-              >
-                {exampleTabLabels[tr.id]}
-              </button>
-            ))}
-          </div>
+          <label className="trace-selector">
+            <span>Choose a trace</span>
+            <select
+              value={activeTrace}
+              onChange={(event) => setActiveTrace(Number(event.target.value))}
+            >
+              {traces.map((tr, idx) => (
+                <option key={tr.id} value={idx}>
+                  {exampleOptionLabels[tr.id]}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
 
         <article className="trace-panel">
@@ -335,7 +340,7 @@ function MainPage() {
 
       <section className="project-section">
         <div className="section-title">
-          <h2>results</h2>
+          <h2>Experimental results</h2>
         </div>
         <article className="project-copy">
           <p>

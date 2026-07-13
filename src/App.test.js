@@ -1,13 +1,18 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders portfolio intro and sections', () => {
   render(<App />);
   expect(screen.getByText(/I build post-training and evaluation systems/i)).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'GLYPH' })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'RLVR model traces' })).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: 'spec gaming' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'What GLYPH taught me' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Explore RLVR model traces' })).toBeInTheDocument();
+  const traceSelector = screen.getByRole('combobox', { name: 'Choose a trace' });
+  expect(traceSelector).toHaveValue('0');
   expect(screen.getByText(/Specification gaming: the prompt says direct values must win/i)).toBeInTheDocument();
+  fireEvent.change(traceSelector, { target: { value: '1' } });
+  expect(traceSelector).toHaveValue('1');
+  expect(screen.getByText(/missing shared-rank behavior/i)).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: 'use GLYPH on Prime Intellect Environments Hub' })
   ).toBeInTheDocument();
