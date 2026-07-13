@@ -363,6 +363,14 @@ function MainPage() {
               Read the full experiment →
             </ExternalLink>
           </p>
+          <p className="result-note">
+            <strong>Working explanation:</strong> the model had little protocol behavior left to
+            improve—the failed traces usually formatted tools correctly but still wrote the wrong
+            Rust. Sparse rewards collapsed materially different failures into ties, while denser
+            rewards exposed partial progress but could not supply missing coding capability. This
+            remains a hypothesis: each reward arm came from one training run, so training variance
+            and reward-shape effects cannot be separated causally.
+          </p>
           <div className="result-chart">
             <img
               src={valid8Chart}

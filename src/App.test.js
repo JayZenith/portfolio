@@ -15,6 +15,7 @@ test('renders portfolio intro and sections', () => {
   fireEvent.change(traceSelector, { target: { value: '1' } });
   expect(traceSelector).toHaveValue('1');
   expect(screen.getByText(/missing shared-rank behavior/i)).toBeInTheDocument();
+  expect(screen.getByText(/Working explanation:/i)).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: 'use GLYPH on Prime Intellect Environments Hub' })
   ).toBeInTheDocument();
