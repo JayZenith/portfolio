@@ -356,20 +356,28 @@ function MainPage() {
         </div>
         <article className="project-copy">
           <p>
-            The RL variants did not show a reliable improvement over SFT. The dense run had the
-            best single result — 102 of 150 tasks solved within eight attempts, versus 95 for
-            SFT — but the difference was not conclusive.{' '}
+            Each model has one role in the comparison: SFT is the control; sparse RLVR tests
+            whether RL alone helps; dense RLVR adds compile-and-test partial credit; and the
+            compiler-aware arm tests a Rust-specific progress signal.
+          </p>
+          <p className="result-note">
+            <strong>Result:</strong> no RL variant showed a reliable improvement over SFT. Dense
+            produced the best retained evaluation—102 of 150 tasks solved within eight attempts,
+            versus 95 for SFT—but the difference was inconclusive.{' '}
             <ExternalLink href="https://jayzenith.github.io/GLYPH/">
               Read the full experiment →
             </ExternalLink>
           </p>
           <p className="result-note">
-            <strong>Working explanation:</strong> the model had little protocol behavior left to
-            improve—the failed traces usually formatted tools correctly but still wrote the wrong
-            Rust. Sparse rewards collapsed materially different failures into ties, while denser
-            rewards exposed partial progress but could not supply missing coding capability. This
-            remains a hypothesis: each reward arm came from one training run, so training variance
-            and reward-shape effects cannot be separated causally.
+            <strong>Working explanation:</strong> both the curriculum and the reward limited the
+            learning frontier. The synthetic data taught the tool protocol and recurring task
+            patterns well, leaving little headroom on easy cases, but likely did not provide enough
+            diverse, intermediate-difficulty Rust work to build the capability needed for the hard
+            tail. Sparse rewards then collapsed different hard-case failures into ties. Denser
+            rewards exposed partial progress, but could not substitute for capability the SFT
+            curriculum had not established. This remains a hypothesis: each reward arm came from
+            one training run, so curriculum, training variance, and reward shape were not isolated
+            causally.
           </p>
           <div className="result-chart">
             <img
