@@ -374,7 +374,7 @@ function MainPage() {
           <div className="result-chart">
             <img
               src={valid8Chart}
-              alt="valid@8 per run across SFT base, sparse, dense, and compiler-aware rewards"
+              alt="valid@8 across trace-retained SFT, sparse, dense, and compiler-aware evaluations"
             />
           </div>
         </article>
