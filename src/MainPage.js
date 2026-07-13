@@ -10,12 +10,12 @@ const profileLinks = [
 
 const llamaCppPrs = [
   {
-    label: 'PR #17851',
+    label: 'llama.cpp · PR #17851',
     href: 'https://github.com/ggml-org/llama.cpp/pull/17851',
     text: 'CUDA/backend support for GGML_OP_FILL, removing the CPU fallback in the Qwen3-Next path.',
   },
   {
-    label: 'PR #18365',
+    label: 'llama.cpp · PR #18365',
     href: 'https://github.com/ggml-org/llama.cpp/pull/18365',
     text: 'Removed a redundant per-token O(vocab) allocation from the sampling hot path — ~1.9–2.2× microbenchmark speedup.',
   },
@@ -390,7 +390,7 @@ function MainPage() {
 
       <section className="project-section">
         <div className="section-title">
-          <h2>llama.cpp (merged upstream)</h2>
+          <h2>Open-source contributions</h2>
         </div>
         <article className="project-copy">
           {llamaCppPrs.map((pr) => (
