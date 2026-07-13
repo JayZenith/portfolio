@@ -261,7 +261,7 @@ function MainPage() {
             RL rollouts differ from the ChatML used in SFT and invalidated an entire era of runs, so
             I unified SFT, RLVR, evaluation, and the TUI behind one tool runtime.
           </p>
-          <p className="project-detail">
+          <p className="lesson-point">
             Reward resolution matters too. In group-relative RLVR, 64 of 96 rollouts were filtered
             at step 0 when tied rewards produced no learning signal. Compiler-aware shaping created
             more distinctions between partial failures, but it still did not reliably improve
