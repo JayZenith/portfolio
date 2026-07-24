@@ -52,25 +52,6 @@ function MainPage() {
         </div>
 
         <article className="project-copy">
-          <p>
-            An early-stage RLVR experiment, inspired by{' '}
-            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink>'s
-            world-model result, testing whether
-            a coding agent's prediction of its own patch's fate can be grounded by the environment
-            alone: trained only against the verified outcome, never the model's own sampled guess.
-            Two matched training arms (reactive test-and-recover vs.
-            predict-then-decide), each replicated across two independent seeds, evaluated on 500
-            held-out tasks with McNemar tests and paired bootstrap confidence intervals, not raw
-            percentage gaps.
-          </p>
-          <p>
-            <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
-            baseline by step 100 (p=0.0003–0.0017 across all four seed/arm combinations). Whether
-            explicit prediction beats reactive testing remains honestly unconfirmed at every
-            checkpoint and seed combination tested, and the diagnosis of exactly why is in the
-            write-up.
-          </p>
-
           <div className="diagram-wrap">
             <svg viewBox="0 0 900 600" role="img" aria-label="Arm A versus Arm B execution flow">
               <defs>
@@ -138,6 +119,26 @@ function MainPage() {
               <text x="464" y="295" textAnchor="middle" fill="#ef4444" fontSize="13" transform="rotate(90 464 295)">test still fails → apply_patch</text>
             </svg>
           </div>
+
+          <p>
+            An early-stage RLVR experiment, inspired by{' '}
+            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink>'s
+            world-model result, testing whether
+            a coding agent's prediction of its own patch's fate can be grounded by the environment
+            alone: trained only against the verified outcome, never the model's own sampled guess.
+            Two matched training arms (reactive test-and-recover vs.
+            predict-then-decide), each replicated across two independent seeds, evaluated on 500
+            held-out tasks with McNemar tests and paired bootstrap confidence intervals, not raw
+            percentage gaps.
+          </p>
+          <p>
+            <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
+            baseline by step 100 (p=0.0003–0.0017 across all four seed/arm combinations). Whether
+            explicit prediction beats reactive testing remains honestly unconfirmed at every
+            checkpoint and seed combination tested, and the diagnosis of exactly why is in the
+            write-up.
+          </p>
+
 
           <p className="results-definition">
             Same task, same checkpoint step, real test-set rollouts for{' '}
