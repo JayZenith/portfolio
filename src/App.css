@@ -100,9 +100,8 @@ a:hover {
 .profile-links a,
 .project-links a {
   color: var(--green);
-  font-size: 14px;
+  font-size: 14.5px;
   border-bottom: none;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .profile-links a:hover,
@@ -144,11 +143,10 @@ a:hover {
 .section-heading h2 {
   margin: 0;
   color: var(--green);
-  font-size: 22px;
+  font-size: 23px;
   line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.01em;
 }
 
 .external-link {
@@ -386,11 +384,10 @@ a:hover {
 
 .trace-grid h3 {
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .trace-grid .arm-a h3 {
