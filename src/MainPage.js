@@ -53,7 +53,9 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            An early-stage RLVR experiment, inspired by ECHO's world-model result, testing whether
+            An early-stage RLVR experiment, inspired by{' '}
+            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink>'s
+            world-model result, testing whether
             a coding agent's prediction of its own patch's fate can be grounded by the environment
             alone: trained only against the verified outcome, never the model's own sampled guess.
             Two matched training arms (reactive test-and-recover vs.
