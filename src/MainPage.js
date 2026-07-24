@@ -129,13 +129,15 @@ function MainPage() {
             prediction as a pure training signal helps; PREDICT makes the prediction causally gate
             behavior: commit to KEEP or REVISE before ever seeing the real result, with the
             prediction trained by its own cross-entropy loss straight off the verified outcome,
-            because RLVR's reward is far too crude to grade one. Two matched arms, two independent
+            because RLVR's reward is far too crude to grade one, and a side question of whether
+            predicting first sharpens the model's internal state even with no visible tokens to
+            reason in. Two matched arms, two independent
             seeds each, 500 held-out tasks, McNemar tests and paired bootstrap confidence
             intervals, not raw percentage gaps.
           </p>
           <p>
             <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
-            baseline by step 100 (p=0.0003–0.0017 across all four seed/arm combinations). Whether
+            baseline by step 100 (p=0.0003–0.033 across all four seed/arm combinations). Whether
             explicit prediction beats reactive testing remains honestly unconfirmed at every
             checkpoint and seed combination tested, and the diagnosis of exactly why is in the
             write-up.
