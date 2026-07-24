@@ -1,21 +1,22 @@
 :root {
-  --bg: #07090d;
-  --panel: #0e131b;
-  --panel-2: #121925;
-  --text: #f4fff8;
-  --muted: #f4fff8;
-  --dim: #b9c2bd;
-  --line: #21422f;
-  --blue: #45a3ff;
+  --bg: #000000;
+  --panel: #080d09;
+  --panel-2: #0c130d;
+  --text: #eef7ef;
+  --muted: #dcebde;
+  --dim: #a3bba8;
+  --line: rgba(57, 255, 20, 0.11);
+  --line-2: rgba(57, 255, 20, 0.24);
+  --blue: #4d9fff;
   --cyan: #24f0ff;
-  --green: #24d366;
-  --green-soft: #6ee894;
-  --green-dim: #36aa5d;
-  --amber: #ffe94a;
+  --green: #39ff14;
+  --green-soft: #7dff62;
+  --green-dim: #00d17a;
+  --amber: #f5e400;
   --purple: #c678ff;
-  --scroll-track: #07100b;
-  --scroll-thumb: #1fa85a;
-  --scroll-thumb-hover: #52d879;
+  --scroll-track: #050a06;
+  --scroll-thumb: #1c7a3f;
+  --scroll-thumb-hover: #39ff14;
 }
 
 * {
@@ -43,10 +44,11 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
+  border-bottom: 1px solid rgba(57, 255, 20, 0.3);
 }
 
 a:hover {
-  text-decoration: underline;
+  border-bottom-color: var(--green);
 }
 
 .AppBackground {
@@ -54,9 +56,9 @@ a:hover {
 }
 
 .site-shell {
-  width: min(760px, calc(100% - 40px));
+  width: min(860px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 42px 0 64px;
+  padding: 56px 0 72px;
 }
 
 .intro {
@@ -75,17 +77,17 @@ a:hover {
 .intro h1 {
   margin: 0;
   color: var(--text);
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1.15;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
 }
 
 .intro p {
-  max-width: 720px;
   margin: 0;
-  color: var(--text);
-  font-size: 16px;
+  color: var(--muted);
+  font-size: 16.5px;
+  line-height: 1.7;
 }
 
 .profile-links,
@@ -95,9 +97,17 @@ a:hover {
   gap: 10px;
 }
 
-.profile-links a {
+.profile-links a,
+.project-links a {
   color: var(--green);
   font-size: 14px;
+  border-bottom: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.profile-links a:hover,
+.project-links a:hover {
+  text-decoration: underline;
 }
 
 .profile-links a::before,
@@ -133,11 +143,12 @@ a:hover {
 .section-title h2,
 .section-heading h2 {
   margin: 0;
-  color: var(--text);
+  color: var(--green);
   font-size: 22px;
   line-height: 1.2;
-  font-weight: 650;
-  letter-spacing: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .external-link {
@@ -147,13 +158,18 @@ a:hover {
 }
 
 .project-copy {
-  max-width: 820px;
+  max-width: none;
 }
 
 .project-copy p {
-  margin: 0;
-  color: var(--text);
-  font-size: 16px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+.project-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .project-copy .project-detail {
@@ -202,9 +218,10 @@ a:hover {
 }
 
 .project-copy .results-definition {
-  margin-top: 12px;
+  margin-top: 20px;
+  margin-bottom: 0;
   color: var(--dim);
-  font-size: 14px;
+  font-size: 14.5px;
 }
 
 .results-table-wrap {
@@ -243,6 +260,11 @@ a:hover {
 .result-note strong {
   color: var(--green);
   font-weight: 650;
+}
+
+.project-copy strong {
+  color: var(--green);
+  font-weight: 700;
 }
 
 .experiment-summary {
@@ -321,7 +343,7 @@ a:hover {
 }
 
 .verifier-gap-panel {
-  max-width: 820px;
+  max-width: none;
   padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -329,12 +351,12 @@ a:hover {
 }
 
 .diagram-wrap {
-  max-width: 820px;
-  padding: 12px;
+  max-width: none;
+  padding: 18px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--panel);
-  margin: 14px 0;
+  margin: 18px 0;
 }
 
 .diagram-wrap svg {
@@ -346,9 +368,10 @@ a:hover {
 .trace-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 820px;
-  margin: 14px 0;
+  gap: 14px;
+  max-width: none;
+  margin: 14px 0 18px;
+  align-items: start;
 }
 
 @media (max-width: 700px) {
@@ -362,12 +385,24 @@ a:hover {
 }
 
 .trace-grid h3 {
-  margin: 0 0 8px;
-  font-size: 15px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.trace-grid .arm-a h3 {
+  color: var(--green-dim);
+}
+
+.trace-grid .arm-b h3 {
+  color: var(--green);
 }
 
 .verifier-gap-diff {
-  margin: 0 0 12px;
+  margin: 0;
   overflow-x: auto;
   color: var(--text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -381,7 +416,7 @@ a:hover {
 }
 
 .gap-after {
-  color: #ff8a96;
+  color: #ef4444;
 }
 
 .gap-result {
