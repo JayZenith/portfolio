@@ -99,8 +99,8 @@ function MainPage() {
               <path d="M210,264 L245,340" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M115,390 L150,430" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M245,365 C 380,365 380,155 300,155" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
-              <text x="345" y="255" textAnchor="middle" fill="#9aa5a0" fontSize="11">revise &</text>
-              <text x="345" y="270" textAnchor="middle" fill="#9aa5a0" fontSize="11">retest</text>
+              <text x="345" y="255" textAnchor="middle" fill="#b9c2bd" fontSize="11">revise &</text>
+              <text x="345" y="270" textAnchor="middle" fill="#b9c2bd" fontSize="11">retest</text>
 
               <rect x="460" y="46" width="240" height="50" rx="6" fill="#0e131b" stroke="#ffe94a" strokeWidth="1.3" />
               <text x="580" y="75" textAnchor="middle" fill="#ffe94a" fontSize="14">read_file</text>
@@ -108,17 +108,17 @@ function MainPage() {
               <text x="580" y="159" textAnchor="middle" fill="#ffe94a" fontSize="14">apply_patch</text>
               <rect x="460" y="214" width="240" height="58" rx="6" fill="#0e131b" stroke="#ffe94a" strokeWidth="1.3" />
               <text x="580" y="241" textAnchor="middle" fill="#ffe94a" fontSize="14">PREDICTION</text>
-              <text x="580" y="259" textAnchor="middle" fill="#9aa5a0" fontSize="11">{'<PREDICTION> + <DECISION>'}</text>
+              <text x="580" y="259" textAnchor="middle" fill="#b9c2bd" fontSize="11">{'<PREDICTION> + <DECISION>'}</text>
               <rect x="460" y="322" width="110" height="50" rx="6" fill="#0e131b" stroke="#24d366" strokeWidth="1.3" />
               <text x="515" y="351" textAnchor="middle" fill="#24d366" fontSize="14">KEEP</text>
               <rect x="590" y="322" width="110" height="50" rx="6" fill="#0e131b" stroke="#ff8a96" strokeWidth="1.3" />
               <text x="645" y="351" textAnchor="middle" fill="#ff8a96" fontSize="14">REVISE</text>
               <rect x="460" y="406" width="110" height="58" rx="6" fill="#0e131b" stroke="#24d366" strokeWidth="1.3" />
               <text x="515" y="433" textAnchor="middle" fill="#24d366" fontSize="14">python_test</text>
-              <text x="515" y="451" textAnchor="middle" fill="#9aa5a0" fontSize="11">visible</text>
+              <text x="515" y="451" textAnchor="middle" fill="#b9c2bd" fontSize="11">visible</text>
               <rect x="590" y="406" width="110" height="58" rx="6" fill="#0e131b" stroke="#ff8a96" strokeWidth="1.3" />
               <text x="645" y="433" textAnchor="middle" fill="#ff8a96" fontSize="14">shadow test</text>
-              <text x="645" y="451" textAnchor="middle" fill="#9aa5a0" fontSize="11">hidden from agent</text>
+              <text x="645" y="451" textAnchor="middle" fill="#b9c2bd" fontSize="11">hidden from agent</text>
               <rect x="460" y="520" width="240" height="46" rx="6" fill="#0e131b" stroke="#24d366" strokeWidth="1.3" />
               <text x="580" y="547" textAnchor="middle" fill="#24d366" fontSize="14">FINAL</text>
               <path d="M580,96 L580,130" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
@@ -129,7 +129,7 @@ function MainPage() {
               <path d="M645,372 L645,406" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M515,464 L550,520" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M645,464 C 735,490 735,155 700,155" stroke="#a9a9a9" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" strokeDasharray="5 4" />
-              <text x="748" y="310" textAnchor="middle" fill="#9aa5a0" fontSize="11" transform="rotate(90 748 310)">apply_patch again</text>
+              <text x="748" y="310" textAnchor="middle" fill="#b9c2bd" fontSize="11" transform="rotate(90 748 310)">apply_patch again</text>
               <path d="M515,464 C 410,500 410,155 460,155" stroke="#ff8a96" strokeWidth="1.4" markerEnd="url(#port-arrow)" fill="none" strokeDasharray="5 4" opacity="0.85" />
               <text x="412" y="500" textAnchor="middle" fill="#ff8a96" fontSize="11">test still fails → apply_patch</text>
             </svg>
