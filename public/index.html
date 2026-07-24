@@ -7,22 +7,22 @@
     <meta name="theme-color" content="#050a05" />
     <meta
       name="description"
-      content="Jay Zenith works on post-training and RL environments for agents."
+      content="PREDICT: an early-stage RLVR experiment testing whether a coding agent can predict its own patch's fate before running it, grounded only in what the environment verifies."
     />
     <meta name="author" content="Jay Zenith" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Jay Zenith - Post-training & RL environments for agents" />
+    <meta property="og:title" content="PREDICT - Can a coding agent predict its own patch's fate?" />
     <meta
       property="og:description"
-      content="Portfolio of Jay Zenith: verifiable-reward RL environments, post-training, and evals for tool-use coding agents."
+      content="Jay Zenith's PREDICT: ground-truth-grounded outcome prediction for a coding agent, trained with SFT, RLVR, and verified-label cross-entropy."
     />
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Jay Zenith" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Jay Zenith - Post-training & RL environments for agents" />
+    <meta name="twitter:title" content="PREDICT - Can a coding agent predict its own patch's fate?" />
     <meta
       name="twitter:description"
-      content="Verifiable-reward RL environments, post-training, and evals for tool-use coding agents."
+      content="Ground-truth-grounded outcome prediction for a coding agent, trained with SFT, RLVR, and verified-label cross-entropy."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Jay Zenith - Post-training & RL environments for agents</title>
+    <title>PREDICT - Can a coding agent predict its own patch's fate?</title>
   </head>
   <body>
     <div id="root">
@@ -67,50 +67,16 @@
         <section class="block">
           <ul class="list">
             <li>
-              <a href="https://jayzenith.github.io/GLYPH/" class="row">
-                <span class="title">glyph</span>
+              <a href="https://jayzenith.github.io/PREDICT/" class="row">
+                <span class="title">predict</span>
               </a>
               <p class="desc">
-                End-to-end post-training for a 4B Rust coding agent, built on a
-                shared ChatML tool runtime across SFT, verifier RL, and evaluation.
-                <a class="blog-link" href="https://jayzenith.github.io/GLYPH/">[blog]</a>
-                <a class="blog-link" href="https://app.primeintellect.ai/dashboard/environments/jayzenith/glyph">[environment]</a>
-                <a class="blog-link" href="https://huggingface.co/datasets/JayZenith/Glyph-RLVR-Eval-Results">[raw evals]</a>
-              </p>
-            </li>
-            <li>
-              <a href="https://github.com/ggml-org/llama.cpp/pull/17851" class="row">
-                <span class="title">llama.cpp - CUDA upstream</span>
-              </a>
-              <p class="desc">
-                Added GGML_OP_FILL on the CUDA backend for the Qwen3-Next path;
-                removed a CPU fallback. Merged upstream.
-              </p>
-            </li>
-            <li>
-              <a href="https://jayzenith.github.io/llama-perf-blog/" class="row">
-                <span class="title">llama.cpp - sampling hot path</span>
-              </a>
-              <p class="desc">
-                Cut a redundant O(vocab) allocation from token sampling.
-                1.9-2.2x on the sampling microbench.
-              </p>
-            </li>
-            <li>
-              <a href="https://jayzenith.github.io/mistral-support-minisgl.github.io/" class="row">
-                <span class="title">mini-sglang - Mistral support</span>
-              </a>
-              <p class="desc">
-                Sliding-window attention for Mistral-7B, validated against
-                Hugging Face past 6k tokens.
-              </p>
-            </li>
-            <li>
-              <a href="https://jayzenith.github.io/colocated-pd-disagg-blog/" class="row">
-                <span class="title">pd disaggregation benchmark</span>
-              </a>
-              <p class="desc">
-                A/B harness for prefill/decode split vs colocated serving.
+                Early-stage experiment: can a coding agent predict its own patch's fate before
+                running it, grounded only in what the environment verifies, never its own guess?
+                Trained with SFT, RLVR, and verified-label cross-entropy.
+                <a class="blog-link" href="https://jayzenith.github.io/PREDICT/">[full report]</a>
+                <a class="blog-link" href="https://github.com/JayZenith/PREDICT">[code]</a>
+                <a class="blog-link" href="https://huggingface.co/JayZenith/SFT_ARM_A">[checkpoints]</a>
               </p>
             </li>
           </ul>
