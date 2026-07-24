@@ -53,9 +53,10 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            An early-stage RLVR experiment testing whether a coding agent can predict its own
-            patch's fate before running it, grounded only in what the environment actually
-            verifies, never its own guess. Two matched training arms (reactive test-and-recover vs.
+            An early-stage RLVR experiment, inspired by ECHO's world-model result, testing whether
+            a coding agent's prediction of its own patch's fate can be grounded by the environment
+            alone: trained only against the verified outcome, never the model's own sampled guess.
+            Two matched training arms (reactive test-and-recover vs.
             predict-then-decide), each replicated across two independent seeds, evaluated on 500
             held-out tasks with McNemar tests and paired bootstrap confidence intervals, not raw
             percentage gaps.
