@@ -71,10 +71,11 @@
                 <span class="title">predict</span>
               </a>
               <p class="desc">
-                Early-stage experiment, inspired by
-                <a href="https://arxiv.org/abs/2605.24517">ECHO</a>'s world-model result: is world
-                modeling the right direction for coding agents, and does a prediction need its own
-                cross-entropy supervision because RLVR's reward is too crude to grade one?
+                Toward a coding agent with a working world model: it predicts what the
+                environment will do and stakes a KEEP/REVISE decision on that prediction before
+                seeing the real result, the prediction trained by its own cross-entropy loss off
+                the verified outcome. Extends <a href="https://arxiv.org/abs/2605.24517">ECHO</a>
+                from prediction-as-training-signal to prediction-as-behavior.
                 <a class="blog-link" href="https://jayzenith.github.io/PREDICT/">[full write-up]</a>
                 <a class="blog-link" href="https://github.com/JayZenith/PREDICT">[code]</a>
               </p>

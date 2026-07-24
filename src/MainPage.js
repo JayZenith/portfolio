@@ -121,15 +121,17 @@ function MainPage() {
           </div>
 
           <p>
-            An early-stage RLVR experiment, inspired by{' '}
-            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink>'s
-            world-model result, asking whether world modeling is actually the right direction for
-            coding agents, and whether a prediction needs its own direct supervision, a
-            cross-entropy loss straight off the verified outcome, because RLVR's reward is far too
-            crude to grade one. Two matched training arms (reactive test-and-recover vs.
-            predict-then-decide), each replicated across two independent seeds, evaluated on 500
-            held-out tasks with McNemar tests and paired bootstrap confidence intervals, not raw
-            percentage gaps.
+            What PREDICT is really after: a coding agent with a working world model, one that
+            doesn't just react to test output but predicts what the environment will do and stakes
+            a decision on that prediction, the way we judge whether our own decisions are worth
+            keeping before acting on them.{' '}
+            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink> showed
+            prediction as a pure training signal helps; PREDICT makes the prediction causally gate
+            behavior: commit to KEEP or REVISE before ever seeing the real result, with the
+            prediction trained by its own cross-entropy loss straight off the verified outcome,
+            because RLVR's reward is far too crude to grade one. Two matched arms, two independent
+            seeds each, 500 held-out tasks, McNemar tests and paired bootstrap confidence
+            intervals, not raw percentage gaps.
           </p>
           <p>
             <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
