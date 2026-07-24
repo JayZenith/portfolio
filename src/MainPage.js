@@ -137,10 +137,11 @@ function MainPage() {
           </p>
           <p>
             <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
-            baseline by step 100 (p=0.0003–0.033 across all four seed/arm combinations). Whether
-            explicit prediction beats reactive testing remains honestly unconfirmed at every
-            checkpoint and seed combination tested, and the diagnosis of exactly why is in the
-            write-up.
+            baseline by step 100, an interim checkpoint with two of the four runs still climbing
+            (p=0.0003–0.033 across all four seed/arm combinations). Whether explicit prediction
+            beats reactive testing remains honestly unconfirmed at every checkpoint tested; the
+            decisive ablations compare Arm B to itself, and the diagnosis of exactly why is in
+            the write-up.
           </p>
 
 
