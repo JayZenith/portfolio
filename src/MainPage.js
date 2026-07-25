@@ -139,9 +139,11 @@ function MainPage() {
             <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
             baseline by step 100, an interim checkpoint with two of the four runs still climbing
             (p=0.0003–0.033 across all four seed/arm combinations). Whether explicit prediction
-            beats reactive testing remains honestly unconfirmed at every checkpoint tested; the
-            decisive ablations compare Arm B to itself, and the diagnosis of exactly why is in
-            the write-up.
+            beats reactive testing remains honestly unconfirmed at every checkpoint tested. Arm
+            B's <code>ASSERTION_FAILURE</code> recall sits at 0%; a follow-up run raising the
+            auxiliary CE loss weight 10× and training 2× longer left that recall unchanged, ruling
+            out loss-strength as the fix. The decisive ablations compare Arm B to itself, and the
+            full diagnosis is in the write-up.
           </p>
 
 
