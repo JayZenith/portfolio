@@ -127,11 +127,10 @@ function MainPage() {
             keeping before acting on them.{' '}
             <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink> showed
             prediction as a pure training signal helps; PREDICT makes the prediction causally gate
-            behavior: commit to KEEP or REVISE before ever seeing the real result, with the
-            prediction trained by its own cross-entropy loss straight off the verified outcome,
-            because RLVR's reward is far too crude to grade one, and a side question of whether
-            predicting first sharpens the model's internal state even with no visible tokens to
-            reason in. Two matched arms, two independent
+            behavior: commit to KEEP or REVISE before ever seeing the real result. Two questions
+            carry the design: does a prediction need its own direct supervision, a cross-entropy
+            loss straight off the verified outcome? And is a gate only as wise as its predictor, so
+            calibration has to come before metacognition pays? Two matched arms, two independent
             seeds each, 500 held-out tasks, McNemar tests and paired bootstrap confidence
             intervals, not raw percentage gaps.
           </p>
@@ -139,11 +138,14 @@ function MainPage() {
             <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
             baseline by step 100, an interim checkpoint with two of the four runs still climbing
             (p=0.0003–0.033 across all four seed/arm combinations). Whether explicit prediction
-            beats reactive testing remains honestly unconfirmed at every checkpoint tested. Arm
-            B's <code>ASSERTION_FAILURE</code> recall sits at 0%; a follow-up run raising the
-            auxiliary CE loss weight 10× and training 2× longer left that recall unchanged, ruling
-            out loss-strength as the fix. The decisive ablations compare Arm B to itself, and the
-            full diagnosis is in the write-up.
+            beats reactive testing remains honestly unconfirmed at every checkpoint tested. The
+            first design question now has a real answer: yes, prediction needs its own direct
+            supervision, because on-policy RLVR's gradient can't reach a token the model rarely
+            samples in the first place, no matter how reward is shaped. A CE + RLVR hybrid confirms
+            this — it partially recovers rare-class recall that pure on-policy RLVR destroys
+            (<code>RUNTIME_ERROR</code>: 63% → 0% → ~2–4%) — but the recovery is incomplete and
+            still training-diagnostic, not a finished n=500 eval. Full diagnosis and follow-up
+            experiments in the write-up.
           </p>
 
 
