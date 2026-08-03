@@ -84,8 +84,8 @@ function MainPage() {
               <path d="M210,264 L245,340" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M115,390 L150,430" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M300,365 C 350,365 350,155 302,155" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
-              <text x="378" y="252" textAnchor="middle" fill="#a3bba8" fontSize="13">revise &</text>
-              <text x="378" y="268" textAnchor="middle" fill="#a3bba8" fontSize="13">retest</text>
+              <text x="378" y="252" textAnchor="middle" fill="#a3bba8" fontSize="13">recovery loop:</text>
+              <text x="378" y="268" textAnchor="middle" fill="#a3bba8" fontSize="13">fix & retest</text>
 
               <rect x="540" y="46" width="240" height="50" rx="7" fill="#080d09" stroke="#39ff14" strokeWidth="1.6" />
               <text x="660" y="76" textAnchor="middle" fill="#39ff14" fontSize="16" fontWeight="600">read_file</text>
@@ -114,11 +114,21 @@ function MainPage() {
               <path d="M725,372 L725,406" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M595,464 L630,520" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M780,435 C 838,435 838,155 782,155" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" strokeDasharray="5 4" />
-              <text x="856" y="295" textAnchor="middle" fill="#a3bba8" fontSize="13" transform="rotate(90 856 295)">apply_patch again</text>
+              <text x="856" y="295" textAnchor="middle" fill="#a3bba8" fontSize="13" transform="rotate(90 856 295)">shadow recovery: caught before the real test ran</text>
               <path d="M540,435 C 482,435 482,155 538,155" stroke="#ef4444" strokeWidth="1.6" markerEnd="url(#port-arrow-r)" fill="none" strokeDasharray="5 4" opacity="0.9" />
-              <text x="464" y="295" textAnchor="middle" fill="#ef4444" fontSize="13" transform="rotate(90 464 295)">test still fails → apply_patch</text>
+              <text x="464" y="295" textAnchor="middle" fill="#ef4444" fontSize="13" transform="rotate(90 464 295)">visible recovery: the prediction was wrong</text>
             </svg>
           </div>
+
+          <p className="results-definition">
+            Both arms recover from a failed test; they differ in <em>when</em> the decision to
+            recover gets made. Arm A has one recovery path: run the real test, see it fail, patch
+            again. Arm B has two — the <strong>visible</strong> one (predicted PASS, kept, and the
+            real test caught it) and the <strong>shadow</strong> one (predicted a failure, revised
+            before the real test ever ran). Only the shadow path uses the predictor. On the
+            held-out set both arms recover on 12–17% of the rollouts whose first test failed, and
+            a hundred steps of RLVR moved that number in neither arm.
+          </p>
 
           <p>
             What PREDICT is really after: a coding agent with a working world model, one that
