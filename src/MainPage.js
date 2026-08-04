@@ -135,7 +135,8 @@ function MainPage() {
           <p className="results-definition">
             Arm A has one recovery path: run the test, see it fail, patch again. Arm B has two —
             visible (predicted PASS, kept, the real test caught it) and shadow (predicted a
-            failure, revised before the real test ran). Only the shadow path uses the predictor.
+            failure, revised before the real test ran). In the visible path the test catches the
+            bug; in the shadow path the prediction does.
           </p>
 
           <p>
