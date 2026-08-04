@@ -140,13 +140,14 @@ function MainPage() {
 
           <p>
             <strong>Results:</strong> RLVR improves both arms over their own SFT baseline in all
-            four runs (p=0.0003–0.033). Whether prediction beats reactive testing is unconfirmed at
-            every checkpoint tested. The predictor never learned to call{' '}
-            <code>ASSERTION_FAILURE</code>, and the diagnosis is the real finding: on-policy RLVR
-            can't lift a token the model rarely samples, no matter how reward is shaped. A
-            cross-entropy loss on the verified label partially recovers it
-            (<code>RUNTIME_ERROR</code>: 63% → 0% → ~2–4%), which is training-diagnostic so far,
-            not a finished n=500 eval.
+            four runs (p=0.0003–0.033), but the gains were concentrated in first-attempt
+            correctness, with no clear improvement in prediction or recovery — the two behaviors
+            that fire only conditionally, and that no reward term grades. Whether prediction beats
+            reactive testing is unconfirmed at every checkpoint tested. The predictor never learned
+            to call <code>ASSERTION_FAILURE</code>: once it stopped sampling a class, on-policy RL
+            had nothing to credit or blame, and a cross-entropy loss on the verified label is what
+            partially recovers it (<code>RUNTIME_ERROR</code>: 63% → 0% → ~2–4%, training-diagnostic
+            so far, not a finished n=500 eval).
           </p>
 
 
