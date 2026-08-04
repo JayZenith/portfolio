@@ -52,6 +52,18 @@ function MainPage() {
         </div>
 
         <article className="project-copy">
+          <p>
+            A coding agent with a working world model. The environment is a Python sandbox; the
+            feedback is what happens when the agent's patch actually runs. Arm B emits a{' '}
+            <code>PREDICTION</code> of that result and commits to KEEP or REVISE before it's
+            allowed to see it. The patch runs either way, and a cross-entropy loss on the verified
+            outcome trains the prediction directly.{' '}
+            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink> showed
+            prediction helps as a pure training signal; here it also gates behavior. Arm A is the
+            matched comparator: patch, test, react. Two arms, two seeds each, 500 held-out tasks,
+            McNemar tests rather than raw percentage gaps.
+          </p>
+
           <div className="diagram-wrap">
             <svg viewBox="0 0 900 600" role="img" aria-label="Arm A versus Arm B execution flow">
               <defs>
@@ -121,41 +133,20 @@ function MainPage() {
           </div>
 
           <p className="results-definition">
-            Both arms recover from a failed test; they differ in <em>when</em> the decision to
-            recover gets made. Arm A has one recovery path: run the real test, see it fail, patch
-            again. Arm B has two — the <strong>visible</strong> one (predicted PASS, kept, and the
-            real test caught it) and the <strong>shadow</strong> one (predicted a failure, revised
-            before the real test ever ran). Only the shadow path uses the predictor. On the
-            held-out set both arms recover on 12–17% of the rollouts whose first test failed, and
-            a hundred steps of RLVR moved that number in neither arm.
+            Arm A has one recovery path: run the test, see it fail, patch again. Arm B has two —
+            visible (predicted PASS, kept, the real test caught it) and shadow (predicted a
+            failure, revised before the real test ran). Only the shadow path uses the predictor.
           </p>
 
           <p>
-            What PREDICT is really after: a coding agent with a working world model, one that
-            doesn't just react to test output but predicts what the environment will do and stakes
-            a decision on that prediction, the way we judge whether our own decisions are worth
-            keeping before acting on them.{' '}
-            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink> showed
-            prediction as a pure training signal helps; PREDICT makes the prediction causally gate
-            behavior: commit to KEEP or REVISE before ever seeing the real result. Two questions
-            carry the design: does a prediction need its own direct supervision, a cross-entropy
-            loss straight off the verified outcome? And is a gate only as wise as its predictor, so
-            calibration has to come before metacognition pays? Two matched arms, two independent
-            seeds each, 500 held-out tasks, McNemar tests and paired bootstrap confidence
-            intervals, not raw percentage gaps.
-          </p>
-          <p>
-            <strong>Current results:</strong> RLVR reliably improves both arms over their own SFT
-            baseline by step 100, an interim checkpoint with two of the four runs still climbing
-            (p=0.0003–0.033 across all four seed/arm combinations). Whether explicit prediction
-            beats reactive testing remains honestly unconfirmed at every checkpoint tested. The
-            first design question now has a real answer: yes, prediction needs its own direct
-            supervision, because on-policy RLVR's gradient can't reach a token the model rarely
-            samples in the first place, no matter how reward is shaped. A CE + RLVR hybrid confirms
-            this — it partially recovers rare-class recall that pure on-policy RLVR destroys
-            (<code>RUNTIME_ERROR</code>: 63% → 0% → ~2–4%) — but the recovery is incomplete and
-            still training-diagnostic, not a finished n=500 eval. Full diagnosis and follow-up
-            experiments in the write-up.
+            <strong>Results:</strong> RLVR improves both arms over their own SFT baseline in all
+            four runs (p=0.0003–0.033). Whether prediction beats reactive testing is unconfirmed at
+            every checkpoint tested. The predictor never learned to call{' '}
+            <code>ASSERTION_FAILURE</code>, and the diagnosis is the real finding: on-policy RLVR
+            can't lift a token the model rarely samples, no matter how reward is shaped. A
+            cross-entropy loss on the verified label partially recovers it
+            (<code>RUNTIME_ERROR</code>: 63% → 0% → ~2–4%), which is training-diagnostic so far,
+            not a finished n=500 eval.
           </p>
 
 
