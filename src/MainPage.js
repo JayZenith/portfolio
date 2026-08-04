@@ -141,14 +141,22 @@ function MainPage() {
 
           <p>
             <strong>Results:</strong> RLVR improves both arms over their own SFT baseline in all
-            four runs (p=0.0003–0.033), but the gains were concentrated in first-attempt
-            correctness, with no clear improvement in prediction or recovery — the two behaviors
-            that fire only conditionally, and that no reward term grades. Whether prediction beats
-            reactive testing is unconfirmed at every checkpoint tested. The predictor never learned
-            to call <code>ASSERTION_FAILURE</code>: once it stopped sampling a class, on-policy RL
-            had nothing to credit or blame, and a cross-entropy loss on the verified label is what
-            partially recovers it (<code>RUNTIME_ERROR</code>: 63% → 0% → ~2–4%, training-diagnostic
-            so far, not a finished n=500 eval).
+            four runs, and the gain is concentrated in first-attempt correctness (p=0.0004–0.011).
+            Recovery does not move in any run (p=0.58–0.74) — it fires only conditionally, and
+            reward pays a recovered task exactly what it pays a first-try task. Whether prediction
+            beats reactive testing is unconfirmed at every checkpoint tested.
+          </p>
+
+          <p>
+            The predictor arrives from SFT already collapsed: it calls <code>PASS</code> on 100% of
+            eval candidates, when <code>PASS</code> is the true outcome 20% of the time. Cross-entropy
+            on the verified label partially revives it — <code>RUNTIME_ERROR</code> goes from never
+            predicted to 16% of predictions at 63% recall, and prediction accuracy rises 44.7% →
+            53.2% in both seeds. <code>ASSERTION_FAILURE</code>, the true outcome 57–61% of the time,
+            is never once called correctly at any checkpoint. That isn't a loss-routing problem: the
+            policy gradient is masked off the prediction span by construction, so CE had an
+            uncontested channel. A crash leaves marks in the code; knowing a patch will fail its
+            assertion is the same problem as knowing the patch is wrong. All figures n=500.
           </p>
 
 
