@@ -142,11 +142,13 @@ function MainPage() {
 
           <p>
             <strong>Results:</strong> RLVR improves both arms over their own SFT baseline in all
-            four runs, and the gain is concentrated in first-attempt correctness (p=0.0004–0.011).
-            Recovery does not move in any run (p=0.58–0.74): it only fires when the first patch
-            fails, and reward pays a recovered task exactly what it pays a first-try task, so
-            nothing trains it. Whether prediction beats reactive testing is unconfirmed at every
-            checkpoint tested — a coin flip at step 100 (54.2% vs 53.6%, p=0.86).
+            four runs. A rollout is multi-turn, so the agent can patch more than once inside one
+            pass@1 attempt — and the gain lands entirely on the first patch (p=0.0004–0.011).
+            Repair after a failed patch does not move in any run (p=0.58–0.74): it only happens
+            when the first patch fails, and reward pays a repaired task exactly what it pays one
+            solved immediately, so nothing trains it. Whether prediction beats reactive testing is
+            unconfirmed at every checkpoint tested — a coin flip at step 100 (54.2% vs 53.6%,
+            p=0.86).
           </p>
 
           <p>
