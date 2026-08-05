@@ -58,8 +58,8 @@ function MainPage() {
           </p>
 
           <p>
-            <strong>Work in progress:</strong> RLVR beat SFT for both agents.{' '}
-            <strong>The predictor has life, but no payoff yet.</strong> Cross-entropy on verified
+            <strong>The predictor has life, but no payoff yet:</strong> RLVR beat SFT for both
+            agents. Cross-entropy on verified
             execution outcomes turned a checkpoint that called PASS on <strong>100%</strong> of
             candidates into a real <code>RUNTIME_ERROR</code> detector:{' '}
             <strong>62.5% and 64.1% precision</strong> across the two seeds, against a 16% base
