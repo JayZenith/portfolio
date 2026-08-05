@@ -58,7 +58,7 @@ function MainPage() {
           </p>
 
           <p>
-            <strong>Predictor shows limited promise:</strong> Starting from an SFT checkpoint that
+            <strong>Environment prediction shows limited promise:</strong> Starting from an SFT checkpoint that
             always predicted PASS, RLVR produced a <code>RUNTIME_ERROR</code> detector with{' '}
             <strong>62.5% and 64.1% precision</strong> across two seeds, versus a 16% base rate,
             after only 8 SFT examples. This did not improve pass@1 because the test reveals runtime
