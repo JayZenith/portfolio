@@ -53,8 +53,9 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            A coding agent with a working world model. The environment is a Python sandbox; the
-            feedback is what happens when the agent's patch actually runs. Arm B emits a{' '}
+            Making a coding agent predict the outcome of its environment and act on that
+            prediction. The environment is a Python sandbox; the feedback is what happens when the
+            agent's patch actually runs. Arm B emits a{' '}
             <code>PREDICTION</code> of that result and commits to KEEP or REVISE before it's
             allowed to see it. The patch runs either way, and a cross-entropy loss on the verified
             outcome trains the prediction directly.{' '}
@@ -142,21 +143,24 @@ function MainPage() {
           <p>
             <strong>Results:</strong> RLVR improves both arms over their own SFT baseline in all
             four runs, and the gain is concentrated in first-attempt correctness (p=0.0004–0.011).
-            Recovery does not move in any run (p=0.58–0.74) — it fires only conditionally, and
-            reward pays a recovered task exactly what it pays a first-try task. Whether prediction
-            beats reactive testing is unconfirmed at every checkpoint tested.
+            Recovery does not move in any run (p=0.58–0.74): it only fires when the first patch
+            fails, and reward pays a recovered task exactly what it pays a first-try task, so
+            nothing trains it. Whether prediction beats reactive testing is unconfirmed at every
+            checkpoint tested — a coin flip at step 100 (54.2% vs 53.6%, p=0.86).
           </p>
 
           <p>
-            The predictor arrives from SFT already collapsed: it calls <code>PASS</code> on 100% of
-            eval candidates, when <code>PASS</code> is the true outcome 20% of the time. Cross-entropy
-            on the verified label partially revives it — <code>RUNTIME_ERROR</code> goes from never
-            predicted to 16% of predictions at 63% recall, and prediction accuracy rises 44.7% →
-            53.2% in both seeds. <code>ASSERTION_FAILURE</code>, the true outcome 57–61% of the time,
-            is never once called correctly at any checkpoint. That isn't a loss-routing problem: the
-            policy gradient is masked off the prediction span by construction, so CE had an
-            uncontested channel. A crash leaves marks in the code; knowing a patch will fail its
-            assertion is the same problem as knowing the patch is wrong. All figures n=500.
+            The prediction mechanism itself learns. The SFT checkpoint is a constant — it calls{' '}
+            <code>PASS</code> on 100% of eval candidates — and cross-entropy on the verified outcome
+            turns that into a working <code>RUNTIME_ERROR</code> detector: 62.5% and 64.1% precision
+            across the two seeds against a 16% base rate, off 8 demonstrations, and not bought by
+            over-predicting (208 predicted, 207 actual). <code>ASSERTION_FAILURE</code>, the true
+            outcome 57% of the time, is never once called correctly at any checkpoint — despite 37
+            demonstrations to <code>RUNTIME_ERROR</code>'s 8. So it isn't scarcity, and it isn't loss
+            routing: the policy gradient is masked off the prediction span by construction, so CE had
+            a clean channel. Predicting a crash means inspecting your own output for a bad name or
+            index. Predicting a wrong answer requires a more adversarial position on code you just
+            wrote. All figures n=500.
           </p>
 
 
