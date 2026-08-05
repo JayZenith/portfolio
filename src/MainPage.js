@@ -60,7 +60,7 @@ function MainPage() {
           <p>
             <strong>Work in progress:</strong> RLVR beat SFT for both agents, and the prediction
             mechanism shows some learning. The SFT checkpoint called PASS on <strong>100%</strong>{' '}
-            of candidates, which needs to be corrected in the curriculum: 257 of its 302 prediction
+            of candidates, which needs to be corrected in the SFT process: 257 of its 302 prediction
             labels are PASS. But cross-entropy on verified execution outcomes did create a{' '}
             <code>RUNTIME_ERROR</code> detector: <strong>62.5% and 64.1% precision</strong> across
             the two seeds, against a 16% base rate, off 8 demonstrations.{' '}
