@@ -67,9 +67,8 @@ function MainPage() {
           </p>
 
           <p>
-            <strong>Work in progress:</strong> train on incorrect solutions sampled from the SFT
-            checkpoint and labeled by execution to improve <code>ASSERTION_FAILURE</code>{' '}
-            emissions.
+            <strong>Next:</strong> sample the SFT checkpoint's own failures, label them by
+            execution, and re-SFT on that data.
           </p>
 
           <div className="diagram-wrap">

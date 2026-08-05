@@ -7,8 +7,7 @@ test('renders portfolio intro and the PREDICT section', () => {
   expect(screen.getByRole('heading', { name: 'PREDICT' })).toBeInTheDocument();
   expect(screen.getByText(/Arm B predicts whether its patch will pass or fail/i)).toBeInTheDocument();
   expect(screen.getByText(/RLVR produced a/i)).toBeInTheDocument();
-  expect(screen.getByText(/train on incorrect solutions sampled from the SFT checkpoint/i))
-    .toBeInTheDocument();
+  expect(screen.getByText(/sample the SFT checkpoint's own failures/i)).toBeInTheDocument();
   expect(screen.getByRole('img', { name: /Arm A versus Arm B execution flow/i }))
     .toBeInTheDocument();
 });
