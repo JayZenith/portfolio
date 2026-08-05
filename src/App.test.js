@@ -3,7 +3,7 @@ import App from './App';
 
 test('renders portfolio intro and the PREDICT section', () => {
   render(<App />);
-  expect(screen.getByText(/I build post-training and evaluation systems/i)).toBeInTheDocument();
+  expect(screen.getByText(/I built PREDICT\./i)).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'PREDICT' })).toBeInTheDocument();
   expect(screen.getByText(/a predict-and-decide agent \(Arm B\) makes a/i)).toBeInTheDocument();
   expect(screen.getByText(/RLVR beat SFT for both agents/i)).toBeInTheDocument();

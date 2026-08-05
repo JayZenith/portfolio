@@ -33,10 +33,7 @@ function MainPage() {
           </nav>
         </div>
 
-        <p>
-          I build post-training and evaluation systems for tool-using agents: data,
-          environments, verifiable rewards, and RL training infrastructure. My work below.
-        </p>
+        <p>I built PREDICT.</p>
       </header>
 
       <section className="project-section">
