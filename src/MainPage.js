@@ -134,7 +134,7 @@ function MainPage() {
           </div>
 
           <p className="results-definition">
-            Arm A has one recovery path: run the test, see it fail, patch again. Arm B has two —
+            Arm A has one recovery path: run the test, see it fail, patch again. Arm B has two:
             visible (predicted PASS, kept, the real test caught it) and shadow (predicted a
             failure, revised before the real test ran). In the visible path the test catches the
             bug; in the shadow path the prediction does.
@@ -143,22 +143,22 @@ function MainPage() {
           <p>
             <strong>Results:</strong> RLVR improves both arms over their own SFT baseline in all
             four runs. A rollout is multi-turn, so the agent can patch more than once inside one
-            pass@1 attempt, and both routes to a pass carry weight — recovery rescues 12–17% of
+            pass@1 attempt, and both routes to a pass carry weight. Recovery rescues 12–17% of
             rollouts whose first test failed. The measured gain sits entirely on the first patch
             (p=0.0004–0.011). Recovery I can't call either way: the agent fixes its own broken patch
             about 40 times per run, and 40 events is too few to detect a change of a few points
-            (p=0.58–0.74) — couldn't tell, rather than nothing happened.
-            Whether prediction beats reactive testing is unconfirmed at every checkpoint tested — a
-            coin flip at step 100 (54.2% vs 53.6%, p=0.86).
+            (p=0.58–0.74). Couldn't tell, rather than nothing happened. Whether prediction beats
+            reactive testing is unconfirmed at every checkpoint tested: a coin flip at step 100
+            (54.2% vs 53.6%, p=0.86).
           </p>
 
           <p>
-            The prediction mechanism itself learns. The SFT checkpoint is a constant — it calls{' '}
-            <code>PASS</code> on 100% of eval candidates — and cross-entropy on the verified outcome
+            The prediction mechanism itself learns. The SFT checkpoint is a constant, calling{' '}
+            <code>PASS</code> on 100% of eval candidates, and cross-entropy on the verified outcome
             turns that into a working <code>RUNTIME_ERROR</code> detector: 62.5% and 64.1% precision
             across the two seeds against a 16% base rate, off 8 demonstrations, and not bought by
             over-predicting (208 predicted, 207 actual). <code>ASSERTION_FAILURE</code>, the true
-            outcome 57% of the time, is never once called correctly at any checkpoint — despite 37
+            outcome 57% of the time, is never once called correctly at any checkpoint, despite 37
             demonstrations to <code>RUNTIME_ERROR</code>'s 8. So it isn't scarcity, and it isn't loss
             routing: the policy gradient is masked off the prediction span by construction, so CE had
             a clean channel. Predicting a crash means inspecting your own output for a bad name or
@@ -174,20 +174,20 @@ function MainPage() {
           </p>
           <div className="trace-grid">
             <div className="verifier-gap-panel arm-a">
-              <h3>Arm A — test-and-recover</h3>
+              <h3>Arm A: test-and-recover</h3>
               <pre className="verifier-gap-diff">{'CALL apply_patch: for i in range(abs(b)): result += a\n  (sign-corrected on a^b<0)\n'}
 CALL python_test → tests passed{'\n'}
 <span className="gap-before">FINAL (reward 1.0)</span></pre>
             </div>
             <div className="verifier-gap-panel arm-b">
-              <h3>Arm B — predict-and-decide</h3>
+              <h3>Arm B: predict-and-decide</h3>
               <pre className="verifier-gap-diff">apply_patch: z = x + y{'\n'}
 PREDICTION PASS / DECISION KEEP → failed (ASSERTION_FAILURE){'\n'}
 apply_patch: z = x - y{'\n'}
 PREDICTION PASS / DECISION KEEP → failed (ASSERTION_FAILURE){'\n'}
 apply_patch: <span className="gap-after">z = x * y</span>{'\n'}
 PREDICTION PASS / DECISION KEEP → tests passed{'\n'}
-<span className="gap-result">FINAL (reward 1.0 — used the forbidden operator; asserts never checked it)</span></pre>
+<span className="gap-result">FINAL (reward 1.0, used the forbidden operator; asserts never checked it)</span></pre>
             </div>
           </div>
 
