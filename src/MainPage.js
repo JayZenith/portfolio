@@ -72,7 +72,7 @@ function MainPage() {
           </p>
 
           <div className="diagram-wrap">
-            <svg viewBox="0 0 900 600" role="img" aria-label="Arm A versus Arm B execution flow">
+            <svg viewBox="0 0 1000 600" role="img" aria-label="Arm A versus Arm B execution flow">
               <defs>
                 <marker id="port-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0,0 L10,5 L0,10 z" fill="#93a897" />
@@ -133,9 +133,13 @@ function MainPage() {
               <path d="M725,372 L725,406" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M595,464 L630,520" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" />
               <path d="M780,435 C 838,435 838,155 782,155" stroke="#93a897" strokeWidth="1.6" markerEnd="url(#port-arrow)" fill="none" strokeDasharray="5 4" />
-              <text x="856" y="295" textAnchor="middle" fill="#a3bba8" fontSize="13" transform="rotate(90 856 295)">shadow recovery: caught before the real test ran</text>
+              <text x="918" y="288" textAnchor="middle" fill="#a3bba8" fontSize="13">shadow recovery:</text>
+              <text x="918" y="306" textAnchor="middle" fill="#a3bba8" fontSize="13">caught before the</text>
+              <text x="918" y="324" textAnchor="middle" fill="#a3bba8" fontSize="13">real test ran</text>
               <path d="M540,435 C 482,435 482,155 538,155" stroke="#ef4444" strokeWidth="1.6" markerEnd="url(#port-arrow-r)" fill="none" strokeDasharray="5 4" opacity="0.9" />
-              <text x="464" y="295" textAnchor="middle" fill="#ef4444" fontSize="13" transform="rotate(90 464 295)">visible recovery: the prediction was wrong</text>
+              <text x="416" y="378" textAnchor="middle" fill="#ef4444" fontSize="13">visible recovery:</text>
+              <text x="416" y="396" textAnchor="middle" fill="#ef4444" fontSize="13">the prediction</text>
+              <text x="416" y="414" textAnchor="middle" fill="#ef4444" fontSize="13">was wrong</text>
             </svg>
           </div>
 
