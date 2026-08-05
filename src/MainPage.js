@@ -68,7 +68,8 @@ function MainPage() {
 
           <p>
             <strong>Next:</strong> sample the SFT checkpoint's own failures, label them by
-            execution, and re-SFT on that data.
+            execution, and re-SFT on that data to improve <code>ASSERTION_FAILURE</code>{' '}
+            predictions.
           </p>
 
           <div className="diagram-wrap">
