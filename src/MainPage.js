@@ -68,8 +68,7 @@ function MainPage() {
             <code>RUNTIME_ERROR</code> detector: <strong>62.5% and 64.1% precision</strong> across
             the two seeds, against a 16% base rate, off 8 demonstrations.{' '}
             <code>ASSERTION_FAILURE</code>, 57% of all outcomes, stayed at zero, never predicted
-            once at any checkpoint. And the gate doesn't pay off yet: Arm A vs. Arm B is a coin
-            flip.
+            once at any checkpoint.
           </p>
 
           <div className="diagram-wrap">
