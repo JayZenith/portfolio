@@ -58,14 +58,15 @@ function MainPage() {
           </p>
 
           <p>
-            <strong>Work in progress:</strong> RLVR beat SFT for both agents, and the prediction
-            mechanism shows some learning. The SFT checkpoint called PASS on <strong>100%</strong>{' '}
-            of candidates, which needs to be corrected in the SFT process: 257 of its 302 prediction
-            labels are PASS. But cross-entropy on verified execution outcomes did create a{' '}
-            <code>RUNTIME_ERROR</code> detector: <strong>62.5% and 64.1% precision</strong> across
-            the two seeds, against a 16% base rate, off 8 demonstrations.{' '}
-            <code>ASSERTION_FAILURE</code>, 57% of all outcomes, stayed at zero, never predicted
-            once at any checkpoint.
+            <strong>Work in progress:</strong> RLVR beat SFT for both agents.{' '}
+            <strong>The predictor has life, but no payoff yet.</strong> Cross-entropy on verified
+            execution outcomes turned a checkpoint that called PASS on <strong>100%</strong> of
+            candidates into a real <code>RUNTIME_ERROR</code> detector:{' '}
+            <strong>62.5% and 64.1% precision</strong> across the two seeds, against a 16% base
+            rate, off 8 demonstrations. That doesn't reach pass@1, and it shouldn't: a runtime
+            error is what the test reports a turn later anyway. <code>ASSERTION_FAILURE</code>, 57%
+            of outcomes and the class actually worth catching early, stayed at zero, never
+            predicted once at any checkpoint.
           </p>
 
           <div className="diagram-wrap">
