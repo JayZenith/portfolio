@@ -215,13 +215,6 @@ a:hover {
   color: var(--text);
 }
 
-.project-copy .results-definition {
-  margin-top: 20px;
-  margin-bottom: 0;
-  color: var(--dim);
-  font-size: 14.5px;
-}
-
 .results-table-wrap {
   margin-top: 14px;
   overflow-x: auto;
@@ -340,14 +333,6 @@ a:hover {
   line-height: 1.55;
 }
 
-.verifier-gap-panel {
-  max-width: none;
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--panel);
-}
-
 .diagram-wrap {
   max-width: none;
   padding: 18px;
@@ -361,67 +346,6 @@ a:hover {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.trace-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  max-width: none;
-  margin: 14px 0 18px;
-  align-items: start;
-}
-
-@media (max-width: 700px) {
-  .trace-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.trace-grid .verifier-gap-panel {
-  max-width: none;
-}
-
-.trace-grid h3 {
-  margin: 0 0 10px;
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.trace-grid .arm-a h3 {
-  color: var(--green-dim);
-}
-
-.trace-grid .arm-b h3 {
-  color: var(--green);
-}
-
-.verifier-gap-diff {
-  margin: 0;
-  overflow-x: auto;
-  color: var(--text);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 14px;
-  line-height: 1.8;
-  white-space: pre-wrap;
-}
-
-.gap-before {
-  color: var(--green);
-}
-
-.gap-after {
-  color: #ef4444;
-}
-
-.gap-result {
-  color: var(--amber);
-}
-
-.full-trace-link {
-  font-weight: 650;
 }
 
 .trace-selector {

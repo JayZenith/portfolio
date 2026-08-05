@@ -1,37 +1,36 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders portfolio intro and sections', () => {
+test('renders portfolio intro and the PREDICT section', () => {
   render(<App />);
   expect(screen.getByText(/I build post-training and evaluation systems/i)).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'GLYPH' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'PREDICT' })).toBeInTheDocument();
+  expect(screen.getByText(/Making a coding agent predict the outcome of its environment/i))
+    .toBeInTheDocument();
+  expect(screen.getByRole('img', { name: /Arm A versus Arm B execution flow/i }))
+    .toBeInTheDocument();
+});
+
+test('links out to the full write-up and the code', () => {
+  render(<App />);
+  expect(screen.getByRole('link', { name: 'Full write-up' })).toHaveAttribute(
+    'href',
+    'https://jayzenith.github.io/PREDICT/'
+  );
+  expect(screen.getByRole('link', { name: 'Code' })).toHaveAttribute(
+    'href',
+    'https://github.com/JayZenith/PREDICT'
+  );
   expect(
-    screen.getByRole('heading', { name: 'Key lessons from building GLYPH' })
-  ).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'One verifier gap' })).toBeInTheDocument();
-  expect(screen.getByText(/Before \(spec-correct\)/i)).toBeInTheDocument();
-  expect(screen.getByText(/Spec: violated. Verifier: blind./i)).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Full trace →' })).toHaveAttribute(
-    'href',
-    'https://jayzenith.github.io/GLYPH/#full-verifier-gap-trace'
-  );
-  expect(screen.getByText(/Each model has one role in the comparison/i)).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'What the evidence says' })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'Next: isolate the bottleneck' })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Methodology →' })).toHaveAttribute(
-    'href',
-    'https://jayzenith.github.io/GLYPH/#methodology'
-  );
-  expect(
-    screen.getByRole('heading', { name: 'use GLYPH on Prime Intellect Environments Hub' })
-  ).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'TUI demo' })).toHaveAttribute(
-    'href',
-    'https://github.com/JayZenith/GLYPH#interactive-tui-smoke-test'
-  );
-  expect(screen.getByRole('link', { name: 'Raw evals' })).toHaveAttribute(
-    'href',
-    'https://huggingface.co/datasets/JayZenith/Glyph-RLVR-Eval-Results'
-  );
-  expect(screen.queryByRole('link', { name: 'llama.cpp' })).not.toBeInTheDocument();
+    screen.getByRole('link', {
+      name: /Full write-up: architecture, data, every statistical test, training curves/i,
+    })
+  ).toHaveAttribute('href', 'https://jayzenith.github.io/PREDICT/');
+});
+
+test('drops the detailed results prose in favor of the write-up link', () => {
+  render(<App />);
+  expect(screen.queryByText(/RLVR improves both arms/i)).not.toBeInTheDocument();
+  expect(screen.queryByText(/verifier gap/i)).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading', { name: 'GLYPH' })).not.toBeInTheDocument();
 });
