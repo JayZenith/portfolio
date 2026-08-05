@@ -53,16 +53,23 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            Making a coding agent predict the outcome of its environment and act on that
-            prediction. The environment is a Python sandbox; the feedback is what happens when the
-            agent's patch actually runs. Arm B emits a{' '}
-            <code>PREDICTION</code> of that result and commits to KEEP or REVISE before it's
-            allowed to see it. The patch runs either way, and a cross-entropy loss on the verified
-            outcome trains the prediction directly.{' '}
-            <ExternalLink href="https://arxiv.org/abs/2605.24517">ECHO</ExternalLink> showed
-            prediction helps as a pure training signal; here it also gates behavior. Arm A is the
-            matched comparator: patch, test, react. Two arms, two seeds each, 500 held-out tasks,
-            McNemar tests rather than raw percentage gaps.
+            <strong>The setup:</strong> a predict-and-decide agent (Arm B) makes a{' '}
+            <code>PREDICTION</code> on what its own patch will do, then chooses to either KEEP or
+            REVISE the patch. The patch is executed either way, and a cross-entropy loss on the
+            verified outcome trains the prediction directly while GRPO handles the rest. The
+            matched comparator is test-and-recover (Arm A): patch, test, react.
+          </p>
+
+          <p>
+            <strong>Work in progress:</strong> RLVR beat SFT for both agents, and the prediction
+            mechanism shows some learning. The SFT checkpoint called PASS on <strong>100%</strong>{' '}
+            of candidates, which needs to be corrected in the curriculum: 257 of its 302 prediction
+            labels are PASS. But cross-entropy on verified execution outcomes did create a{' '}
+            <code>RUNTIME_ERROR</code> detector: <strong>62.5% and 64.1% precision</strong> across
+            the two seeds, against a 16% base rate, off 8 demonstrations.{' '}
+            <code>ASSERTION_FAILURE</code>, 57% of all outcomes, stayed at zero, never predicted
+            once at any checkpoint. And the gate doesn't pay off yet: Arm A vs. Arm B is a coin
+            flip.
           </p>
 
           <div className="diagram-wrap">
