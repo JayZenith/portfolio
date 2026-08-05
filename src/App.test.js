@@ -5,8 +5,10 @@ test('renders portfolio intro and the PREDICT section', () => {
   render(<App />);
   expect(screen.getByText(/I built PREDICT\./i)).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'PREDICT' })).toBeInTheDocument();
-  expect(screen.getByText(/a predict-and-decide agent \(Arm B\) makes a/i)).toBeInTheDocument();
-  expect(screen.getByText(/RLVR beat SFT for both agents/i)).toBeInTheDocument();
+  expect(screen.getByText(/Arm B predicts whether its patch will pass or fail/i)).toBeInTheDocument();
+  expect(screen.getByText(/RLVR produced a/i)).toBeInTheDocument();
+  expect(screen.getByText(/train on incorrect solutions sampled from the SFT checkpoint/i))
+    .toBeInTheDocument();
   expect(screen.getByRole('img', { name: /Arm A versus Arm B execution flow/i }))
     .toBeInTheDocument();
 });

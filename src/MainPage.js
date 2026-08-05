@@ -50,23 +50,26 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            <strong>The setup:</strong> a predict-and-decide agent (Arm B) makes a{' '}
-            <code>PREDICTION</code> on what its own patch will do, then chooses to either KEEP or
-            REVISE the patch. The patch is executed either way, and a cross-entropy loss on the
-            verified outcome trains the prediction directly while GRPO handles the rest. The
-            matched comparator is test-and-recover (Arm A): patch, test, react.
+            <strong>CE and GRPO working together:</strong> Arm B predicts whether its patch will
+            pass or fail, then chooses to KEEP or REVISE it. The patch is executed either way, and
+            cross-entropy trains the prediction against the verified outcome, while GRPO trains the
+            rest of the rollout but is masked from the prediction label. Arm A is the matched
+            test-and-recover baseline: patch, test, react.
           </p>
 
           <p>
-            <strong>The predictor has life, but no payoff yet:</strong> RLVR beat SFT for both
-            agents. Cross-entropy on verified
-            execution outcomes turned a checkpoint that called PASS on <strong>100%</strong> of
-            candidates into a real <code>RUNTIME_ERROR</code> detector:{' '}
-            <strong>62.5% and 64.1% precision</strong> across the two seeds, against a 16% base
-            rate, off 8 demonstrations. That doesn't reach pass@1, and it shouldn't: a runtime
-            error is what the test reports a turn later anyway. <code>ASSERTION_FAILURE</code>, 57%
-            of outcomes and the class actually worth catching early, stayed at zero, never
-            predicted once at any checkpoint.
+            <strong>Predictor shows limited promise:</strong> Starting from an SFT checkpoint that
+            always predicted PASS, RLVR produced a <code>RUNTIME_ERROR</code> detector with{' '}
+            <strong>62.5% and 64.1% precision</strong> across two seeds, versus a 16% base rate,
+            after only 8 SFT examples. This did not improve pass@1 because the test reveals runtime
+            errors one turn later anyway. <code>ASSERTION_FAILURE</code>, 57% of outcomes and the
+            more useful class to catch early, was never predicted correctly.
+          </p>
+
+          <p>
+            <strong>Work in progress:</strong> train on incorrect solutions sampled from the SFT
+            checkpoint and labeled by execution to improve <code>ASSERTION_FAILURE</code>{' '}
+            emissions.
           </p>
 
           <div className="diagram-wrap">
