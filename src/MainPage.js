@@ -145,9 +145,9 @@ function MainPage() {
             four runs. A rollout is multi-turn, so the agent can patch more than once inside one
             pass@1 attempt, and both routes to a pass carry weight — recovery rescues 12–17% of
             rollouts whose first test failed. The measured gain sits entirely on the first patch
-            (p=0.0004–0.011). The recovery rate after RLVR is roughly what it was at SFT in all four
-            runs (p=0.58–0.74), but that column rests on ~40 events per run against 500 for the
-            others, so it is underpowered rather than settled.
+            (p=0.0004–0.011). Recovery I can't call either way: the agent fixes its own broken patch
+            about 40 times per run, and 40 events is too few to detect a change of a few points
+            (p=0.58–0.74) — couldn't tell, rather than nothing happened.
             Whether prediction beats reactive testing is unconfirmed at every checkpoint tested — a
             coin flip at step 100 (54.2% vs 53.6%, p=0.86).
           </p>
