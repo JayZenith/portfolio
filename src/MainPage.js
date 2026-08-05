@@ -50,7 +50,7 @@ function MainPage() {
 
         <article className="project-copy">
           <p>
-            <strong>CE and GRPO working together:</strong> Arm B predicts whether its patch will
+            <strong>CE and GRPO working together during RLVR:</strong> Arm B predicts whether its patch will
             pass or fail, then chooses to KEEP or REVISE it. The patch is executed either way, and
             cross-entropy trains the prediction against the verified outcome, while GRPO trains the
             rest of the rollout but is masked from the prediction label. Arm A is the matched
