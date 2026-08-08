@@ -7,22 +7,22 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="PREDICT: an early-stage RLVR experiment toward a coding agent with a working world model: it predicts what the environment will do and stakes a KEEP/REVISE decision on that prediction before seeing the real result."
+      content="Jay Zenith builds post-training systems for tool-using LLM agents: verifier-based environments, RL training infrastructure, and auxiliary learning objectives."
     />
     <meta name="author" content="Jay Zenith" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="PREDICT - Giving a coding agent a world model it must act on" />
+    <meta property="og:title" content="Jay Zenith - post-training systems for tool-using LLM agents" />
     <meta
       property="og:description"
-      content="Jay Zenith's PREDICT: a coding agent whose prediction causally gates its behavior, trained with SFT, RLVR, and verified-label cross-entropy. Extends ECHO from prediction-as-training-signal to prediction-as-behavior."
+      content="PREDICT: training an agent to predict the verified outcome of its own actions before executing them. GRPO plus auxiliary outcome supervision."
     />
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Jay Zenith" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="PREDICT - Giving a coding agent a world model it must act on" />
+    <meta name="twitter:title" content="Jay Zenith - post-training systems for tool-using LLM agents" />
     <meta
       name="twitter:description"
-      content="A coding agent whose prediction causally gates its behavior, trained with SFT, RLVR, and verified-label cross-entropy."
+      content="PREDICT: training an agent to predict the verified outcome of its own actions before executing them."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>PREDICT - Giving a coding agent a world model it must act on</title>
+    <title>Jay Zenith</title>
   </head>
   <body>
     <div id="root">
@@ -59,8 +59,8 @@
             <a href="https://twitter.com/jayz3nith">[x]</a>
           </div>
           <p class="lede">
-            I build post-training and evaluation systems for tool-using agents:
-            data, environments, verifiable rewards, and RL training infrastructure. My work below.
+            I build post-training systems for tool-using LLM agents: verifier-based environments,
+            RL training infrastructure, and auxiliary learning objectives.
           </p>
         </header>
 
@@ -71,12 +71,19 @@
                 <span class="title">predict</span>
               </a>
               <p class="desc">
-                Toward a coding agent with a working world model: it predicts what the
-                environment will do and stakes a KEEP/REVISE decision on that prediction before
-                seeing the real result, the prediction trained by its own cross-entropy loss off
-                the verified outcome. Extends <a href="https://arxiv.org/abs/2605.24517">ECHO</a>
-                from prediction-as-training-signal to prediction-as-behavior.
-                <a class="blog-link" href="https://jayzenith.github.io/PREDICT/">[full write-up]</a>
+                <strong>Training an agent to predict the verified outcome of its own actions before
+                executing them.</strong> PREDICT extends GRPO with auxiliary outcome supervision. A
+                coding agent proposes a patch, predicts what will happen if it executes that patch,
+                and commits to KEEP or REVISE before seeing the result. After execution, the
+                environment provides the verified outcome: GRPO trains the agent's actions,
+                auxiliary cross-entropy trains the earlier prediction against that ground truth.
+                Unlike observation-prediction methods such as
+                <a href="https://arxiv.org/abs/2605.24517">ECHO</a>, PREDICT's target does not need
+                to appear in the rollout itself. On Qwen3-4B, RL training turned a checkpoint that
+                always predicted PASS into a runtime-error detector reaching 62.5% and 64.1%
+                precision across two seeds; the broader agent-performance advantage is not yet
+                established.
+                <a class="blog-link" href="https://jayzenith.github.io/PREDICT/">[read PREDICT]</a>
                 <a class="blog-link" href="https://github.com/JayZenith/PREDICT">[code]</a>
               </p>
             </li>

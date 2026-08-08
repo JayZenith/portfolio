@@ -170,6 +170,21 @@ a:hover {
   margin-bottom: 0;
 }
 
+.project-copy .project-lede {
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.project-copy code {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  color: #d8ecd9;
+  background: rgba(57, 255, 20, 0.06);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
 .project-copy .project-detail {
   margin-top: 12px;
   color: var(--dim);
