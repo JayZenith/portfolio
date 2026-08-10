@@ -1,22 +1,22 @@
 :root {
-  --bg: #374539;
+  --bg: #334d48;
   --panel: #43513f;
   --panel-2: #3f4d41;
-  --text: #f2f5f2;
-  --muted: #d9ded9;
-  --dim: #b3bbb4;
-  --line: rgba(57, 255, 20, 0.20);
-  --line-2: rgba(57, 255, 20, 0.38);
-  --blue: #8cbcff;
+  --text: #faf7f0;
+  --muted: #dde7e2;
+  --dim: #a7bcb5;
+  --line: rgba(134, 232, 106, 0.20);
+  --line-2: rgba(134, 232, 106, 0.38);
+  --blue: #9ec9ff;
   --cyan: #6fe3f0;
-  --green: #39ff14;
+  --green: #86e86a;
   --green-soft: #7dff62;
-  --green-dim: #5fd9c9;
-  --amber: #f2cf5e;
+  --green-dim: #79d3c6;
+  --amber: #d6d658;
   --purple: #c9a6ff;
   --scroll-track: #2f3d31;
   --scroll-thumb: #5a6b5c;
-  --scroll-thumb-hover: #39ff14;
+  --scroll-thumb-hover: #86e86a;
 }
 
 * {
@@ -44,7 +44,7 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+  border-bottom: 1px solid rgba(134, 232, 106, 0.3);
 }
 
 a:hover {
@@ -179,8 +179,8 @@ a:hover {
 .project-copy code {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
-  color: #d7f5e0;
-  background: rgba(57, 255, 20, 0.06);
+  color: #d9f0d2;
+  background: rgba(134, 232, 106, 0.06);
   border-radius: 3px;
   padding: 1px 5px;
 }
