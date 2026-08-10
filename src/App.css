@@ -1,22 +1,22 @@
 :root {
-  --bg: #a8ada9;
-  --panel: #ffffff;
-  --panel-2: #dcdfdc;
-  --text: #10151a;
-  --muted: #232a26;
-  --dim: #3d4642;
-  --line: rgba(8, 30, 16, 0.24);
-  --line-2: rgba(8, 30, 16, 0.42);
-  --blue: #14338f;
-  --cyan: #0e7490;
-  --green: #0e4520;
-  --green-soft: #2c8a3f;
-  --green-dim: #0b4f49;
-  --amber: #5c3a04;
-  --purple: #6d28d9;
-  --scroll-track: #dfe2df;
-  --scroll-thumb: #9aa89e;
-  --scroll-thumb-hover: #0e4520;
+  --bg: #414643;
+  --panel: #4b514c;
+  --panel-2: #494f4a;
+  --text: #f2f5f2;
+  --muted: #d9ded9;
+  --dim: #b3bbb4;
+  --line: rgba(110, 242, 154, 0.20);
+  --line-2: rgba(110, 242, 154, 0.38);
+  --blue: #8cbcff;
+  --cyan: #6fe3f0;
+  --green: #6ef29a;
+  --green-soft: #9df7bd;
+  --green-dim: #5fd9c9;
+  --amber: #f2cf5e;
+  --purple: #c9a6ff;
+  --scroll-track: #383d39;
+  --scroll-thumb: #5f6b62;
+  --scroll-thumb-hover: #6ef29a;
 }
 
 * {
@@ -44,7 +44,7 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(8, 30, 16, 0.3);
+  border-bottom: 1px solid rgba(110, 242, 154, 0.3);
 }
 
 a:hover {
@@ -179,8 +179,8 @@ a:hover {
 .project-copy code {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
-  color: #1f2a24;
-  background: rgba(8, 30, 16, 0.06);
+  color: #d7f5e0;
+  background: rgba(110, 242, 154, 0.06);
   border-radius: 3px;
   padding: 1px 5px;
 }
