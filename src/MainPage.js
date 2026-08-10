@@ -28,7 +28,8 @@ function MainPage() {
 
         <p>
           I build post-training and evaluation systems for tool-using LLM agents: verifier-based
-          environments, RL training infrastructure, and auxiliary learning objectives.
+          environments, RL training infrastructure, and auxiliary learning objectives. I build
+          PREDICT below.
         </p>
       </header>
 
