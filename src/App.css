@@ -1,22 +1,22 @@
 :root {
-  --bg: #d6d9d6;
+  --bg: #a8ada9;
   --panel: #ffffff;
-  --panel-2: #eceeec;
-  --text: #14191a;
-  --muted: #333c37;
-  --dim: #5f6d64;
-  --line: rgba(18, 58, 32, 0.14);
-  --line-2: rgba(18, 58, 32, 0.30);
-  --blue: #1d4ed8;
+  --panel-2: #dcdfdc;
+  --text: #10151a;
+  --muted: #232a26;
+  --dim: #3d4642;
+  --line: rgba(8, 30, 16, 0.24);
+  --line-2: rgba(8, 30, 16, 0.42);
+  --blue: #14338f;
   --cyan: #0e7490;
-  --green: #17692f;
+  --green: #0e4520;
   --green-soft: #2c8a3f;
-  --green-dim: #0f766e;
-  --amber: #8a5606;
+  --green-dim: #0b4f49;
+  --amber: #5c3a04;
   --purple: #6d28d9;
   --scroll-track: #dfe2df;
   --scroll-thumb: #9aa89e;
-  --scroll-thumb-hover: #17692f;
+  --scroll-thumb-hover: #0e4520;
 }
 
 * {
@@ -44,7 +44,7 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(18, 58, 32, 0.3);
+  border-bottom: 1px solid rgba(8, 30, 16, 0.3);
 }
 
 a:hover {
@@ -180,7 +180,7 @@ a:hover {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
   color: #1f2a24;
-  background: rgba(18, 58, 32, 0.06);
+  background: rgba(8, 30, 16, 0.06);
   border-radius: 3px;
   padding: 1px 5px;
 }
