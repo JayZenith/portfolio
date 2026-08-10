@@ -46,16 +46,22 @@ function MainPage() {
 
         <article className="project-copy">
           <p className="project-lede">
-            <strong>
-              Two coding agents on the same RL environment: one tests its patch, the other predicts
-              what the test will say and decides whether to keep it.
-            </strong>
+            <strong>A post-training study of reactive vs. predictive coding agents.</strong>
           </p>
 
           <p>
-            Qwen3-4B, SFT then GRPO, built on Prime Intellect's Verifiers and PRIME-RL. The
-            predictive agent learns real outcome prediction and still loses, and the write-up
-            isolates exactly which part of its protocol costs it.
+            Two Qwen3-4B agents on the same verifier-backed environment, built on Prime Intellect's
+            Verifiers and PRIME-RL. Arm A was test-and-recover, trained with GRPO. Arm B predicted
+            the verified outcome of its patch and decided whether to keep it, trained with GRPO plus
+            an auxiliary cross-entropy loss.
+          </p>
+
+          <p>
+            Both learned, but the predictive agent did not outperform: its REVISE path destroyed the
+            execution feedback the reactive agent recovered from, and cheap testing made direct
+            observation worth more than foresight. The project also produced an upstream PRIME-RL
+            fix, where zero-advantage filtering could discard rollouts that still carried valid
+            non-RL training signal.
           </p>
         </article>
       </section>
