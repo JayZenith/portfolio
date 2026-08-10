@@ -27,8 +27,8 @@ function MainPage() {
         </div>
 
         <p>
-          I build post-training systems for tool-using LLM agents: verifier-based environments, RL
-          training infrastructure, and auxiliary learning objectives.
+          I build post-training and evaluation systems for tool-using LLM agents: verifier-based
+          environments, RL training infrastructure, and auxiliary learning objectives.
         </p>
       </header>
 
@@ -71,10 +71,28 @@ function MainPage() {
           </p>
 
           <p>
-            On Qwen3-4B, RL training turned a checkpoint that always predicted{' '}
-            <code>PASS</code> into a runtime-error detector reaching{' '}
-            <strong>62.5% and 64.1% precision</strong> across two seeds. The broader
-            agent-performance advantage is not yet established.
+            On Qwen3-4B, RL turned a checkpoint that always predicted <code>PASS</code> into a
+            runtime-error detector at <strong>62.5% and 64.1% precision</strong> across two seeds.
+            It still did not beat the reactive baseline on pass@1. The interesting result was why.
+          </p>
+
+          <p>
+            Splitting the predictive agent's trajectories by whether it ever chose REVISE: the ones
+            that never revised passed <strong>63.3% / 60.4%</strong>; the ones that revised passed{' '}
+            <strong>1.1% / 4.9%</strong>. Both seeds. The entire deficit is that one path.
+          </p>
+
+          <p>
+            The gate itself discriminated correctly — it chose REVISE two to three times more often
+            on patches that genuinely failed than on patches that would have passed. But REVISE
+            spends a tool call and returns no execution feedback, so <strong>99% and 95%</strong>{' '}
+            of those trajectories exhausted their budget and terminated before ever running a test.
+            Always predicting <code>PASS</code> was the rational policy, not a training failure.
+          </p>
+
+          <p>
+            A correct prediction is worthless if the action it gates is worse than simply observing
+            the environment. Agent protocol dominated the training objective.
           </p>
 
           <div className="diagram-wrap">
