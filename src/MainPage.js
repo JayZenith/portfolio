@@ -46,22 +46,24 @@ function MainPage() {
 
         <article className="project-copy">
           <p className="project-lede">
-            <strong>A post-training study of reactive vs. predictive coding agents.</strong>
+            <strong>Reactive vs. Predictive Post-Training for Coding Agents</strong>
           </p>
 
           <p>
-            Two Qwen3-4B agents on the same verifier-backed environment, built on Prime Intellect's
-            Verifiers and PRIME-RL. Arm A was test-and-recover, trained with GRPO. Arm B predicted
-            the verified outcome of its patch and decided whether to keep it, trained with GRPO plus
-            an auxiliary cross-entropy loss.
+            I trained two Qwen3-4B coding agents on the same verifier-backed environment using Prime
+            Intellect's Verifiers and PRIME-RL: reactive test-and-recover with GRPO versus
+            predictive KEEP/REVISE with GRPO + auxiliary CE.
           </p>
 
           <p>
-            Both learned, but the predictive agent did not outperform: its REVISE path destroyed the
-            execution feedback the reactive agent recovered from, and cheap testing made direct
-            observation worth more than foresight. The project also produced an upstream PRIME-RL
-            fix, where zero-advantage filtering could discard rollouts that still carried valid
-            non-RL training signal.
+            Both improved with RL, but the predictive arm did not outperform. Trajectory analysis
+            showed why: REVISE was nearly terminal, while cheap test feedback made direct
+            observation more useful than foresight.
+          </p>
+
+          <p>
+            The project also uncovered an upstream PRIME-RL filtering bug that could discard valid
+            CE/ref-KL training signal from zero-advantage rollouts.
           </p>
         </article>
       </section>
