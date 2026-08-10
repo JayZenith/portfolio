@@ -1,7 +1,7 @@
 :root {
-  --bg: #414643;
-  --panel: #4b514c;
-  --panel-2: #494f4a;
+  --bg: #374539;
+  --panel: #43513f;
+  --panel-2: #3f4d41;
   --text: #f2f5f2;
   --muted: #d9ded9;
   --dim: #b3bbb4;
@@ -14,8 +14,8 @@
   --green-dim: #5fd9c9;
   --amber: #f2cf5e;
   --purple: #c9a6ff;
-  --scroll-track: #383d39;
-  --scroll-thumb: #5f6b62;
+  --scroll-track: #2f3d31;
+  --scroll-thumb: #5a6b5c;
   --scroll-thumb-hover: #39ff14;
 }
 
