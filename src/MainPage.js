@@ -57,13 +57,8 @@ function MainPage() {
 
           <p>
             Both improved with RL, but the predictive arm did not outperform. Trajectory analysis
-            showed why: REVISE was nearly terminal, while cheap test feedback made direct
-            observation more useful than foresight.
-          </p>
-
-          <p>
-            The project also uncovered an upstream PRIME-RL filtering bug that could discard valid
-            CE/ref-KL training signal from zero-advantage rollouts.
+            showed why: rollouts that chose REVISE almost never recovered, while cheap test feedback
+            made direct observation more useful than foresight.
           </p>
         </article>
       </section>

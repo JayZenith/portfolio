@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#e8eae8" />
     <meta
       name="description"
       content="Jay Zenith builds post-training systems for tool-using LLM agents: verifier-based environments, RL training infrastructure, and auxiliary learning objectives."
@@ -59,8 +59,8 @@
             <a href="https://twitter.com/jayz3nith">[x]</a>
           </div>
           <p class="lede">
-            I build post-training systems for tool-using LLM agents: verifier-based environments,
-            RL training infrastructure, and auxiliary learning objectives.
+            I build post-training and evaluation systems for tool-using LLM agents: verifier-based
+            environments, RL training infrastructure, and auxiliary learning objectives.
           </p>
         </header>
 
@@ -71,19 +71,14 @@
                 <span class="title">predict</span>
               </a>
               <p class="desc">
-                <strong>Training an agent to predict the verified outcome of its own actions before
-                executing them.</strong> PREDICT extends GRPO with auxiliary outcome supervision. A
-                coding agent proposes a patch, predicts what will happen if it executes that patch,
-                and commits to KEEP or REVISE before seeing the result. After execution, the
-                environment provides the verified outcome: GRPO trains the agent's actions,
-                auxiliary cross-entropy trains the earlier prediction against that ground truth.
-                Unlike observation-prediction methods such as
-                <a href="https://arxiv.org/abs/2605.24517">ECHO</a>, PREDICT's target does not need
-                to appear in the rollout itself. On Qwen3-4B, RL training turned a checkpoint that
-                always predicted PASS into a runtime-error detector reaching 62.5% and 64.1%
-                precision across two seeds; the broader agent-performance advantage is not yet
-                established.
-                <a class="blog-link" href="https://jayzenith.github.io/PREDICT/">[read PREDICT]</a>
+                <strong>Reactive vs. Predictive Post-Training for Coding Agents.</strong> I trained
+                two Qwen3-4B coding agents on the same verifier-backed environment using Prime
+                Intellect's Verifiers and PRIME-RL: reactive test-and-recover with GRPO versus
+                predictive KEEP/REVISE with GRPO + auxiliary CE. Both improved with RL, but the
+                predictive arm did not outperform. Trajectory analysis showed why: rollouts that
+                chose REVISE almost never recovered, while cheap test feedback made direct
+                observation more useful than foresight.
+                <a class="blog-link" href="https://jayzenith.github.io/PREDICT/">[read the study]</a>
                 <a class="blog-link" href="https://github.com/JayZenith/PREDICT">[code]</a>
               </p>
             </li>

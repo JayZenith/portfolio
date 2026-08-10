@@ -1,22 +1,22 @@
 :root {
-  --bg: #000000;
-  --panel: #080d09;
-  --panel-2: #0c130d;
-  --text: #eef7ef;
-  --muted: #dcebde;
-  --dim: #a3bba8;
-  --line: rgba(57, 255, 20, 0.11);
-  --line-2: rgba(57, 255, 20, 0.24);
-  --blue: #4d9fff;
-  --cyan: #24f0ff;
-  --green: #39ff14;
-  --green-soft: #7dff62;
-  --green-dim: #00d17a;
-  --amber: #f5e400;
-  --purple: #c678ff;
-  --scroll-track: #050a06;
-  --scroll-thumb: #1c7a3f;
-  --scroll-thumb-hover: #39ff14;
+  --bg: #e8eae8;
+  --panel: #ffffff;
+  --panel-2: #f2f4f2;
+  --text: #14191a;
+  --muted: #333c37;
+  --dim: #5f6d64;
+  --line: rgba(18, 58, 32, 0.14);
+  --line-2: rgba(18, 58, 32, 0.30);
+  --blue: #1d4ed8;
+  --cyan: #0e7490;
+  --green: #17692f;
+  --green-soft: #2c8a3f;
+  --green-dim: #0f766e;
+  --amber: #8a5606;
+  --purple: #6d28d9;
+  --scroll-track: #dfe2df;
+  --scroll-thumb: #9aa89e;
+  --scroll-thumb-hover: #17692f;
 }
 
 * {
@@ -44,7 +44,7 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+  border-bottom: 1px solid rgba(18, 58, 32, 0.3);
 }
 
 a:hover {
@@ -179,8 +179,8 @@ a:hover {
 .project-copy code {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
-  color: #d8ecd9;
-  background: rgba(57, 255, 20, 0.06);
+  color: #1f2a24;
+  background: rgba(18, 58, 32, 0.06);
   border-radius: 3px;
   padding: 1px 5px;
 }
