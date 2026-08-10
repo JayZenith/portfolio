@@ -5,18 +5,18 @@
   --text: #f2f5f2;
   --muted: #d9ded9;
   --dim: #b3bbb4;
-  --line: rgba(110, 242, 154, 0.20);
-  --line-2: rgba(110, 242, 154, 0.38);
+  --line: rgba(57, 255, 20, 0.20);
+  --line-2: rgba(57, 255, 20, 0.38);
   --blue: #8cbcff;
   --cyan: #6fe3f0;
-  --green: #6ef29a;
-  --green-soft: #9df7bd;
+  --green: #39ff14;
+  --green-soft: #7dff62;
   --green-dim: #5fd9c9;
   --amber: #f2cf5e;
   --purple: #c9a6ff;
   --scroll-track: #383d39;
   --scroll-thumb: #5f6b62;
-  --scroll-thumb-hover: #6ef29a;
+  --scroll-thumb-hover: #39ff14;
 }
 
 * {
@@ -44,7 +44,7 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(110, 242, 154, 0.3);
+  border-bottom: 1px solid rgba(57, 255, 20, 0.3);
 }
 
 a:hover {
@@ -180,7 +180,7 @@ a:hover {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
   color: #d7f5e0;
-  background: rgba(110, 242, 154, 0.06);
+  background: rgba(57, 255, 20, 0.06);
   border-radius: 3px;
   padding: 1px 5px;
 }
