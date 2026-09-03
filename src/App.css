@@ -1,22 +1,23 @@
 :root {
-  --bg: #313432;
-  --panel: #43513f;
-  --panel-2: #3f4d41;
-  --text: #faf7f0;
-  --muted: #dde7e2;
-  --dim: #a7bcb5;
-  --line: rgba(134, 232, 106, 0.20);
-  --line-2: rgba(134, 232, 106, 0.38);
-  --blue: #9ec9ff;
-  --cyan: #6fe3f0;
-  --green: #5cf03c;
-  --green-soft: #7dff62;
-  --green-dim: #79d3c6;
-  --amber: #d6d658;
-  --purple: #c9a6ff;
-  --scroll-track: #2f3d31;
-  --scroll-thumb: #5a6b5c;
-  --scroll-thumb-hover: #86e86a;
+  /* near-black ground, dark grey panels, one red accent */
+  --bg: #0b0b0c;
+  --panel: #151517;
+  --panel-2: #1e1e21;
+  --text: #f4f2f1;
+  --muted: #cac6c4;
+  --dim: #8b8785;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-2: rgba(255, 77, 77, 0.34);
+  --blue: #9a9694;
+  --cyan: #b8b3b0;
+  --green: #ff4d4d;
+  --green-soft: #ff6b6b;
+  --green-dim: #b0706c;
+  --amber: #d8d4d2;
+  --purple: #b0706c;
+  --scroll-track: #1a1a1d;
+  --scroll-thumb: #4a4a4f;
+  --scroll-thumb-hover: #ff4d4d;
 }
 
 * {
@@ -44,7 +45,7 @@ a {
 a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(134, 232, 106, 0.3);
+  border-bottom: 1px solid rgba(255, 77, 77, 0.30);
 }
 
 a:hover {
@@ -179,8 +180,8 @@ a:hover {
 .project-copy code {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
-  color: #d9f0d2;
-  background: rgba(134, 232, 106, 0.06);
+  color: #e6e2e0;
+  background: rgba(255, 77, 77, 0.06);
   border-radius: 3px;
   padding: 1px 5px;
 }
@@ -331,9 +332,9 @@ a:hover {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid rgba(36, 211, 102, 0.28);
+  border: 1px solid rgba(255, 77, 77, 0.28);
   border-radius: 5px;
-  background: #020704;
+  background: #0d0d0f;
 }
 
 .trace-heading {
@@ -397,7 +398,7 @@ a:hover {
 }
 
 .trace-selector select:focus-visible {
-  box-shadow: 0 0 0 2px rgba(36, 211, 102, 0.18);
+  box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.18);
   border-color: var(--green);
 }
 
@@ -442,10 +443,10 @@ a:hover {
 .trace-summary p.trace-note {
   margin-top: 8px;
   padding: 8px 10px;
-  color: #ff8a96;
-  border: 1px solid rgba(255, 74, 94, 0.55);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 77, 77, 0.55);
   border-radius: 5px;
-  background: rgba(255, 45, 68, 0.1);
+  background: rgba(255, 77, 77, 0.10);
   font-size: 13px;
 }
 
@@ -462,7 +463,7 @@ a:hover {
 
 .crate-source {
   border-bottom: 1px solid var(--line);
-  background: #090c12;
+  background: #0f0f11;
 }
 
 .crate-source-header {
@@ -472,7 +473,7 @@ a:hover {
   padding: 10px 14px;
   color: var(--green);
   border-bottom: 1px solid var(--line);
-  background: #0a0e15;
+  background: #141416;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 11px;
 }
@@ -493,8 +494,8 @@ a:hover {
   margin: 0;
   overflow: auto;
   padding: 12px 0;
-  background: #05080d;
-  color: #e6fff0;
+  background: #0d0d0f;
+  color: #dedad8;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
   line-height: 1.55;
@@ -509,7 +510,7 @@ a:hover {
 
 .rust-line-number {
   padding-right: 12px;
-  color: #41664d;
+  color: #55524f;
   text-align: right;
   user-select: none;
 }
@@ -538,7 +539,7 @@ a:hover {
 .actions-panel {
   margin-top: 10px;
   border-top: 1px solid var(--line);
-  background: #0d131b;
+  background: #151517;
 }
 
 .actions-header {
@@ -548,7 +549,7 @@ a:hover {
   padding: 10px 14px;
   color: var(--dim);
   border-bottom: 1px solid var(--line);
-  background: #121925;
+  background: #1c1c1f;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 11px;
 }
@@ -576,7 +577,7 @@ a:hover {
 }
 
 .turn-system .turn-role {
-  color: #82c798;
+  color: #9a9694;
 }
 
 .turn-user .turn-role {
@@ -596,10 +597,10 @@ a:hover {
   margin: 0;
   padding: 10px 12px;
   overflow-x: auto;
-  color: #e6fff0;
+  color: #dedad8;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: #05080d;
+  background: #0d0d0f;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
   line-height: 1.5;
@@ -608,32 +609,32 @@ a:hover {
 }
 
 .turn-call {
-  color: #7ec2ff;
-  border-color: rgba(69, 163, 255, 0.62);
-  background: rgba(69, 163, 255, 0.08);
+  color: #b8b3b0;
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .turn-result {
-  color: #7cffb4;
-  border-color: rgba(57, 255, 136, 0.52);
-  background: rgba(57, 255, 136, 0.07);
+  color: #d8d4d2;
+  border-color: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .turn-system .turn-body {
-  color: #c0ffd4;
-  background: #0c1118;
+  color: #cac6c4;
+  background: #131315;
 }
 
 .turn-user .turn-body {
-  color: #fff28a;
-  border-color: rgba(255, 233, 74, 0.5);
-  background: rgba(255, 233, 74, 0.07);
+  color: #ff9d9a;
+  border-color: rgba(255, 77, 77, 0.45);
+  background: rgba(255, 77, 77, 0.08);
 }
 
 .turn-final {
-  color: #fff28a;
-  border-color: rgba(255, 233, 74, 0.7);
-  background: rgba(255, 233, 74, 0.1);
+  color: #ff9d9a;
+  border-color: rgba(255, 77, 77, 0.60);
+  background: rgba(255, 77, 77, 0.12);
 }
 
 .trace-call-token,
@@ -655,7 +656,7 @@ a:hover {
 }
 
 .trace-failed-token {
-  color: #ff6b7a;
+  color: #ff4d4d;
   font-weight: 700;
 }
 
@@ -683,7 +684,7 @@ a:hover {
 .rust-code::-webkit-scrollbar-thumb,
 .trace-turns::-webkit-scrollbar-thumb,
 .turn-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--scroll-thumb), #138f4b);
+  background: linear-gradient(180deg, var(--scroll-thumb), #6a3b39);
   border: 2px solid var(--scroll-track);
   border-radius: 999px;
 }
