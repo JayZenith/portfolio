@@ -7,7 +7,7 @@ const profileLinks = [
 ];
 
 const predictLinks = [
-  { label: 'read PREDICT', href: 'https://jayzenith.github.io/PREDICT/' },
+  { label: 'study', href: 'https://jayzenith.github.io/PREDICT/' },
   { label: 'code', href: 'https://github.com/JayZenith/PREDICT' },
 ];
 
@@ -27,9 +27,11 @@ function MainPage() {
         </div>
 
         <p>
-          I build post-training and evaluation systems for tool-using LLM agents: verifier-based
-          environments, RL training infrastructure, and auxiliary learning objectives. I build
-          PREDICT below.
+          I want to understand how we train agents that can improve the process of building agents.
+          I built PREDICT end-to-end to understand how model behavior actually emerges through
+          pretraining, SFT, rollout generation, reinforcement learning, and credit assignment.
+          Now I’m focused on long-horizon context management, credit assignment, and self-improving
+          agent systems.
         </p>
       </header>
 
@@ -47,19 +49,12 @@ function MainPage() {
 
         <article className="project-copy">
           <p className="project-lede">
-            <strong>Reactive vs. Predictive Post-Training for Coding Agents</strong>
+            Post-training coding agents with SFT, verifier-backed RL, and real tool execution.
           </p>
 
           <p>
-            I trained two Qwen3-4B coding agents on the same verifier-backed environment using Prime
-            Intellect's Verifiers and PRIME-RL: reactive test-and-recover with GRPO versus
-            predictive KEEP/REVISE with GRPO + auxiliary CE.
-          </p>
-
-          <p>
-            Both improved with RL, but the predictive arm did not outperform. Trajectory analysis
-            showed why: rollouts that chose REVISE almost never recovered, while cheap test feedback
-            made direct observation more useful than foresight.
+            I trained Qwen3-4B agents and built the surrounding training system: coding environments,
+            sandboxed rollouts, tool execution, rewards and evals, and custom PRIME-RL training logic.
           </p>
         </article>
       </section>
