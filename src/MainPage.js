@@ -7,7 +7,7 @@ const profileLinks = [
 ];
 
 const predictLinks = [
-  { label: 'study', href: 'https://jayzenith.github.io/PREDICT/' },
+  { label: 'writeup', href: 'https://jayzenith.github.io/PREDICT/' },
   { label: 'code', href: 'https://github.com/JayZenith/PREDICT' },
 ];
 
