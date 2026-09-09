@@ -57,7 +57,8 @@ function MainPage() {
 
           <p>
             I trained Qwen3-4B agents and built the surrounding training system: coding environments,
-            sandboxed rollouts, tool execution, rewards and evals, and custom PRIME-RL training logic.
+            sandboxed rollouts, tool execution, rewards and evals, and custom PRIME-RL logic for
+            combining GRPO with an auxiliary prediction objective.
           </p>
         </article>
       </section>
