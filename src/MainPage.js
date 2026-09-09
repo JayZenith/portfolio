@@ -27,14 +27,14 @@ function MainPage() {
         </div>
 
         <p>
-          I built PREDICT to understand the post-training stack end to end, while comparing a
-          standard reactive coding agent against one trained to judge the quality of its own patches
-          before acting on them.
+          I built PREDICT to understand the post-training stack end to end, while testing whether a
+          coding agent could learn to evaluate its own patches instead of relying purely on reactive
+          tool feedback.
         </p>
         <p>
-          Now I want to train agents that can do this kind of work themselves: operate over long
-          horizons, manage context, assign credit across trajectories, and improve the systems used
-          to build better agents.
+          Now I want to train agents that can take on more of the work required to improve agents
+          themselves: managing long contexts, exploring branched trajectories, assigning credit
+          across them, and evaluating changes to the systems that train them.
         </p>
       </header>
 
