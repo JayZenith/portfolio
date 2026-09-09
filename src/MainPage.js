@@ -32,9 +32,11 @@ function MainPage() {
           tool feedback.
         </p>
         <p>
-          Now I want to train agent systems that can take on more of the work required to improve
-          agent systems themselves: managing long contexts, exploring branched trajectories,
-          assigning credit across them, and evaluating changes to the systems that train them.
+          Now I’m most intrigued by self-improving agent systems that can take on more of the
+          research required to improve agent systems themselves: maintaining and sharing
+          long-horizon context, exploring competing research directions, developing judgment about
+          which ideas are promising, running and evaluating experiments, and using those results to
+          improve the systems that train them.
         </p>
       </header>
 
