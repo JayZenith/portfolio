@@ -40,7 +40,11 @@ function MainPage() {
 
       <section className="project-section">
         <div className="section-title">
-          <h2>PREDICT</h2>
+          <h2>
+            <a href="https://jayzenith.github.io/PREDICT/" target="_blank" rel="noreferrer">
+              PREDICT
+            </a>
+          </h2>
           <div className="project-links">
             {predictLinks.map((link) => (
               <a key={link.label} href={link.href} target="_blank" rel="noreferrer">

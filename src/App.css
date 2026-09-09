@@ -150,6 +150,10 @@ a:hover {
   letter-spacing: 0.01em;
 }
 
+.section-title h2 a {
+  border-bottom: none;
+}
+
 .external-link {
   display: inline;
   color: var(--green);
