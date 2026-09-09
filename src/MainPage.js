@@ -27,11 +27,14 @@ function MainPage() {
         </div>
 
         <p>
-          I want to understand how we train agents that can improve the process of building agents.
-          I built PREDICT end-to-end to understand how model behavior actually emerges through
-          pretraining, SFT, rollout generation, reinforcement learning, and credit assignment.
-          Now I’m focused on long-horizon context management, credit assignment, and self-improving
-          agent systems.
+          I built PREDICT to understand the post-training stack end to end, while comparing a
+          standard reactive coding agent against one trained to judge the quality of its own patches
+          before acting on them.
+        </p>
+        <p>
+          Now I want to train agents that can do this kind of work themselves: operate over long
+          horizons, manage context, assign credit across trajectories, and improve the systems used
+          to build better agents.
         </p>
       </header>
 
