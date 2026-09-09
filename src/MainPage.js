@@ -32,9 +32,9 @@ function MainPage() {
           tool feedback.
         </p>
         <p>
-          Now I want to train agents that can take on more of the work required to improve agents
-          themselves: managing long contexts, exploring branched trajectories, assigning credit
-          across them, and evaluating changes to the systems that train them.
+          Now I want to train agent systems that can take on more of the work required to improve
+          agent systems themselves: managing long contexts, exploring branched trajectories,
+          assigning credit across them, and evaluating changes to the systems that train them.
         </p>
       </header>
 
