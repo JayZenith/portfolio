@@ -28,12 +28,12 @@ function MainPage() {
 
         <p>
           I built PREDICT to understand the post-training stack end to end, while testing whether a
-          coding agent could learn to evaluate its own patches instead of relying purely on reactive
-          tool feedback.
+          agent could learn to predict the consequences of its own actions before observing the
+          result, using coding as the testbed.
         </p>
         <p>
           Now I’m most intrigued by self-improving agent systems: how they could take on more of the
-          research required to improve agent systems themselves, develop better research judgment,
+          research required to improve their successors, develop better research judgment,
           coordinate and explore across many trajectories, and remain understandable and aligned as
           that capability compounds.
         </p>
