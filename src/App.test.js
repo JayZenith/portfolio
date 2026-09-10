@@ -1,37 +1,27 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders portfolio intro and the PREDICT section', () => {
+test('renders the current portfolio bio and PREDICT section', () => {
   render(<App />);
-  expect(screen.getByText(/I built PREDICT\./i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'JAY ZENITH' })).toBeInTheDocument();
+  expect(screen.getByText(/I built PREDICT to understand the post-training stack end to end/i)).toBeInTheDocument();
+  expect(screen.getByText(/Now I’m most intrigued by self-improving agent systems: how they could take on more of the research/i)).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'PREDICT' })).toBeInTheDocument();
-  expect(screen.getByText(/Arm B predicts whether its patch will pass or fail/i)).toBeInTheDocument();
-  expect(screen.getByText(/RLVR produced a/i)).toBeInTheDocument();
-  expect(screen.getByText(/sample the SFT checkpoint's own failures/i)).toBeInTheDocument();
-  expect(screen.getByRole('img', { name: /Arm A versus Arm B execution flow/i }))
-    .toBeInTheDocument();
 });
 
-test('links out to the full write-up and the code', () => {
+test('links to the PREDICT write-up and code', () => {
   render(<App />);
-  expect(screen.getByRole('link', { name: 'Full write-up' })).toHaveAttribute(
+  expect(screen.getByRole('link', { name: 'writeup' })).toHaveAttribute(
     'href',
     'https://jayzenith.github.io/PREDICT/'
   );
-  expect(screen.getByRole('link', { name: 'Code' })).toHaveAttribute(
+  expect(screen.getByRole('link', { name: 'code' })).toHaveAttribute(
     'href',
     'https://github.com/JayZenith/PREDICT'
   );
-  expect(
-    screen.getByRole('link', {
-      name: /Full write-up: architecture, data, every statistical test, training curves/i,
-    })
-  ).toHaveAttribute('href', 'https://jayzenith.github.io/PREDICT/');
 });
 
-test('drops the detailed results prose in favor of the write-up link', () => {
+test('does not render removed detailed results sections', () => {
   render(<App />);
-  expect(screen.queryByText(/McNemar, paired on identical tasks/i)).not.toBeInTheDocument();
-  expect(screen.queryByText(/verifier gap/i)).not.toBeInTheDocument();
   expect(screen.queryByRole('heading', { name: 'GLYPH' })).not.toBeInTheDocument();
 });
