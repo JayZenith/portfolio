@@ -32,11 +32,10 @@ function MainPage() {
           tool feedback.
         </p>
         <p>
-          Now I’m most intrigued by self-improving agent systems that can take on more of the
-          research required to improve agent systems themselves: maintaining and sharing
-          long-horizon context, exploring competing research directions, developing judgment about
-          which ideas are promising, running and evaluating experiments, and using those results to
-          improve the systems that train them.
+          Now I’m most intrigued by self-improving agent systems: how they could take on more of the
+          research required to improve agent systems themselves, develop better research judgment,
+          coordinate and explore across many trajectories, and remain understandable and aligned as
+          that capability compounds.
         </p>
       </header>
 
