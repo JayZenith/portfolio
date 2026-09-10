@@ -2,7 +2,6 @@ import React from 'react';
 
 const profileLinks = [
   { label: 'github', href: 'https://github.com/JayZenith' },
-  { label: 'huggingface', href: 'https://huggingface.co/JayZenith' },
   { label: 'x', href: 'https://twitter.com/jayz3nith' },
 ];
 
